@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Section on govuk-hugo Demonstration</title>
+    <link>https://co-analysis.github.io/govuk-hugo-demo/section/</link>
+    <description>Recent content in Section on govuk-hugo Demonstration</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Fri, 22 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://co-analysis.github.io/govuk-hugo-demo/section/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pages</title>
+      <link>https://co-analysis.github.io/govuk-hugo-demo/section/pages/</link>
+      <pubDate>Fri, 22 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://co-analysis.github.io/govuk-hugo-demo/section/pages/</guid>
+      <description>Pages are created by writing a markdown (.md) files with a YAML header.
+--- title: &amp;#34;Pages&amp;#34; date: 2021-01-22 type: post --- Pages are created by writing a markdown (.md) files with a YAML header. </description>
+    </item>
+    
+    <item>
+      <title>Tests</title>
+      <link>https://co-analysis.github.io/govuk-hugo-demo/section/tests/</link>
+      <pubDate>Fri, 22 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://co-analysis.github.io/govuk-hugo-demo/section/tests/</guid>
+      <description>Some tests</description>
+    </item>
+    
+  </channel>
+</rss>
