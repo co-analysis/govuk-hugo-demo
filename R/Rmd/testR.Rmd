@@ -1,0 +1,19 @@
+---
+title: Test R Page
+date: 2021-01-22
+section: workflow
+---
+
+This is a test of an RMarkdown document within a govuk-hugo theme.
+
+```{r}
+# Comment
+mtcars
+```
+
+Some more text
+
+```{r}
+plot(mtcars$mpg, mtcars$disp)
+```
+

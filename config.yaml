@@ -1,0 +1,18 @@
+baseURL: https://co-analysis.github.io/govuk-hugo-demo/
+languageCode: en-gb
+title: govuk-hugo Demonstration
+theme: govukhugo
+publishDir: docs
+canonifyurls: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+params:
+  govuk: false
+  logotext: ABC
+  product: govuk-hugo Demonstration
+  phase: alpha
+  feedbackurl: https://co-analysis.github.io/govuk-hugo-demo/issues/
