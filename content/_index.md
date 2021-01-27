@@ -54,7 +54,7 @@ You can also manually add the theme, this is not recommended as it will be less 
 
 To apply the `govuk-hugo` theme, your `config.yaml` file should look like:
 
-```shell
+```yaml
 baseURL: https://your.site/
 languageCode: en-gb
 title: My Site Title
