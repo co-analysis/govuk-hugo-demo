@@ -79,68 +79,69 @@ td, th {
     grid-column: 2;
 }
 
+.sidebar-nav {
+    overflow-y: scroll;
+    height: calc(100vh - 200px);
+}
+
+.nav-section,
+.nav-item {
+    line-height: 1rem;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.nav-section {
+    margin-top: 5px;
+    padding-left: 15px;
+}
+
+.nav-active-section {
+    background-color: var(--govuk-colour-light-grey);
+    border-left: 5px solid var(--govuk-colour-dark-grey);
+    padding-left: 10px;
+}
+
 .nav-section a {
+    font-weight: 700;
     color: var(--govuk-secondary-text-colour);
     text-decoration: none;
-    font-weight: 700;
-    margin-top: 10px;
-    margin-bottom: 5px;
+}
+
+.nav-item {
+    padding-left: 30px;
+}
+
+.nav-active-item {
+    background-color: var(--govuk-colour-light-grey);
+    border-left: 5px solid var(--govuk-link-colour);
+    padding-left: 25px;
+}
+
+.nav-item:hover {
+    border-left: 5px solid var(--govuk-colour-light-blue);
+    padding-left: 25px;
+}
+
+.nav-active-item:hover {
+    border-left: 5px solid var(--govuk-link-colour) !important;
+    padding-left: 25px;
 }
 
 .nav-item a {
-    margin-top: 2px;
-    margin-bottom: 3px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 15px;
-    padding-right: 5px;
     text-decoration: none;
-    display: block;
 }
 
-.nav-active {
+.nav-item a:hover {
+    text-decoration: none;
     color: var(--govuk-link-colour);
-    font-weight: 700 !important;
-    padding-left: 10px !important;
-    border-left: 5px solid var(--govuk-link-colour);
-    background-color: var(--govuk-colour-light-grey);
-}
-
-.nav-active:hover {
-    color: var(--govuk-link-colour);
-}
-
-.nav-link:hover {
-    color: var(--govuk-link-colour);
-    padding-left: 10px;
-    border-left: 5px solid var(--govuk-colour-light-blue);
-}
-
-pre {
-    border: 1px solid var(--govuk-colour-mid-grey);
-    max-width: min(100%, var(--govuk-max-width-text));
-    font-family: monospace !important;
-}
-
-code {
-    font-family: monospace !important;
-}
-
-pre code {
-    font-family: monospace !important;
-}
-
-pre span {
-    font-family: monospace !important;
-}
-
-p code {
-    font-family: monospace !important;
-    background-color: var(--govuk-colour-light-grey);
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
 }
 
 .govuk-header__logo {
     width: 80%;
+}
+
+.govuk-summary-list {
+    max-width: min(100%, var(--govuk-max-width-text));
 }

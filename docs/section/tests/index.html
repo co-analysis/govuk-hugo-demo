@@ -24,9 +24,7 @@
   
 
   
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+  <link href="https://co-analysis.github.io/govuk-hugo-demo/css/syntax.css" rel="stylesheet">
 
   <meta property="og:image" content="/assets/images/govuk-opengraph-image.png">
 
@@ -90,51 +88,56 @@
                 <div class="dashboard-nav">
 <nav class="sidebar-nav">
 
-    
-    
-
-    <ul class="govuk-list">
-
+        
         
 
-        <li class="nav-section "><a class="govuk-body-s" href="https://co-analysis.github.io/govuk-hugo-demo/section/">Section</a></li>
+        <ul class="govuk-list">
 
+                
+
+                
+                <li class="nav-section "><a class="govuk-!-font-size-14" href="https://co-analysis.github.io/govuk-hugo-demo/section/">Section</a>
+                </li>
+                
+
+                
+
+                
+                <li class="nav-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/section/pages/">Pages</a></li>
+                
+
+                
+
+                
+                <li class="nav-item nav-active-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state "
+                                href="https://co-analysis.github.io/govuk-hugo-demo/section/tests/">Tests</a></li>
+                
+
+                
+
+                
+
+        </ul>
 
         
-
-        
-        <li class="nav-item"><a class="govuk-body-s govuk-link govuk-link--no-visited-state nav-link"
-                href="https://co-analysis.github.io/govuk-hugo-demo/section/pages/">Pages</a></li>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
         
 
+        <ul class="govuk-list nav-extra">
+
+                
+                <li class="nav-item"><a
+                                class="govuk-body-s govuk-!-font-size-14 govuk-link govuk-link--no-visited-state nav-link"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/about/">About page</a></li>
+                
+
+                </a>
+
+        </ul>
         
-
-        
-        <li class="nav-item"><a class="govuk-body-s govuk-link govuk-link--no-visited-state nav-active"
-                href="https://co-analysis.github.io/govuk-hugo-demo/section/tests/">Tests</a></li>
-        
-
-        
-
-        
-
-    </ul>
-
-    
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
-    
-
-    <ul class="govuk-list nav-extra">
-
-        
-        <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state nav-link"
-                href="https://co-analysis.github.io/govuk-hugo-demo/about/">About page</a></li>
-        
-
-        </a>
-
-    </ul>
-    
 
 </nav></div>
                 <div class="dashboard-content">
@@ -143,7 +146,58 @@
 <div class="govuk-body">
 
     <p>A page for tests</p>
+<p>Here is an <code>inline code block</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># A code block for R</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
 
+<span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">%&gt;%</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="s">&#34;b&#34;</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="m">12382</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+
+<span class="c1"># This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line.s</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># A code block for python</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!--&gt; A code block for HTML&lt;--&gt;</span>
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://www.example.com&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;link&#34;</span><span class="p">&gt;</span>a link<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
 
 </div>
 
@@ -197,6 +251,7 @@
     applyGOVUK("TD", "govuk-table__cell");
     applyGOVUK("THEAD", "govuk-table__head");
     applyGOVUK("TH", "govuk-table__header");
+    applyGOVUK("BLOCKQUOTE", "govuk-inset-text");
 
 </script></body>
 

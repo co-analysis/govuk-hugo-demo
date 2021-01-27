@@ -25,9 +25,7 @@
   
 
   
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+  <link href="https://co-analysis.github.io/govuk-hugo-demo/css/syntax.css" rel="stylesheet">
 
   <meta property="og:image" content="/assets/images/govuk-opengraph-image.png">
 
@@ -91,51 +89,56 @@
                 <div class="dashboard-nav">
 <nav class="sidebar-nav">
 
-    
-    
-
-    <ul class="govuk-list">
-
+        
         
 
-        <li class="nav-section "><a class="govuk-body-s" href="https://co-analysis.github.io/govuk-hugo-demo/section/">Section</a></li>
+        <ul class="govuk-list">
 
+                
+
+                
+                <li class="nav-section "><a class="govuk-!-font-size-14" href="https://co-analysis.github.io/govuk-hugo-demo/section/">Section</a>
+                </li>
+                
+
+                
+
+                
+                <li class="nav-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/section/pages/">Pages</a></li>
+                
+
+                
+
+                
+                <li class="nav-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/section/tests/">Tests</a></li>
+                
+
+                
+
+                
+
+        </ul>
 
         
-
-        
-        <li class="nav-item"><a class="govuk-body-s govuk-link govuk-link--no-visited-state nav-link"
-                href="https://co-analysis.github.io/govuk-hugo-demo/section/pages/">Pages</a></li>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
         
 
+        <ul class="govuk-list nav-extra">
+
+                
+                <li class="nav-item"><a
+                                class="govuk-body-s govuk-!-font-size-14 govuk-link govuk-link--no-visited-state nav-link"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/about/">About page</a></li>
+                
+
+                </a>
+
+        </ul>
         
-
-        
-        <li class="nav-item"><a class="govuk-body-s govuk-link govuk-link--no-visited-state nav-link"
-                href="https://co-analysis.github.io/govuk-hugo-demo/section/tests/">Tests</a></li>
-        
-
-        
-
-        
-
-    </ul>
-
-    
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
-    
-
-    <ul class="govuk-list nav-extra">
-
-        
-        <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state nav-link"
-                href="https://co-analysis.github.io/govuk-hugo-demo/about/">About page</a></li>
-        
-
-        </a>
-
-    </ul>
-    
 
 </nav></div>
                 <div class="dashboard-content">
@@ -149,18 +152,47 @@
 <h2 id="getting-started">Getting started</h2>
 <p>To use <code>govuk-hugo</code>, install Hugo as per the <a href="https://gohugo.io/getting-started/">getting started</a> advice and then create a new site.</p>
 <p>If creating from scratch (i.e. without an existing directory) the following code will create a Hugo site in the folder called <code>SITEDIR</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ hugo new site SITEDIR -f <span style="color:#e6db74">&#34;yaml&#34;</span>
-</code></pre></div><p>You can initialise an existing directory (e.g. if you&rsquo;ve already created an empty git repo) as a Hugo site by navigating to the directory and then forcing a new site to be built:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ cd SITEDIR
-$ hugo new site . --force -f <span style="color:#e6db74">&#34;yaml&#34;</span>
-</code></pre></div><p>Note that YAML is preferred for the format of config files, all documentation for <code>govuk-hugo</code> will use YAML. TOML (Hugo&rsquo;s default) should work, but is not supported and has not been tested.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ hugo new site SITEDIR -f <span class="s2">&#34;yaml&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>You can initialise an existing directory (e.g. if you&rsquo;ve already created an empty git repo) as a Hugo site by navigating to the directory and then forcing a new site to be built:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ <span class="nb">cd</span> SITEDIR
+$ hugo new site . --force -f <span class="s2">&#34;yaml&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Note that YAML is preferred for the format of config files, all documentation for <code>govuk-hugo</code> will use YAML. TOML (Hugo&rsquo;s default) should work, but is not supported and has not been tested.</p>
 <h3 id="add-the-govuk-hugo-theme">Add the <code>govuk-hugo</code> theme</h3>
 <p>Add as a git clone/submodule, as the theme is under active development it is recommended that you use git to add the theme so that you can easily get updates.</p>
 <p>If your hugo site is in its own git repo then add as a submodule:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git submodule add https://github.com/co-analysis/govuk-hugo.git themes/govukhugo
-</code></pre></div><p>If you hugo site is not a git repo then clone the theme:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ git clone https://github.com/co-analysis/govuk-hugo.git themes/govukhugo
-</code></pre></div><p>You can also manually add the theme, this is not recommended as it will be less easy for you to track updates:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ git submodule add https://github.com/co-analysis/govuk-hugo.git themes/govukhugo
+</code></pre></td></tr></table>
+</div>
+</div><p>If you hugo site is not a git repo then clone the theme:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ git clone https://github.com/co-analysis/govuk-hugo.git themes/govukhugo
+</code></pre></td></tr></table>
+</div>
+</div><p>You can also manually add the theme, this is not recommended as it will be less easy for you to track updates:</p>
 <ol>
 <li>Download the govuk-hugo repo&rsquo;s <a href="https://github.com/co-analysis/govuk-hugo/archive/main.zip">zip file</a></li>
 <li>Create a <code>govukhugo</code> folder inside the <code>themes</code> folder</li>
@@ -168,25 +200,49 @@ $ hugo new site . --force -f <span style="color:#e6db74">&#34;yaml&#34;</span>
 </ol>
 <h3 id="configure">Configure</h3>
 <p>To apply the <code>govuk-hugo</code> theme, your <code>config.yaml</code> file should look like:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">baseURL: https://your.site/
-languageCode: en-gb
-title: My Site Title
-theme: govukhugo
-publishDir: docs
-canonifyurls: true
-
-markup:
-  goldmark:
-    renderer:
-      unsafe: true
-
-params:
-  govuk: false
-  logotext: ABC
-  product: Product Name
-  phase: alpha
-  feedbackurl: https://your.site/feedback/
-</code></pre></div><p>If deploying to GitHub Pages you must set <code>publishDir: docs</code> and <code>canonifyurls: true</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">baseURL</span><span class="p">:</span><span class="w"> </span><span class="l">https://your.site/</span><span class="w">
+</span><span class="w"></span><span class="nt">languageCode</span><span class="p">:</span><span class="w"> </span><span class="l">en-gb</span><span class="w">
+</span><span class="w"></span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l">My Site Title</span><span class="w">
+</span><span class="w"></span><span class="nt">theme</span><span class="p">:</span><span class="w"> </span><span class="l">govukhugo</span><span class="w">
+</span><span class="w"></span><span class="nt">publishDir</span><span class="p">:</span><span class="w"> </span><span class="l">docs</span><span class="w">
+</span><span class="w"></span><span class="nt">canonifyurls</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">markup</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">goldmark</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">renderer</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">unsafe</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">params</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">govuk</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="w">  </span><span class="nt">logotext</span><span class="p">:</span><span class="w"> </span><span class="l">ABC</span><span class="w">
+</span><span class="w">  </span><span class="nt">product</span><span class="p">:</span><span class="w"> </span><span class="l">Product Name</span><span class="w">
+</span><span class="w">  </span><span class="nt">phase</span><span class="p">:</span><span class="w"> </span><span class="l">alpha</span><span class="w">
+</span><span class="w">  </span><span class="nt">feedbackurl</span><span class="p">:</span><span class="w"> </span><span class="l">https://your.site/feedback/</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>If deploying to GitHub Pages you must set <code>publishDir: docs</code> and <code>canonifyurls: true</code>.</p>
 <p>Set <code>unsafe: true</code> if you want to be able to use raw HTML in in markdown documents.</p>
 <p>Unless you are deploying to a .gov.uk subdomain you should set <code>govuk: false</code> - this ensures you do not use GOV.UK&rsquo;s New Transport font, nor use the GOV.UK crown in the header and as the favicon, these are only permitted for use on .gov.uk subdomains.</p>
 <p>You should provide a service acronym using <code>logotext: ABC</code> - this should be capitalised. If deploying to a .gov.uk domain you should set this as <code>logotext: GOV.UK</code>.</p>
@@ -245,6 +301,7 @@ params:
     applyGOVUK("TD", "govuk-table__cell");
     applyGOVUK("THEAD", "govuk-table__head");
     applyGOVUK("TH", "govuk-table__header");
+    applyGOVUK("BLOCKQUOTE", "govuk-inset-text");
 
 </script></body>
 

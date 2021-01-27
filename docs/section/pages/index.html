@@ -24,9 +24,7 @@
   
 
   
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+  <link href="https://co-analysis.github.io/govuk-hugo-demo/css/syntax.css" rel="stylesheet">
 
   <meta property="og:image" content="/assets/images/govuk-opengraph-image.png">
 
@@ -90,51 +88,56 @@
                 <div class="dashboard-nav">
 <nav class="sidebar-nav">
 
-    
-    
-
-    <ul class="govuk-list">
-
+        
         
 
-        <li class="nav-section "><a class="govuk-body-s" href="https://co-analysis.github.io/govuk-hugo-demo/section/">Section</a></li>
+        <ul class="govuk-list">
 
+                
+
+                
+                <li class="nav-section "><a class="govuk-!-font-size-14" href="https://co-analysis.github.io/govuk-hugo-demo/section/">Section</a>
+                </li>
+                
+
+                
+
+                
+                <li class="nav-item nav-active-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state "
+                                href="https://co-analysis.github.io/govuk-hugo-demo/section/pages/">Pages</a></li>
+                
+
+                
+
+                
+                <li class="nav-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/section/tests/">Tests</a></li>
+                
+
+                
+
+                
+
+        </ul>
 
         
-
-        
-        <li class="nav-item"><a class="govuk-body-s govuk-link govuk-link--no-visited-state nav-active"
-                href="https://co-analysis.github.io/govuk-hugo-demo/section/pages/">Pages</a></li>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
         
 
+        <ul class="govuk-list nav-extra">
+
+                
+                <li class="nav-item"><a
+                                class="govuk-body-s govuk-!-font-size-14 govuk-link govuk-link--no-visited-state nav-link"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/about/">About page</a></li>
+                
+
+                </a>
+
+        </ul>
         
-
-        
-        <li class="nav-item"><a class="govuk-body-s govuk-link govuk-link--no-visited-state nav-link"
-                href="https://co-analysis.github.io/govuk-hugo-demo/section/tests/">Tests</a></li>
-        
-
-        
-
-        
-
-    </ul>
-
-    
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
-    
-
-    <ul class="govuk-list nav-extra">
-
-        
-        <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state nav-link"
-                href="https://co-analysis.github.io/govuk-hugo-demo/about/">About page</a></li>
-        
-
-        </a>
-
-    </ul>
-    
 
 </nav></div>
                 <div class="dashboard-content">
@@ -143,7 +146,19 @@
 <div class="govuk-body">
 
     <p>Pages are created by writing a markdown (.md) files with a YAML header.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">---
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">---
 title: &#34;Pages&#34;
 date: 2021-01-22
 type: post
@@ -151,7 +166,9 @@ type: post
 
 Pages are created by writing a markdown (.md) files with a YAML header.
 
-</code></pre></div>
+</code></pre></td></tr></table>
+</div>
+</div>
 
 </div>
 
@@ -205,6 +222,7 @@ Pages are created by writing a markdown (.md) files with a YAML header.
     applyGOVUK("TD", "govuk-table__cell");
     applyGOVUK("THEAD", "govuk-table__head");
     applyGOVUK("TH", "govuk-table__header");
+    applyGOVUK("BLOCKQUOTE", "govuk-inset-text");
 
 </script></body>
 

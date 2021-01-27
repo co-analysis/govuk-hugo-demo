@@ -24,9 +24,7 @@
   
 
   
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+  <link href="https://co-analysis.github.io/govuk-hugo-demo/css/syntax.css" rel="stylesheet">
 
   <meta property="og:image" content="/assets/images/govuk-opengraph-image.png">
 
@@ -90,51 +88,57 @@
                 <div class="dashboard-nav">
 <nav class="sidebar-nav">
 
-    
-    
-
-    <ul class="govuk-list">
-
+        
         
 
-        <li class="nav-section "><a class="govuk-body-s" href="https://co-analysis.github.io/govuk-hugo-demo/section/">Section</a></li>
+        <ul class="govuk-list">
 
+                
+
+                
+                <li class="nav-section nav-active-section"><a class="govuk-!-font-size-14"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/section/">Section</a>
+                </li>
+                
+
+                
+
+                
+                <li class="nav-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/section/pages/">Pages</a></li>
+                
+
+                
+
+                
+                <li class="nav-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/section/tests/">Tests</a></li>
+                
+
+                
+
+                
+
+        </ul>
 
         
-
-        
-        <li class="nav-item"><a class="govuk-body-s govuk-link govuk-link--no-visited-state nav-link"
-                href="https://co-analysis.github.io/govuk-hugo-demo/section/pages/">Pages</a></li>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
         
 
+        <ul class="govuk-list nav-extra">
+
+                
+                <li class="nav-item"><a
+                                class="govuk-body-s govuk-!-font-size-14 govuk-link govuk-link--no-visited-state nav-link"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/about/">About page</a></li>
+                
+
+                </a>
+
+        </ul>
         
-
-        
-        <li class="nav-item"><a class="govuk-body-s govuk-link govuk-link--no-visited-state nav-link"
-                href="https://co-analysis.github.io/govuk-hugo-demo/section/tests/">Tests</a></li>
-        
-
-        
-
-        
-
-    </ul>
-
-    
-    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
-    
-
-    <ul class="govuk-list nav-extra">
-
-        
-        <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state nav-link"
-                href="https://co-analysis.github.io/govuk-hugo-demo/about/">About page</a></li>
-        
-
-        </a>
-
-    </ul>
-    
 
 </nav></div>
                 <div class="dashboard-content">
@@ -151,7 +155,7 @@
 
     <hr class="govuk-section-break govuk-section-break--l" />
 
-    <h2 class="govuk-caption-xl">Section pages</h2>
+    <h2 class="govuk-caption-xl">Pages</h2>
     <hr class="govuk-section-break govuk-section-break--m" />
 
     <dl class="govuk-summary-list">
@@ -163,7 +167,7 @@
             </dt>
             <dd class="govuk-summary-list__value">
                 Pages are created by writing a markdown (.md) files with a YAML header.
---- title: &#34;Pages&#34; date: 2021-01-22 type: post --- Pages are created by writing a markdown (.md) files with a YAML header. 
+1 2 3 4 5 6 7 8  --- title: &#34;Pages&#34; date: 2021-01-22 type: post --- Pages are created by writing a markdown (.md) files with a YAML header.   
             </dd>
             <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="https://co-analysis.github.io/govuk-hugo-demo/section/pages/">
@@ -245,6 +249,7 @@
     applyGOVUK("TD", "govuk-table__cell");
     applyGOVUK("THEAD", "govuk-table__head");
     applyGOVUK("TH", "govuk-table__header");
+    applyGOVUK("BLOCKQUOTE", "govuk-inset-text");
 
 </script></body>
 
