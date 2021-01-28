@@ -83,7 +83,10 @@ render_rmd <- function(rmd_file,
   tmp_content <- rmarkdown::render(
     tmp_rmd,
     output_format =  rmarkdown::html_document(
-      theme = NULL, mathjax = NULL, self_contained = TRUE
+      theme = NULL,
+      mathjax = NULL,
+      self_contained = TRUE,
+      df_print = "kable"
     ),
     output_file = file.path(tmp_dir, "content.html"),
     quiet = TRUE
