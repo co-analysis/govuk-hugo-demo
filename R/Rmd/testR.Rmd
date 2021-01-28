@@ -1,10 +1,10 @@
 ---
-title: Test R Page
+title: Test Rmd
 date: 2021-01-22
-section: workflow
+section: section
 ---
 
-This is a test of an RMarkdown document within a govuk-hugo theme.
+This is a test of an RMarkdown document within the govuk-hugo theme.
 
 ```{r}
 # Comment
@@ -15,5 +15,32 @@ Some more text
 
 ```{r}
 plot(mtcars$mpg, mtcars$disp)
+```
+
+
+Testing DT
+
+```{r}
+DT::datatable(mtcars)
+```
+
+
+Testing plotly/ggplotly
+
+```{r}
+p <- ggplot2::ggplot(mtcars, ggplot2::aes(x = mpg, y = disp)) +
+  ggplot2::geom_point()
+
+plotly::ggplotly(p)
+
+```
+
+
+Testing leaflet
+```{r}
+m <- leaflet::leaflet()
+m <- leaflet::addTiles(m)
+m <- leaflet::addMarkers(m, lng = -0.12768, lat = 51.50739)
+m
 ```
 
