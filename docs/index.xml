@@ -27,6 +27,16 @@
     </item>
     
     <item>
+      <title>Test Rmd</title>
+      <link>https://co-analysis.github.io/govuk-hugo-demo/section/testr/</link>
+      <pubDate>Fri, 22 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://co-analysis.github.io/govuk-hugo-demo/section/testr/</guid>
+      <description>This is a test of an RMarkdown document within the govuk-hugo theme.
+1 2  # Comment mtcars   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33  ## mpg cyl disp hp drat wt qsec vs am gear carb ## Mazda RX4 21.</description>
+    </item>
+    
+    <item>
       <title>Tests</title>
       <link>https://co-analysis.github.io/govuk-hugo-demo/section/tests/</link>
       <pubDate>Fri, 22 Jan 2021 00:00:00 +0000</pubDate>
