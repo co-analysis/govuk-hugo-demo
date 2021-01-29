@@ -27,7 +27,7 @@ markup:
 
 params:
   govuk: false
-  logotext: ABC
-  product: govuk-hugo Demonstration
+  logotext: GHD
+  product: Demonstration and Documentation of govuk-hugo
   phase: alpha
   feedbackurl: https://co-analysis.github.io/govuk-hugo-demo/issues/
