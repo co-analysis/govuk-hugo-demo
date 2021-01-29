@@ -8,6 +8,17 @@
     <language>en-gb</language>
     <lastBuildDate>Fri, 22 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://co-analysis.github.io/govuk-hugo-demo/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Hugo-ify R Markdown documents</title>
+      <link>https://co-analysis.github.io/govuk-hugo-demo/section/rmarkdown/</link>
+      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://co-analysis.github.io/govuk-hugo-demo/section/rmarkdown/</guid>
+      <description>Hugo is a static site builder that is fast and lightweight, it is the preferred engine for building {blogdown} sites.
+govuk-hugo is a theme for Hugo that applies the GOV.UK Design System. The theme is designed with dashboard-/book-style output common for publishing data products, and has been strongly influenced by the application of the Design System&amp;rsquo;s principle and components in Public Health England&amp;rsquo;s Coronavirus dashboard.
+{govukhugo} is an R package that enables the use of R Markdown documents in Hugo static sites using the govuk-hugo theme, it provides an easy way for R users to initialise a Hugo site using the govuk-hugo theme.</description>
+    </item>
+    
+    <item>
       <title>About page</title>
       <link>https://co-analysis.github.io/govuk-hugo-demo/about/</link>
       <pubDate>Fri, 22 Jan 2021 00:00:00 +0000</pubDate>

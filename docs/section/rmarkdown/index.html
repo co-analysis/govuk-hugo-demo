@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   
   
-  <title>govuk-hugo Demonstration | Tags</title>
+  <title>govuk-hugo Demonstration | Hugo-ify R Markdown documents</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0b0c0c">
 
@@ -105,8 +105,8 @@
                 
 
                 
-                <li class="nav-item"><a
-                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                <li class="nav-item nav-active-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state "
                                 href="https://co-analysis.github.io/govuk-hugo-demo/section/rmarkdown/">Hugo-ify R Markdown documents</a></li>
                 
 
@@ -159,14 +159,33 @@
 
 </nav></div>
                 <div class="dashboard-content">
+<h1 class="govuk-heading-xl">Hugo-ify R Markdown documents</h1>
 
 <div class="govuk-body">
-    <h1 class="govuk-heading-xl">Tags</h1>
 
-    
-
-
-    
+    <p><a href="https://gohugo.io">Hugo</a> is a static site builder that is fast and lightweight, it is the preferred engine for building <a href="https://cran.r-project.org/package=blogdown"><code>{blogdown}</code></a> sites.</p>
+<p><a href="https://github.com/co-analysis/govuk-hugo"><code>govuk-hugo</code></a> is a theme for Hugo that applies the <a href="https://design-system.service.gov.uk/">GOV.UK Design System</a>. The theme is designed with dashboard-/book-style output common for publishing data products, and has been strongly influenced by the application of the Design System&rsquo;s principle and components in Public Health England&rsquo;s <a href="https://coronavirus.data.gov.uk/">Coronavirus dashboard</a>.</p>
+<p><code>{govukhugo}</code> is an R package that enables the use of R Markdown documents in Hugo static sites using the <code>govuk-hugo</code> theme, it provides an easy way for R users to initialise a Hugo site using the <code>govuk-hugo</code> theme. The <code>govuk-hugo</code> theme is not compatible with <code>{blogdown}</code>, therefore the package also provides a means to render and build Rmarkdown documents.</p>
+<h2 id="converting-rmarkdown-documents">Converting RMarkdown documents</h2>
+<p>While Hugo is intended for converting plain markdown (<code>.md</code>) files, <code>{blogdown}</code> websites rely on the fact that Hugo also processes HTML files (given certain parameters). However, as outlined in the <a href="https://bookdown.org/yihui/blogdown/other-themes.html"><code>{blogdown}</code> documentation</a>, Hugo themes are not always compatible.</p>
+<blockquote>
+<p>If you find a certain theme does not work well with blogdown, you may report to <a href="https://github.com/rstudio/blogdown/issues,">https://github.com/rstudio/blogdown/issues,</a> and we will try to investigate the reason, but it can be time-consuming to learn and understand how a new theme works, so we recommend that you learn more about Hugo by yourself before asking, and we also encourage users to help each other there.</p>
+</blockquote>
+<p>This is the case for <code>govuk-hugo</code>. Trying to solve this problem, from investigating the inner workings of <code>{blogdown}</code> one learns that its <code>html_page()</code> format is a wrapper around the <code>bookdown::html_document2()</code> format, which itself is a wrapper around <code>rmarkdown::html_document()</code>.</p>
+<p>Rather than invest time in making the <code>govuk-hugo</code> theme work with <code>{blogdown}</code> the <code>{govukhugo}</code> package goes back to first principles to create HTML that Hugo will process.</p>
+<p>For end users the <code>build_hugo()</code> and <code>build_hugo_rmd()</code> functions are all that are required.</p>
+<h2 id="under-the-hood-hugo-ification">Under the hood: &ldquo;Hugo-ification&rdquo;</h2>
+<p>The site building functions call <code>render_rmd()</code> which processes an Rmd file and converts it to an HTML file that Hugo will process. The Rmd is minimally rendered into HTML by <code>rmarkdown::html_document()</code>: without a theme, without MathJax, data frames are printed via <code>knitr::kable()</code> and as a self-contained document. A self-contained document is chosen so that static plots are stored as base64 content within the file rather than having to deal with separate images.</p>
+<p>Having rendered the HTML file, it is then passed to a back-end function (<code>hugo_html()</code>), which &ldquo;Hugo-ifies&rdquo; the HTML. At present this comprises three actions:</p>
+<ol>
+<li>Replace the HTML entities <code>&amp;lt;</code> and <code>&amp;gt;</code> with <code>&lt;</code> and <code>&gt;</code> so that code fragments will be processed by Hugo properly.</li>
+<li>Replace the HTML tags for code blocks <code>&lt;pre&gt;&lt;code&gt;</code> with Hugo&rsquo;s shortcode for code block syntax highlighting.</li>
+<li>Extracts the HTML content between the <code>&lt;body&gt;</code> tags, excluding the lines where the title and date have been written by <code>html_document()</code>.</li>
+</ol>
+<p>The Hugo-ified HTML is then returned to <code>render_rmd()</code> which finishes the process by prepending the YAML front-matter of the Rmd file to the HTML. A <code>rmarkdown: true</code> parameter is also added to the YAML. Finally, the YAML is scanned for the <code>section</code> parameter, if present this is used to determine the sub-folder of the site&rsquo;s <code>content</code> directory that the HTML will be placed in.</p>
+<h2 id="supporting-htmlwidgets">Supporting htmlwidgets</h2>
+<p>R Markdown documents that do not include interactive content, e.g. that print a data frame or include a plot image, will now be converted when Hugo builds the site. However, a common reason for writing R Markdown documents is to include interactive components. When rendering an R Markdown document that include an <a href="http://www.htmlwidgets.org/"><code>{htmlwidgets}</code></a> component the rendering process will insert the relevant dependencies into the <code>&lt;head&gt;</code> component of the resulting HTML document.</p>
+<p>As just described, the &ldquo;Hugo-ified&rdquo; HTML process of <code>{govhugo}</code> removes the head component, thus removing these dependencies. This is rectified by the setting of the <code>rmarkdown: true</code> parameter in the YAML front matter of the HTML page. When Hugo processes the HTML it reads this parameter in adds back in the dependencies to the head component of the relevant page. At present it adds in the dependencies for the <a href="https://rstudio.github.io/DT/"><code>{DT}</code></a>, <a href="https://plot.ly/r/"><code>{plotly}</code></a> and  <a href="https://rstudio.github.io/leaflet/"><code>{leaflet}</code></a>.</p>
 
 
 </div>
