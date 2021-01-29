@@ -48,7 +48,7 @@
                     
 
                     <span class="govuk-header__logotype-text">
-                        ABC
+                        GHD
                     </span>
 
 
@@ -56,7 +56,7 @@
 
                 <span class="govuk-header__product-name">
                     
-                    govuk-hugo Demonstration
+                    Demonstration and Documentation of govuk-hugo
                     
             </a>
             </span>
@@ -104,11 +104,12 @@
                 
 
                 
+                
 
                 
                 <li class="nav-item"><a
                                 class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/section/rmarkdown/">Hugo-ify R Markdown documents</a></li>
+                                href="https://co-analysis.github.io/govuk-hugo-demo/section/features/">Features</a></li>
                 
 
                 
@@ -120,21 +121,45 @@
                 
 
                 
-
                 
-                <li class="nav-item"><a
-                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/section/testr/">Test Rmd</a></li>
-                
-
                 
 
                 
                 <li class="nav-item"><a
                                 class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/section/tests/">Tests</a></li>
+                                href="https://co-analysis.github.io/govuk-hugo-demo/section/rmarkdown/">Hugo-ify R Markdown documents</a></li>
                 
 
+                
+                
+
+                
+
+                
+                <li class="nav-section "><a class="govuk-!-font-size-14" href="https://co-analysis.github.io/govuk-hugo-demo/tests/">Tests</a>
+                </li>
+                
+
+                
+                
+
+                
+                <li class="nav-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/tests/tests/">Tests</a></li>
+                
+
+                
+                
+                
+
+                
+                <li class="nav-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/tests/testr/">Test Rmd</a></li>
+                
+
+                
                 
 
                 
@@ -238,32 +263,62 @@ $ hugo new site . --force -f <span class="s2">&#34;yaml&#34;</span>
 </span><span class="lnt">16
 </span><span class="lnt">17
 </span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">baseURL</span><span class="p">:</span><span class="w"> </span><span class="l">https://your.site/</span><span class="w">
 </span><span class="w"></span><span class="nt">languageCode</span><span class="p">:</span><span class="w"> </span><span class="l">en-gb</span><span class="w">
-</span><span class="w"></span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l">My Site Title</span><span class="w">
+</span><span class="w"></span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l">Your site</span><span class="w">
 </span><span class="w"></span><span class="nt">theme</span><span class="p">:</span><span class="w"> </span><span class="l">govukhugo</span><span class="w">
 </span><span class="w"></span><span class="nt">publishDir</span><span class="p">:</span><span class="w"> </span><span class="l">docs</span><span class="w">
 </span><span class="w"></span><span class="nt">canonifyurls</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">pygmentsUseClasses</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="w">
 </span><span class="w"></span><span class="nt">markup</span><span class="p">:</span><span class="w">
 </span><span class="w">  </span><span class="nt">goldmark</span><span class="p">:</span><span class="w">
 </span><span class="w">    </span><span class="nt">renderer</span><span class="p">:</span><span class="w">
 </span><span class="w">      </span><span class="nt">unsafe</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">  </span><span class="nt">highlight</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">anchorLineNos</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="w">    </span><span class="nt">codeFences</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">    </span><span class="nt">guessSyntax</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="w">    </span><span class="nt">hl_Lines</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">lineAnchors</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">lineNoStart</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span><span class="w">    </span><span class="nt">lineNos</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">    </span><span class="nt">lineNumbersInTable</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">    </span><span class="nt">noClasses</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">    </span><span class="nt">style</span><span class="p">:</span><span class="w"> </span><span class="l">github</span><span class="w">
+</span><span class="w">    </span><span class="nt">tabWidth</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">
+</span><span class="w">
 </span><span class="w">
 </span><span class="w"></span><span class="nt">params</span><span class="p">:</span><span class="w">
 </span><span class="w">  </span><span class="nt">govuk</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-</span><span class="w">  </span><span class="nt">logotext</span><span class="p">:</span><span class="w"> </span><span class="l">ABC</span><span class="w">
-</span><span class="w">  </span><span class="nt">product</span><span class="p">:</span><span class="w"> </span><span class="l">Product Name</span><span class="w">
+</span><span class="w">  </span><span class="nt">logotext</span><span class="p">:</span><span class="w"> </span><span class="l">AAA</span><span class="w">
+</span><span class="w">  </span><span class="nt">product</span><span class="p">:</span><span class="w"> </span><span class="l">Your site</span><span class="w">
 </span><span class="w">  </span><span class="nt">phase</span><span class="p">:</span><span class="w"> </span><span class="l">alpha</span><span class="w">
-</span><span class="w">  </span><span class="nt">feedbackurl</span><span class="p">:</span><span class="w"> </span><span class="l">https://your.site/feedback/</span><span class="w">
+</span><span class="w">  </span><span class="nt">feedbackurl</span><span class="p">:</span><span class="w"> </span><span class="l">https://your.site/feedback</span><span class="w">
 </span></code></pre></td></tr></table>
 </div>
 </div><p>If deploying to GitHub Pages you must set <code>publishDir: docs</code> and <code>canonifyurls: true</code>.</p>
 <p>Set <code>unsafe: true</code> if you want to be able to use raw HTML in in markdown documents.</p>
 <p>Unless you are deploying to a .gov.uk subdomain you should set <code>govuk: false</code> - this ensures you do not use GOV.UK&rsquo;s New Transport font, nor use the GOV.UK crown in the header and as the favicon, these are only permitted for use on .gov.uk subdomains.</p>
-<p>You should provide a service acronym using <code>logotext: ABC</code> - this should be capitalised. If deploying to a .gov.uk domain you should set this as <code>logotext: GOV.UK</code>.</p>
+<p>You should provide a service acronym using <code>logotext: AAA</code> - this should be capitalised. If deploying to a .gov.uk domain you should set this as <code>logotext: GOV.UK</code>.</p>
 <p>You can provide a product name using <code>product: Product Name</code> which will provide the product name in the header. If a product name is not provided the <code>title</code> specified at the top of the <code>config.yaml</code> file will be used.</p>
 <p>To add a GOV.UK style &ldquo;phase&rdquo; banner set <code>phase: alpha</code> or <code>phase: beta</code> in the params. You must also provide a feedback URL using <code>feedbackurl: https://your.site/feedback</code>.</p>
 
@@ -305,7 +360,7 @@ $ hugo new site . --force -f <span class="s2">&#34;yaml&#34;</span>
 <script type="text/javascript">
 
     function applyGOVUK(tag, govuk_class) {
-        var elements = document.getElementsByTagName(tag)
+        var elements = document.querySelector("div.dashboard-content").getElementsByTagName(tag)
 
         var i;
         for (i = 0; i < elements.length; i++) {
@@ -314,12 +369,34 @@ $ hugo new site . --force -f <span class="s2">&#34;yaml&#34;</span>
 
     };
 
+     
+    applyGOVUK("P", "govuk-body");
+
+     
+    applyGOVUK("H1", "govuk-heading-xl");
+    applyGOVUK("H2", "govuk-heading-l");
+    applyGOVUK("H3", "govuk-heading-m");
+    applyGOVUK("H4", "govuk-heading-s");
+
+     
     applyGOVUK("TABLE", "govuk-table");
     applyGOVUK("TR", "govuk-table__row");
     applyGOVUK("TD", "govuk-table__cell");
     applyGOVUK("THEAD", "govuk-table__head");
     applyGOVUK("TH", "govuk-table__header");
+
+     
     applyGOVUK("BLOCKQUOTE", "govuk-inset-text");
+    applyGOVUK("STRONG", "govuk-!-font-weight-bold");
+    applyGOVUK("B", "govuk-!-font-weight-bold");
+
+     
+    applyGOVUK("UL", "govuk-list");
+    applyGOVUK("UL", "govuk-list--bullet");
+    applyGOVUK("OL", "govuk-list");
+    applyGOVUK("OL", "govuk-list--number");
+
+    
 
 </script></body>
 

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tests on govuk-hugo Demonstration</title>
+    <link>https://co-analysis.github.io/govuk-hugo-demo/tests/</link>
+    <description>Recent content in Tests on govuk-hugo Demonstration</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Fri, 22 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://co-analysis.github.io/govuk-hugo-demo/tests/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tests</title>
+      <link>https://co-analysis.github.io/govuk-hugo-demo/tests/tests/</link>
+      <pubDate>Fri, 22 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://co-analysis.github.io/govuk-hugo-demo/tests/tests/</guid>
+      <description>Some tests</description>
+    </item>
+    
+    <item>
+      <title>Test Rmd</title>
+      <link>https://co-analysis.github.io/govuk-hugo-demo/tests/testr/</link>
+      <pubDate>Fri, 22 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://co-analysis.github.io/govuk-hugo-demo/tests/testr/</guid>
+      <description>An example of rendered R Markdown document</description>
+    </item>
+    
+  </channel>
+</rss>

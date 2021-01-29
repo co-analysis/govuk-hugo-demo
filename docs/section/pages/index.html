@@ -47,7 +47,7 @@
                     
 
                     <span class="govuk-header__logotype-text">
-                        ABC
+                        GHD
                     </span>
 
 
@@ -55,7 +55,7 @@
 
                 <span class="govuk-header__product-name">
                     
-                    govuk-hugo Demonstration
+                    Demonstration and Documentation of govuk-hugo
                     
             </a>
             </span>
@@ -103,11 +103,12 @@
                 
 
                 
+                
 
                 
                 <li class="nav-item"><a
                                 class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/section/rmarkdown/">Hugo-ify R Markdown documents</a></li>
+                                href="https://co-analysis.github.io/govuk-hugo-demo/section/features/">Features</a></li>
                 
 
                 
@@ -119,21 +120,45 @@
                 
 
                 
-
                 
-                <li class="nav-item"><a
-                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/section/testr/">Test Rmd</a></li>
-                
-
                 
 
                 
                 <li class="nav-item"><a
                                 class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/section/tests/">Tests</a></li>
+                                href="https://co-analysis.github.io/govuk-hugo-demo/section/rmarkdown/">Hugo-ify R Markdown documents</a></li>
                 
 
+                
+                
+
+                
+
+                
+                <li class="nav-section "><a class="govuk-!-font-size-14" href="https://co-analysis.github.io/govuk-hugo-demo/tests/">Tests</a>
+                </li>
+                
+
+                
+                
+
+                
+                <li class="nav-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/tests/tests/">Tests</a></li>
+                
+
+                
+                
+                
+
+                
+                <li class="nav-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/tests/testr/">Test Rmd</a></li>
+                
+
+                
                 
 
                 
@@ -174,19 +199,23 @@
 </span><span class="lnt">6
 </span><span class="lnt">7
 </span><span class="lnt">8
+</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-txt" data-lang="txt">---
 title: &#34;Pages&#34;
 date: 2021-01-22
 type: post
+weight: 100
 ---
 
 Pages are created by writing a markdown (.md) files with a YAML header.
 
 </code></pre></td></tr></table>
 </div>
-</div>
+</div><p>Optionally you can add a weight to the YAML header to adjust the page&rsquo;s ordering within their section. The default page weight is 0, it is recommended however that pages have a default weight of 100. Pages with the same weight will be ordered alphabetically by title.</p>
+<p>If using the <code>listpages: true</code> parameter in a section <code>_index.md</code> file to generate a list of the pages within the section then it is recommended that you add a summary parameter to the YAML header: <code>summary: &quot;This is post about pages&quot;</code>.</p>
+
 
 </div>
 
@@ -226,7 +255,7 @@ Pages are created by writing a markdown (.md) files with a YAML header.
 <script type="text/javascript">
 
     function applyGOVUK(tag, govuk_class) {
-        var elements = document.getElementsByTagName(tag)
+        var elements = document.querySelector("div.dashboard-content").getElementsByTagName(tag)
 
         var i;
         for (i = 0; i < elements.length; i++) {
@@ -235,12 +264,34 @@ Pages are created by writing a markdown (.md) files with a YAML header.
 
     };
 
+     
+    applyGOVUK("P", "govuk-body");
+
+     
+    applyGOVUK("H1", "govuk-heading-xl");
+    applyGOVUK("H2", "govuk-heading-l");
+    applyGOVUK("H3", "govuk-heading-m");
+    applyGOVUK("H4", "govuk-heading-s");
+
+     
     applyGOVUK("TABLE", "govuk-table");
     applyGOVUK("TR", "govuk-table__row");
     applyGOVUK("TD", "govuk-table__cell");
     applyGOVUK("THEAD", "govuk-table__head");
     applyGOVUK("TH", "govuk-table__header");
+
+     
     applyGOVUK("BLOCKQUOTE", "govuk-inset-text");
+    applyGOVUK("STRONG", "govuk-!-font-weight-bold");
+    applyGOVUK("B", "govuk-!-font-weight-bold");
+
+     
+    applyGOVUK("UL", "govuk-list");
+    applyGOVUK("UL", "govuk-list--bullet");
+    applyGOVUK("OL", "govuk-list");
+    applyGOVUK("OL", "govuk-list--number");
+
+    
 
 </script></body>
 

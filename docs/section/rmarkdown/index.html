@@ -47,7 +47,7 @@
                     
 
                     <span class="govuk-header__logotype-text">
-                        ABC
+                        GHD
                     </span>
 
 
@@ -55,7 +55,7 @@
 
                 <span class="govuk-header__product-name">
                     
-                    govuk-hugo Demonstration
+                    Demonstration and Documentation of govuk-hugo
                     
             </a>
             </span>
@@ -103,11 +103,12 @@
                 
 
                 
+                
 
                 
-                <li class="nav-item nav-active-item"><a
-                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state "
-                                href="https://co-analysis.github.io/govuk-hugo-demo/section/rmarkdown/">Hugo-ify R Markdown documents</a></li>
+                <li class="nav-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/section/features/">Features</a></li>
                 
 
                 
@@ -119,21 +120,45 @@
                 
 
                 
+                
+                
+
+                
+                <li class="nav-item nav-active-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state "
+                                href="https://co-analysis.github.io/govuk-hugo-demo/section/rmarkdown/">Hugo-ify R Markdown documents</a></li>
+                
+
+                
+                
+
+                
+
+                
+                <li class="nav-section "><a class="govuk-!-font-size-14" href="https://co-analysis.github.io/govuk-hugo-demo/tests/">Tests</a>
+                </li>
+                
+
+                
+                
 
                 
                 <li class="nav-item"><a
                                 class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/section/testr/">Test Rmd</a></li>
+                                href="https://co-analysis.github.io/govuk-hugo-demo/tests/tests/">Tests</a></li>
                 
 
+                
+                
                 
 
                 
                 <li class="nav-item"><a
                                 class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/section/tests/">Tests</a></li>
+                                href="https://co-analysis.github.io/govuk-hugo-demo/tests/testr/">Test Rmd</a></li>
                 
 
+                
                 
 
                 
@@ -166,24 +191,94 @@
     <p><a href="https://gohugo.io">Hugo</a> is a static site builder that is fast and lightweight, it is the preferred engine for building <a href="https://cran.r-project.org/package=blogdown"><code>{blogdown}</code></a> sites.</p>
 <p><a href="https://github.com/co-analysis/govuk-hugo"><code>govuk-hugo</code></a> is a theme for Hugo that applies the <a href="https://design-system.service.gov.uk/">GOV.UK Design System</a>. The theme is designed with dashboard-/book-style output common for publishing data products, and has been strongly influenced by the application of the Design System&rsquo;s principle and components in Public Health England&rsquo;s <a href="https://coronavirus.data.gov.uk/">Coronavirus dashboard</a>.</p>
 <p><code>{govukhugo}</code> is an R package that enables the use of R Markdown documents in Hugo static sites using the <code>govuk-hugo</code> theme, it provides an easy way for R users to initialise a Hugo site using the <code>govuk-hugo</code> theme. The <code>govuk-hugo</code> theme is not compatible with <code>{blogdown}</code>, therefore the package also provides a means to render and build Rmarkdown documents.</p>
+<h2 id="installing-and-using-govukhugo">Installing and using {govukhugo}</h2>
+<p>The <code>{govukhugo}</code> package is not currently on CRAN, you can install it from GitHub:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">remotes</span><span class="o">::</span><span class="nf">install_github</span><span class="p">(</span><span class="s">&#34;co-analysis/govuk-hugo-r&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Within RStudio you can use <code>init_govuk_hugo()</code> to create a Hugo site with the <code>govuk-hugo</code> theme. Otherwise follow the general <a href="https://co-analysis.github.io/govuk-hugo-demo/">getting started info</a>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">govukhugo</span><span class="p">)</span>
+<span class="nf">init_govuk_hugo</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The package includes an R Markdown template that provides an outline skeleton which you can access from the R Markdown menu in R Studio.</p>
+<p>It is recommended that you save R Markdown documents in the <code>R/Rmd</code> folder of your project. In the R Markdown YAML header you should specify the <code>section</code> (i.e. sub-folder of the <code>content</code> directory) where you want the Rmd file to be placed after it has been converted.</p>
+<p>Once you have written and saved your R Markdown document(s), you can then build your Hugo site by calling <code>build_hugo_site()</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">build_hugo_site</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>By default <code>build_hugo()</code> will look for and process Rmd files in the <code>R/Rmd</code> folder, you can specify a different folder by the altering the <code>rmd_folder</code> argument, setting <code>with_rmd</code> to false skips the building of Rmd files.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># specify a different folder</span>
+<span class="nf">build_hugo</span><span class="p">(</span><span class="n">rmd_folder</span> <span class="o">=</span> <span class="s">&#34;code/Rmarkdown&#34;</span><span class="p">)</span>
+
+<span class="c1"># skip Rmd processing</span>
+<span class="nf">build_hugo</span><span class="p">(</span><span class="n">with_rmd</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>In more advanced site building you might not want to build the Hugo site, just convert your R Markdown files. You can do this by calling <code>build_hugo_rmd()</code>. As with <code>build_hugo()</code> the default assumption is that R Markdown is stored in the <code>R/Rmd</code> folder.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">build_hugo_rmd</span><span class="p">()</span>
+
+<span class="c1"># specify a different folder</span>
+<span class="nf">build_hugo_rmd</span><span class="p">(</span><span class="n">rmd_folder</span> <span class="o">=</span> <span class="s">&#34;code/Rmarkdown&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>You can render a single R Markdown file by calling <code>render_rmd()</code>. This will use the <code>section</code> as defined in the YAML header, however for testing purposes you may want to output file somewhere else, which you can do by specifying a different folder using the <code>out_dir</code> argument.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">render_rmd</span><span class="p">(</span><span class="s">&#34;R/Rmd/my_file.Rmd&#34;</span><span class="p">)</span>
+
+<span class="nf">render_rmd</span><span class="p">(</span><span class="s">&#34;R/Rmd/my_file.Rmd&#34;</span><span class="p">,</span> <span class="n">out_dir</span> <span class="o">=</span> <span class="s">&#34;R/test_output&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Interactive elements from the <a href="https://rstudio.github.io/DT/"><code>{DT}</code></a>, <a href="https://plot.ly/r/"><code>{plotly}</code></a> and  <a href="https://rstudio.github.io/leaflet/"><code>{leaflet}</code></a> packages are supported (see below).</p>
 <h2 id="converting-rmarkdown-documents">Converting RMarkdown documents</h2>
-<p>While Hugo is intended for converting plain markdown (<code>.md</code>) files, <code>{blogdown}</code> websites rely on the fact that Hugo also processes HTML files (given certain parameters). However, as outlined in the <a href="https://bookdown.org/yihui/blogdown/other-themes.html"><code>{blogdown}</code> documentation</a>, Hugo themes are not always compatible.</p>
-<blockquote>
-<p>If you find a certain theme does not work well with blogdown, you may report to <a href="https://github.com/rstudio/blogdown/issues,">https://github.com/rstudio/blogdown/issues,</a> and we will try to investigate the reason, but it can be time-consuming to learn and understand how a new theme works, so we recommend that you learn more about Hugo by yourself before asking, and we also encourage users to help each other there.</p>
-</blockquote>
+<p>While Hugo is intended for converting plain markdown (<code>.md</code>) files, <code>{blogdown}</code> websites rely on the fact that Hugo also processes HTML files (given certain parameters). However, as outlined in the <a href="https://bookdown.org/yihui/blogdown/other-themes.html"><code>{blogdown}</code> documentation</a>, Hugo themes are not always compatible and &ldquo;it can be time-consuming&rdquo; to adapt them.</p>
 <p>This is the case for <code>govuk-hugo</code>. Trying to solve this problem, from investigating the inner workings of <code>{blogdown}</code> one learns that its <code>html_page()</code> format is a wrapper around the <code>bookdown::html_document2()</code> format, which itself is a wrapper around <code>rmarkdown::html_document()</code>.</p>
 <p>Rather than invest time in making the <code>govuk-hugo</code> theme work with <code>{blogdown}</code> the <code>{govukhugo}</code> package goes back to first principles to create HTML that Hugo will process.</p>
 <p>For end users the <code>build_hugo()</code> and <code>build_hugo_rmd()</code> functions are all that are required.</p>
-<h2 id="under-the-hood-hugo-ification">Under the hood: &ldquo;Hugo-ification&rdquo;</h2>
+<h3 id="under-the-hood-the-hugo-ification-process">Under the hood: the &ldquo;Hugo-ification&rdquo; process</h3>
 <p>The site building functions call <code>render_rmd()</code> which processes an Rmd file and converts it to an HTML file that Hugo will process. The Rmd is minimally rendered into HTML by <code>rmarkdown::html_document()</code>: without a theme, without MathJax, data frames are printed via <code>knitr::kable()</code> and as a self-contained document. A self-contained document is chosen so that static plots are stored as base64 content within the file rather than having to deal with separate images.</p>
-<p>Having rendered the HTML file, it is then passed to a back-end function (<code>hugo_html()</code>), which &ldquo;Hugo-ifies&rdquo; the HTML. At present this comprises three actions:</p>
-<ol>
-<li>Replace the HTML entities <code>&amp;lt;</code> and <code>&amp;gt;</code> with <code>&lt;</code> and <code>&gt;</code> so that code fragments will be processed by Hugo properly.</li>
-<li>Replace the HTML tags for code blocks <code>&lt;pre&gt;&lt;code&gt;</code> with Hugo&rsquo;s shortcode for code block syntax highlighting.</li>
-<li>Extracts the HTML content between the <code>&lt;body&gt;</code> tags, excluding the lines where the title and date have been written by <code>html_document()</code>.</li>
-</ol>
+<p>Having rendered the HTML file, it is then passed to a back-end function (<code>hugo_html()</code>), which &ldquo;Hugo-ifies&rdquo; the HTML. It replaces the HTML entities <code>&amp;lt;</code> and <code>&amp;gt;</code> with <code>&lt;</code> and <code>&gt;</code> so that code fragments will be processed by Hugo properly. It replaces the HTML tags for code blocks <code>&lt;pre&gt;&lt;code&gt;</code> with Hugo&rsquo;s shortcode for code block syntax highlighting. Finally, it extracts the HTML content between the <code>&lt;body&gt;</code> tags, excluding the lines where the title and date have been written by <code>html_document()</code>.</p>
 <p>The Hugo-ified HTML is then returned to <code>render_rmd()</code> which finishes the process by prepending the YAML front-matter of the Rmd file to the HTML. A <code>rmarkdown: true</code> parameter is also added to the YAML. Finally, the YAML is scanned for the <code>section</code> parameter, if present this is used to determine the sub-folder of the site&rsquo;s <code>content</code> directory that the HTML will be placed in.</p>
-<h2 id="supporting-htmlwidgets">Supporting htmlwidgets</h2>
+<h3 id="supporting-htmlwidgets">Supporting htmlwidgets</h3>
 <p>R Markdown documents that do not include interactive content, e.g. that print a data frame or include a plot image, will now be converted when Hugo builds the site. However, a common reason for writing R Markdown documents is to include interactive components. When rendering an R Markdown document that include an <a href="http://www.htmlwidgets.org/"><code>{htmlwidgets}</code></a> component the rendering process will insert the relevant dependencies into the <code>&lt;head&gt;</code> component of the resulting HTML document.</p>
 <p>As just described, the &ldquo;Hugo-ified&rdquo; HTML process of <code>{govhugo}</code> removes the head component, thus removing these dependencies. This is rectified by the setting of the <code>rmarkdown: true</code> parameter in the YAML front matter of the HTML page. When Hugo processes the HTML it reads this parameter in adds back in the dependencies to the head component of the relevant page. At present it adds in the dependencies for the <a href="https://rstudio.github.io/DT/"><code>{DT}</code></a>, <a href="https://plot.ly/r/"><code>{plotly}</code></a> and  <a href="https://rstudio.github.io/leaflet/"><code>{leaflet}</code></a>.</p>
 
@@ -226,7 +321,7 @@
 <script type="text/javascript">
 
     function applyGOVUK(tag, govuk_class) {
-        var elements = document.getElementsByTagName(tag)
+        var elements = document.querySelector("div.dashboard-content").getElementsByTagName(tag)
 
         var i;
         for (i = 0; i < elements.length; i++) {
@@ -235,12 +330,34 @@
 
     };
 
+     
+    applyGOVUK("P", "govuk-body");
+
+     
+    applyGOVUK("H1", "govuk-heading-xl");
+    applyGOVUK("H2", "govuk-heading-l");
+    applyGOVUK("H3", "govuk-heading-m");
+    applyGOVUK("H4", "govuk-heading-s");
+
+     
     applyGOVUK("TABLE", "govuk-table");
     applyGOVUK("TR", "govuk-table__row");
     applyGOVUK("TD", "govuk-table__cell");
     applyGOVUK("THEAD", "govuk-table__head");
     applyGOVUK("TH", "govuk-table__header");
+
+     
     applyGOVUK("BLOCKQUOTE", "govuk-inset-text");
+    applyGOVUK("STRONG", "govuk-!-font-weight-bold");
+    applyGOVUK("B", "govuk-!-font-weight-bold");
+
+     
+    applyGOVUK("UL", "govuk-list");
+    applyGOVUK("UL", "govuk-list--bullet");
+    applyGOVUK("OL", "govuk-list");
+    applyGOVUK("OL", "govuk-list--number");
+
+    
 
 </script></body>
 

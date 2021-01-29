@@ -47,7 +47,7 @@
                     
 
                     <span class="govuk-header__logotype-text">
-                        ABC
+                        GHD
                     </span>
 
 
@@ -55,7 +55,7 @@
 
                 <span class="govuk-header__product-name">
                     
-                    govuk-hugo Demonstration
+                    Demonstration and Documentation of govuk-hugo
                     
             </a>
             </span>
@@ -103,11 +103,12 @@
                 
 
                 
+                
 
                 
                 <li class="nav-item"><a
                                 class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/section/rmarkdown/">Hugo-ify R Markdown documents</a></li>
+                                href="https://co-analysis.github.io/govuk-hugo-demo/section/features/">Features</a></li>
                 
 
                 
@@ -119,21 +120,45 @@
                 
 
                 
-
                 
-                <li class="nav-item"><a
-                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/section/testr/">Test Rmd</a></li>
-                
-
                 
 
                 
                 <li class="nav-item"><a
                                 class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/section/tests/">Tests</a></li>
+                                href="https://co-analysis.github.io/govuk-hugo-demo/section/rmarkdown/">Hugo-ify R Markdown documents</a></li>
                 
 
+                
+                
+
+                
+
+                
+                <li class="nav-section "><a class="govuk-!-font-size-14" href="https://co-analysis.github.io/govuk-hugo-demo/tests/">Tests</a>
+                </li>
+                
+
+                
+                
+
+                
+                <li class="nav-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/tests/tests/">Tests</a></li>
+                
+
+                
+                
+                
+
+                
+                <li class="nav-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/tests/testr/">Test Rmd</a></li>
+                
+
+                
                 
 
                 
@@ -207,7 +232,7 @@
 <script type="text/javascript">
 
     function applyGOVUK(tag, govuk_class) {
-        var elements = document.getElementsByTagName(tag)
+        var elements = document.querySelector("div.dashboard-content").getElementsByTagName(tag)
 
         var i;
         for (i = 0; i < elements.length; i++) {
@@ -216,12 +241,34 @@
 
     };
 
+     
+    applyGOVUK("P", "govuk-body");
+
+     
+    applyGOVUK("H1", "govuk-heading-xl");
+    applyGOVUK("H2", "govuk-heading-l");
+    applyGOVUK("H3", "govuk-heading-m");
+    applyGOVUK("H4", "govuk-heading-s");
+
+     
     applyGOVUK("TABLE", "govuk-table");
     applyGOVUK("TR", "govuk-table__row");
     applyGOVUK("TD", "govuk-table__cell");
     applyGOVUK("THEAD", "govuk-table__head");
     applyGOVUK("TH", "govuk-table__header");
+
+     
     applyGOVUK("BLOCKQUOTE", "govuk-inset-text");
+    applyGOVUK("STRONG", "govuk-!-font-weight-bold");
+    applyGOVUK("B", "govuk-!-font-weight-bold");
+
+     
+    applyGOVUK("UL", "govuk-list");
+    applyGOVUK("UL", "govuk-list--bullet");
+    applyGOVUK("OL", "govuk-list");
+    applyGOVUK("OL", "govuk-list--number");
+
+    
 
 </script></body>
 
