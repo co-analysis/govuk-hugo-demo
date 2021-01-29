@@ -57,22 +57,37 @@ To apply the `govuk-hugo` theme, your `config.yaml` file should look like:
 ```yaml
 baseURL: https://your.site/
 languageCode: en-gb
-title: My Site Title
+title: Your site
 theme: govukhugo
 publishDir: docs
 canonifyurls: true
+
+pygmentsUseClasses: true
 
 markup:
   goldmark:
     renderer:
       unsafe: true
+  highlight:
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: false
+    hl_Lines: ""
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNos: true
+    lineNumbersInTable: true
+    noClasses: true
+    style: github
+    tabWidth: 2
+
 
 params:
   govuk: false
-  logotext: ABC
-  product: Product Name
+  logotext: AAA
+  product: Your site
   phase: alpha
-  feedbackurl: https://your.site/feedback/
+  feedbackurl: https://your.site/feedback
 ```
 
 If deploying to GitHub Pages you must set `publishDir: docs` and `canonifyurls: true`.
@@ -81,7 +96,7 @@ Set `unsafe: true` if you want to be able to use raw HTML in in markdown documen
 
 Unless you are deploying to a .gov.uk subdomain you should set `govuk: false` - this ensures you do not use GOV.UK's New Transport font, nor use the GOV.UK crown in the header and as the favicon, these are only permitted for use on .gov.uk subdomains.
 
-You should provide a service acronym using `logotext: ABC` - this should be capitalised. If deploying to a .gov.uk domain you should set this as `logotext: GOV.UK`.
+You should provide a service acronym using `logotext: AAA` - this should be capitalised. If deploying to a .gov.uk domain you should set this as `logotext: GOV.UK`.
 
 You can provide a product name using `product: Product Name` which will provide the product name in the header. If a product name is not provided the `title` specified at the top of the `config.yaml` file will be used.
 
