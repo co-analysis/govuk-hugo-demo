@@ -2,6 +2,7 @@
 title: "Tests"
 date: 2021-01-22
 type: post
+weight: 100
 summary: "Some tests"
 ---
 
