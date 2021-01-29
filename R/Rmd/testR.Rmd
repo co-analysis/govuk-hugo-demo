@@ -4,7 +4,7 @@ date: 2021-01-22
 section: section
 ---
 
-This is a test of an RMarkdown document within the govuk-hugo theme.
+This is a test of an `RMarkdown` document within the govuk-hugo theme, on `r Sys.Date()`.
 
 ```{r}
 # Comment
