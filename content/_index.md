@@ -88,6 +88,8 @@ params:
   product: Your site
   phase: alpha
   feedbackurl: https://your.site/feedback
+  builtby: Your Team
+  builtbyurl: https://your.org/
 ```
 
 If deploying to GitHub Pages you must set `publishDir: docs` and `canonifyurls: true`.
@@ -101,3 +103,5 @@ You should provide a service acronym using `logotext: AAA` - this should be capi
 You can provide a product name using `product: Product Name` which will provide the product name in the header. If a product name is not provided the `title` specified at the top of the `config.yaml` file will be used.
 
 To add a GOV.UK style "phase" banner set `phase: alpha` or `phase: beta` in the params. You must also provide a feedback URL using `feedbackurl: https://your.site/feedback`.
+
+You can add a "built by" reference by setting `builtby: Your Team`. You must also provide a URL to your team or organisation's main website using `builtbyurl: https://your.org/`
