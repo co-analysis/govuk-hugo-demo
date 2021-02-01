@@ -278,6 +278,8 @@ $ hugo new site . --force -f <span class="s2">&#34;yaml&#34;</span>
 </span><span class="lnt">31
 </span><span class="lnt">32
 </span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">baseURL</span><span class="p">:</span><span class="w"> </span><span class="l">https://your.site/</span><span class="w">
@@ -313,6 +315,8 @@ $ hugo new site . --force -f <span class="s2">&#34;yaml&#34;</span>
 </span><span class="w">  </span><span class="nt">product</span><span class="p">:</span><span class="w"> </span><span class="l">Your site</span><span class="w">
 </span><span class="w">  </span><span class="nt">phase</span><span class="p">:</span><span class="w"> </span><span class="l">alpha</span><span class="w">
 </span><span class="w">  </span><span class="nt">feedbackurl</span><span class="p">:</span><span class="w"> </span><span class="l">https://your.site/feedback</span><span class="w">
+</span><span class="w">  </span><span class="nt">builtby</span><span class="p">:</span><span class="w"> </span><span class="l">Your Team</span><span class="w">
+</span><span class="w">  </span><span class="nt">builtbyurl</span><span class="p">:</span><span class="w"> </span><span class="l">https://your.org/</span><span class="w">
 </span></code></pre></td></tr></table>
 </div>
 </div><p>If deploying to GitHub Pages you must set <code>publishDir: docs</code> and <code>canonifyurls: true</code>.</p>
@@ -321,6 +325,7 @@ $ hugo new site . --force -f <span class="s2">&#34;yaml&#34;</span>
 <p>You should provide a service acronym using <code>logotext: AAA</code> - this should be capitalised. If deploying to a .gov.uk domain you should set this as <code>logotext: GOV.UK</code>.</p>
 <p>You can provide a product name using <code>product: Product Name</code> which will provide the product name in the header. If a product name is not provided the <code>title</code> specified at the top of the <code>config.yaml</code> file will be used.</p>
 <p>To add a GOV.UK style &ldquo;phase&rdquo; banner set <code>phase: alpha</code> or <code>phase: beta</code> in the params. You must also provide a feedback URL using <code>feedbackurl: https://your.site/feedback</code>.</p>
+<p>You can add a &ldquo;built by&rdquo; reference by setting <code>builtby: Your Team</code>. You must also provide a URL to your team or organisation&rsquo;s main website using <code>builtbyurl: https://your.org/</code></p>
 
 
 </div>
@@ -334,6 +339,33 @@ $ hugo new site . --force -f <span class="s2">&#34;yaml&#34;</span>
     <div class="govuk-width-container ">
         <div class="govuk-footer__meta">
             <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+                <h2 class="govuk-visually-hidden">Support links</h2>
+                <ul class="govuk-footer__inline-list">
+                
+                    
+                    
+                    
+                    
+                    <li class="govuk-footer__inline-list-item">
+                        <a class="govuk-footer__link" href="https://co-analysis.github.io/govuk-hugo-demo/accessibility/">
+                            Accessibility
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="govuk-footer__inline-list-item">
+                        Built by <a class="govuk-footer__link" href="https://www.github.com/co-analysis">
+                            Cabinet Office Analysis &amp; Insight
+                        </a>
+                    </li>
+                    
+                
+                </ul>
 
                 <svg aria-hidden="true" focusable="false" class="govuk-footer__licence-logo"
                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 483.2 195.7" height="17" width="41">

@@ -53,6 +53,16 @@
     </item>
     
     <item>
+      <title>Accessibility statement</title>
+      <link>https://co-analysis.github.io/govuk-hugo-demo/accessibility/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://co-analysis.github.io/govuk-hugo-demo/accessibility/</guid>
+      <description>This website is run by the Cabinet Office&amp;rsquo;s Analysis &amp;amp; Insight Directorate. We want as many people as possible to be able to use this website. For example, that means you should be able to:
+ change colours, contrast levels and fonts zoom in up to 300% without the text spilling off the screen navigate most of the website using just a keyboard navigate most of the website using speech recognition software listen to most of the website using a screen reader (including the most recent versions of JAWS, NVDA and VoiceOver) We’ve also made the website text as simple as possible to understand.</description>
+    </item>
+    
+    <item>
       <title>About page</title>
       <link>https://co-analysis.github.io/govuk-hugo-demo/about/</link>
       <pubDate>Fri, 22 Jan 2021 00:00:00 +0000</pubDate>
