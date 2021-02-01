@@ -31,3 +31,6 @@ params:
   product: Demonstration and Documentation of govuk-hugo
   phase: alpha
   feedbackurl: https://co-analysis.github.io/govuk-hugo-demo/issues/
+  accessibility: /accessibility.md
+  builtby: "Cabinet Office Analysis & Insight"
+  builtbyurl: https://www.github.com/co-analysis
