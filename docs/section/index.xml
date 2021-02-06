@@ -26,6 +26,15 @@
     </item>
     
     <item>
+      <title>Shortcodes</title>
+      <link>https://co-analysis.github.io/govuk-hugo-demo/section/shortcodes/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://co-analysis.github.io/govuk-hugo-demo/section/shortcodes/</guid>
+      <description>Custom shortcodes</description>
+    </item>
+    
+    <item>
       <title>Hugo-ify R Markdown documents</title>
       <link>https://co-analysis.github.io/govuk-hugo-demo/section/rmarkdown/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>

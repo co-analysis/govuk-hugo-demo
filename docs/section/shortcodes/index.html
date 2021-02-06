@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   
   
-  <title>govuk-hugo Demonstration | About page</title>
+  <title>govuk-hugo Demonstration | Shortcodes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0b0c0c">
 
@@ -122,8 +122,8 @@
                 
 
                 
-                <li class="nav-item"><a
-                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                <li class="nav-item nav-active-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state "
                                 href="https://co-analysis.github.io/govuk-hugo-demo/section/shortcodes/">Shortcodes</a></li>
                 
 
@@ -190,7 +190,7 @@
         <ul class="govuk-list nav-extra">
 
                 
-                <li class="nav-item nav-active-item nav-about"><a
+                <li class="nav-item nav-about"><a
                                 class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
                                 href="https://co-analysis.github.io/govuk-hugo-demo/about/">About page</a></li>
                 
@@ -202,11 +202,73 @@
 
 </nav></div>
                 <div class="dashboard-content">
-<h1 class="govuk-heading-xl">About page</h1>
+<h1 class="govuk-heading-xl">Shortcodes</h1>
 
 <div class="govuk-body">
 
-    <p>An about page</p>
+    <p>In addition to the default <a href="https://gohugo.io/content-management/shortcodes/">Hugo shortcodes</a>, <code>govuk-hugo</code> includes the following custom shortcodes, most of which are intended to make it easier to add GOV.UK Design System <a href="https://design-system.service.gov.uk/components/">components</a>.</p>
+<h2 id="in-page-table-of-contents">In-page table of contents</h2>
+<p>An in-page table of contents, suitable for long-form articles can be included by using the shortcode <code>{{&lt; TOC &gt;}}</code> within your document. Preferably, you should include this after the first section of text but before the first secondary heading.</p>
+<aside id="page_toc" class="govuk-body toc govuk-body-s">
+  <span class="toc-header">Table of contents</span>
+  <nav id="TableOfContents">
+  <ul class="toc-list">
+    <li><a href="#" class="toc-link">Section</a></li>
+    <li><a href="#" class="toc-link">Section</a>
+      <ul class="toc-list">
+        <li><a href="#" class="toc-link">Sub-section</a></li>
+        <li><a href="#" class="toc-link">Sub-section</a></li>
+      </ul>
+    </li>
+    <li><a href="#" class="toc-link">Section</a></li>
+  </ul>
+</nav>
+</aside>
+<h2 id="details">Details</h2>
+<p>You can add the <a href="https://design-system.service.gov.uk/components/details/">details</a> component using the <code>{{&lt; details &gt;}}</code> shortcode. In the opening shortcode you specify the summary text, while between that and a closing <code>{{&lt; /details &gt;}}</code> shortcode you include the content that you wish to be revealed when the user chooses to expand the details section.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">{{&lt; details &#34;More information&#34; &gt;}}
+The details component allows you to hide more detailed information 
+that might be relevant to only some users.
+{{&lt; /details &gt;}}
+</code></pre></td></tr></table>
+</div>
+</div><details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      More information
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    
+The details component allows you to hide more detailed information that might be relevant to only some users.
+
+  </div>
+</details>
+<h2 id="warning-text">Warning text</h2>
+<p>You can add the <a href="https://design-system.service.gov.uk/components/warning-text/">warning text</a> component using the <code>{{&lt; warning &gt;}}</code> shortcode.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">{{&lt; warning &#34;This is experimental and still under development&#34; &gt;}}
+</code></pre></td></tr></table>
+</div>
+</div><div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    This is experimental and still under development
+  </strong>
+</div>
 
 
 </div>

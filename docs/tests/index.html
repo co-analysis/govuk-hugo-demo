@@ -120,6 +120,14 @@
                 
 
                 
+
+                
+                <li class="nav-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/section/shortcodes/">Shortcodes</a></li>
+                
+
+                
                 
                 
 
@@ -156,7 +164,17 @@
                 
                 <li class="nav-item"><a
                                 class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/tests/testr/">Test Rmd</a></li>
+                                href="https://co-analysis.github.io/govuk-hugo-demo/tests/static_rmd/">Static R Markdown</a></li>
+                
+
+                
+                
+                
+
+                
+                <li class="nav-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/tests/interactive_rmd/">Interactive R Markdown</a></li>
                 
 
                 
@@ -173,8 +191,8 @@
         <ul class="govuk-list nav-extra">
 
                 
-                <li class="nav-item"><a
-                                class="govuk-body-s govuk-!-font-size-14 govuk-link govuk-link--no-visited-state nav-link"
+                <li class="nav-item nav-about"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
                                 href="https://co-analysis.github.io/govuk-hugo-demo/about/">About page</a></li>
                 
 
@@ -223,13 +241,33 @@
         
         <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-                Test Rmd
+                Static R Markdown
             </dt>
             <dd class="govuk-summary-list__value">
-                An example of rendered R Markdown document
+                This is a test of a static RMarkdown document within the govuk-hugo theme, on 2021-02-06.
+Printing a data frame 1 2  # Comment mtcars      mpg cyl disp hp drat wt qsec vs am gear carb    Mazda RX4 21.0 6 160.0 110 3.90 2.620 16.46 0 1 4 4  Mazda RX4 Wag 21.0 6 160.0 110 3.90 2.875 17.02 0 1 4 4  Datsun 710 22.
             </dd>
             <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="https://co-analysis.github.io/govuk-hugo-demo/tests/testr/">
+                <a class="govuk-link" href="https://co-analysis.github.io/govuk-hugo-demo/tests/static_rmd/">
+                    Read/View</span>
+                </a>
+            </dd>
+
+        </div>
+        
+        
+        
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Interactive R Markdown
+            </dt>
+            <dd class="govuk-summary-list__value">
+                This is a test of an interactive RMarkdown document within the govuk-hugo theme, on 2021-02-06.
+Testing DT This is a test of the {DT} package that implements interactive tables via the DataTables jQuery plugin
+1 2  new_cars &lt;- tibble::rownames_to_column(mtcars, var = &amp;quot;model&amp;quot;) govukhugo::govuk_datatable(new_cars)    {"x":{"style":"jqueryui","filter":"none","extensions":["Buttons"],"data":[["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant","Duster 360","Merc 240D","Merc 230","Merc 280","Merc 280C","Merc 450SE","Merc 450SL","Merc 450SLC","Cadillac Fleetwood","Lincoln Continental","Chrysler Imperial","Fiat 128","Honda Civic","Toyota Corolla","Toyota Corona"
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="https://co-analysis.github.io/govuk-hugo-demo/tests/interactive_rmd/">
                     Read/View</span>
                 </a>
             </dd>
@@ -349,6 +387,40 @@
     applyGOVUK("UL", "govuk-list--bullet");
     applyGOVUK("OL", "govuk-list");
     applyGOVUK("OL", "govuk-list--number");
+
+     
+    function styleCodeBlocks() {
+        var code_elements = document.querySelectorAll("div.highlight")
+        var i;
+        
+        for (i = 0; i < code_elements.length; i++) {
+            code_elements[i].classList.add("govuk-body");
+        };
+    };
+    styleCodeBlocks();
+
+     
+    function restyleTOC() {
+
+        var toc_elements = document.querySelectorAll("#page_toc #TableOfContents ul")
+
+        var i;
+
+        for (i = 0; i < toc_elements.length; i++) {
+            toc_elements[i].classList.remove("govuk-list");
+            toc_elements[i].classList.remove("govuk-list--bullet");
+            toc_elements[i].classList.add("toc-list");
+
+        };
+
+        var toc_links = document.querySelectorAll("#page_toc #TableOfContents a")
+
+        for (i = 0; i < toc_links.length; i++) {
+            toc_links[i].classList.add("toc-link");
+        };
+
+    };
+    restyleTOC();
 
     
 

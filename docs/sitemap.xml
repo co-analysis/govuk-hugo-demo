@@ -18,12 +18,22 @@
   </url>
   
   <url>
+    <loc>https://co-analysis.github.io/govuk-hugo-demo/section/shortcodes/</loc>
+    <lastmod>2021-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://co-analysis.github.io/govuk-hugo-demo/tests/static_rmd/</loc>
+    <lastmod>2021-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://co-analysis.github.io/govuk-hugo-demo/section/rmarkdown/</loc>
     <lastmod>2021-01-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://co-analysis.github.io/govuk-hugo-demo/tests/testr/</loc>
+    <loc>https://co-analysis.github.io/govuk-hugo-demo/tests/interactive_rmd/</loc>
     <lastmod>2021-01-22T00:00:00+00:00</lastmod>
   </url>
   
