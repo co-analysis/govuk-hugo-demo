@@ -1,0 +1,40 @@
+---
+title: Interactive R Markdown
+date: 2021-01-22
+section: tests
+weight: 900
+---
+
+This is a test of an interactive `RMarkdown` document within the govuk-hugo theme, on `r Sys.Date()`.
+
+## Testing DT
+
+This is a test of the [`{DT}`](https://rstudio.github.io/DT/) package that implements interactive tables via the [DataTables jQuery plugin](https://datatables.net/examples/styling/jqueryUI.html)
+
+```{r}
+new_cars <- tibble::rownames_to_column(mtcars, var = "model")
+govukhugo::govuk_datatable(new_cars)
+```
+
+## Testing Plotly
+This is a test of `plotly::ggplotly()` which uses the [Plotly R package and JavaScript Library](https://plot.ly/r/) to convert `{ggplot2}` charts into interactive charts
+
+```{r}
+p <- ggplot2::ggplot(mtcars, ggplot2::aes(x = mpg, y = disp)) +
+  ggplot2::geom_point()
+
+plotly::ggplotly(p)
+
+```
+
+
+## Testing leaflet
+This is a test of the [`{leaflet}`](https://rstudio.github.io/leaflet/) package that produces interactive maps using [leaflet.js](https://leafletjs.com/).
+
+```{r}
+m <- leaflet::leaflet()
+m <- leaflet::addTiles(m)
+m <- leaflet::addMarkers(m, lng = -0.12768, lat = 51.50739)
+m
+```
+
