@@ -1,8 +1,72 @@
 ---
 title: Test Rmd
 date: 2021-01-22
-section: section
+section: tests
+weight: 900
+draft: true
 ---
+
+```{r, include=FALSE}
+govuk_datatable <- function(data,
+                            element_id = NULL,
+                            col_names = NULL,
+                            page_length = 10,
+                            small_text = TRUE,
+                            buttons = TRUE,
+                            col_defs = NULL) {
+
+  if (!requireNamespace("DT", quietly = TRUE)) {
+    stop(
+      "The DT package is required. ",
+      "Install from CRAN using install.packages(\"DT\")"
+    )
+  }
+
+  if (!is.data.frame(data) & !is.matrix(data)) {
+    stop("data must be a data frame or matrix")
+  }
+
+
+  if (small_text) {
+    dt_class <- "govuk-table govuk-!-font-size-14"
+  } else {
+    dt_class <- "govuk-table"
+  }
+
+  if (is.null(col_names)) {
+    col_names <- names(data)
+  }
+
+  dt_options <- list(pageLength = page_length)
+
+  if (buttons) {
+    dt_options <- append(dt_options, list(buttons = list("copy", "csv")))
+    dt_options <- append(dt_options, list(dom = "frtBp"))
+    dt_extensions <- "Buttons"
+  } else {
+    dt_options <- append(dt_options, list(dom = "frtp"))
+    dt_extensions <- character()
+  }
+
+  if (!is.null(col_defs)) {
+    dt_options <- append(dt_options, list(columnDefs = col_defs))
+  }
+
+  x <- DT::datatable(data,
+                style = "jqueryui",
+                class = dt_class,
+                elementId = element_id,
+                selection = "none",
+                rownames = FALSE,
+                colnames = col_names,
+                extensions = dt_extensions,
+                options = dt_options
+  )
+
+  return(x)
+
+}
+```
 
 This is a test of an `RMarkdown` document within the govuk-hugo theme, on `r Sys.Date()`.
 
@@ -21,7 +85,7 @@ plot(mtcars$mpg, mtcars$disp)
 Testing DT
 
 ```{r}
-DT::datatable(mtcars)
+govuk_datatable(mtcars)
 ```
 
 
