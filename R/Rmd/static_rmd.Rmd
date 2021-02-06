@@ -2,6 +2,7 @@
 title: Static R Markdown
 date: 2021-01-22
 section: tests
+summary: "Example of an R Markdown document with static content"
 weight: 800
 ---
 

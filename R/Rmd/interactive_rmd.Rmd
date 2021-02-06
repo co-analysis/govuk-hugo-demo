@@ -2,6 +2,7 @@
 title: Interactive R Markdown
 date: 2021-01-22
 section: tests
+summary: "Example of an R Markdown document with interactive content"
 weight: 900
 ---
 
