@@ -22,8 +22,7 @@
       <pubDate>Fri, 22 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://co-analysis.github.io/govuk-hugo-demo/tests/static_rmd/</guid>
-      <description>This is a test of a static RMarkdown document within the govuk-hugo theme, on 2021-02-06.
-Printing a data frame 1 2  # Comment mtcars      mpg cyl disp hp drat wt qsec vs am gear carb    Mazda RX4 21.0 6 160.0 110 3.90 2.620 16.46 0 1 4 4  Mazda RX4 Wag 21.0 6 160.0 110 3.90 2.875 17.02 0 1 4 4  Datsun 710 22.</description>
+      <description>Example of an R Markdown document with static content</description>
     </item>
     
     <item>
@@ -32,9 +31,7 @@ Printing a data frame 1 2  # Comment mtcars      mpg cyl disp hp drat wt qsec vs
       <pubDate>Fri, 22 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://co-analysis.github.io/govuk-hugo-demo/tests/interactive_rmd/</guid>
-      <description>This is a test of an interactive RMarkdown document within the govuk-hugo theme, on 2021-02-06.
-Testing DT This is a test of the {DT} package that implements interactive tables via the DataTables jQuery plugin
-1 2  new_cars &amp;lt;- tibble::rownames_to_column(mtcars, var = &amp;amp;quot;model&amp;amp;quot;) govukhugo::govuk_datatable(new_cars)    {&#34;x&#34;:{&#34;style&#34;:&#34;jqueryui&#34;,&#34;filter&#34;:&#34;none&#34;,&#34;extensions&#34;:[&#34;Buttons&#34;],&#34;data&#34;:[[&#34;Mazda RX4&#34;,&#34;Mazda RX4 Wag&#34;,&#34;Datsun 710&#34;,&#34;Hornet 4 Drive&#34;,&#34;Hornet Sportabout&#34;,&#34;Valiant&#34;,&#34;Duster 360&#34;,&#34;Merc 240D&#34;,&#34;Merc 230&#34;,&#34;Merc 280&#34;,&#34;Merc 280C&#34;,&#34;Merc 450SE&#34;,&#34;Merc 450SL&#34;,&#34;Merc 450SLC&#34;,&#34;Cadillac Fleetwood&#34;,&#34;Lincoln Continental&#34;,&#34;Chrysler Imperial&#34;,&#34;Fiat 128&#34;,&#34;Honda Civic&#34;,&#34;Toyota Corolla&#34;,&#34;Toyota Corona&#34;</description>
+      <description>Example of an R Markdown document with interactive content</description>
     </item>
     
   </channel>
