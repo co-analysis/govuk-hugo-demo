@@ -30,7 +30,7 @@ params:
   logotext: GHD
   product: Demonstration and Documentation of govuk-hugo
   phase: alpha
-  feedbackurl: https://co-analysis.github.io/govuk-hugo-demo/issues/
+  feedbackurl: https://github.com/co-analysis/govuk-hugo-demo/issues/
   accessibility: accessibility.md
   cookies: cookies.md
   builtby: "Cabinet Office Analysis & Insight"
