@@ -35,6 +35,15 @@
     </item>
     
     <item>
+      <title>Accessible charts</title>
+      <link>https://co-analysis.github.io/govuk-hugo-demo/section/render_svg/</link>
+      <pubDate>Fri, 30 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://co-analysis.github.io/govuk-hugo-demo/section/render_svg/</guid>
+      <description>Rendering charts as accessible SVG objects</description>
+    </item>
+    
+    <item>
       <title>Hugo-ify R Markdown documents</title>
       <link>https://co-analysis.github.io/govuk-hugo-demo/section/rmarkdown/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
