@@ -12,6 +12,8 @@
   
 
   
+
+  
   <link href="https://co-analysis.github.io/govuk-hugo-demo/css/govuk-frontend-3.10.2.min.css" rel="stylesheet">
   
 
@@ -276,6 +278,98 @@ The details component allows you to hide more detailed information that might be
     <span class="govuk-warning-text__assistive">Warning</span>
     This is experimental and still under development
   </strong>
+</div>
+<h2 id="notification-banners">Notification banners</h2>
+<p>You can add the neutral <a href="https://design-system.service.gov.uk/components/notification-banner/">notification banner</a> component using the <code>{{&lt; notification */}}</code> shortcode. In the opening shortcode specify the banner heading, while between that and a closing <code>{{&lt;/* /notification &gt;}}</code> banner you include the content of the notification message.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">{{&lt; notification &#34;Important&#34; &gt;}}
+Here is an important notice
+{{&lt; /notification &gt;}}
+</code></pre></td></tr></table>
+</div>
+</div><div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+  data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <div class="govuk-notification-banner__heading">
+      
+Here is an important notice
+
+    </div>
+  </div>
+</div>
+<p>You can add the success notification banner using the <code>{{&lt; success &gt;}}</code> shortcode.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">{{&lt; success &#34;Success&#34; &gt;}}
+You have succeeded
+{{&lt; /success &gt;}}
+</code></pre></td></tr></table>
+</div>
+</div><div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+  aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  
+    
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Success
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <h3 class="govuk-notification-banner__heading">
+        
+You have succeeded
+
+      </h3>
+    </div>
+    
+  
+</div>
+<p>If you need to include further information then include you should provide the title and message as named arguments to the shortcode and include the further information within the opening and closing shortcodes. Note you will need to use raw HTML tags for inner content rather than markdown.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">{{&lt; success title=&#34;Success&#34; message=&#34;You have succeeded&#34; &gt;}}
+Please visit &lt;a href=&#34;https://www.gov.uk&#34;&gt;GOV.UK&lt;/a&gt; for further details.
+{{&lt; /success &gt;}}
+</code></pre></td></tr></table>
+</div>
+</div><div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+  aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      You have succeeded
+    </h3>
+    <div class="govuk-body">
+Please visit <a href="https://www.gov.uk">GOV.UK</a> for further details.
+</div>
+  </div>
+  
 </div>
 
 
