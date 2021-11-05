@@ -90,7 +90,9 @@ The Hugo-ified HTML is then returned to `render_rmd()` which finishes the proces
 ## Supporting htmlwidgets
 R Markdown documents that do not include interactive content, e.g. that print a data frame or include a plot image, will now be converted when Hugo builds the site. However, a common reason for writing R Markdown documents is to include interactive components. When rendering an R Markdown document that include an [`{htmlwidgets}`](http://www.htmlwidgets.org/) component the rendering process will insert the relevant dependencies into the `<head>` component of the resulting HTML document.
 
-As just described, the "Hugo-ified" HTML process of `{govhugo}` removes the head component, thus removing these dependencies. This is rectified by the setting of the `rmarkdown: true` parameter in the YAML front matter of the HTML page. When Hugo processes the HTML it reads this parameter in adds back in the dependencies to the head component of the relevant page. At present it adds in the dependencies for the [`{DT}`](https://rstudio.github.io/DT/), [`{plotly}`](https://plot.ly/r/) and  [`{leaflet}`](https://rstudio.github.io/leaflet/).
+As just described, the "Hugo-ified" HTML process of `{govukhugo}` removes the head component, thus removing these dependencies. This is rectified by the setting of the `rmarkdown: true` parameter in the YAML front matter of the HTML page. When Hugo processes the HTML it reads this parameter in adds back in the dependencies to the head component of the relevant page. At present it adds in the dependencies for the [`{DT}`](https://rstudio.github.io/DT/), [`{plotly}`](https://plot.ly/r/) and  [`{leaflet}`](https://rstudio.github.io/leaflet/).
+
+The [`{crosstalk}`](https://rstudio.github.io/crosstalk/) package's filtering controls that allow dynamic filtering of the data used by these three widgets are also supported. However, users should wrap any calls to these controls in the package's `unstrap()` function which removes the dependencies associated with the Bootstrap framework, if you do not remove these the page may render incorrectly. Note that these controls make use of the selectize.js library and may not work properly for users of assistive technologies.
 
 ### govuk_datatable()
 The `{DT}` package provides an opinionated implementation of the [DataTables jQuery plugin](https://datatables.net/), which does not easily conform to the GOV.UK Design System. As a result `{govukhugo}` includes a `govuk_datatable()` function that acts as a wrapper around `DT::datatable()`. Note that `govuk_datatable()` only provides access to some aspects of the `datatable()` arguments, and does not support passing of additional arguments via a `...` argument, this is to minimise the potential for disrupting the application of GOV.UK style.
@@ -100,6 +102,7 @@ govuk_datatable <- function(data,
                             element_id = NULL,
                             col_names = NULL,
                             page_length = 10,
+                            search = TRUE,
                             small_text = FALSE,
                             buttons = TRUE,
                             col_defs = NULL)
@@ -110,6 +113,7 @@ govuk_datatable <- function(data,
 - `element_id`: an id for the HTML chunk
 - `col_names`: a vector of column names, if not supplied the column names of the data object will be used
 - `page_length`: the number of rows to show in the table, note that end-users cannot change this setting
+- `search`: whether to include the table search functionality
 - `small_text`: whether the table should render with a smaller font-size (only recommended for very large tables)
 - `buttons`: whether to include a copy and csv download button with the table
 - `col_defs`: a list of column definitions (see the [`{DT}`](https://rstudio.github.io/DT/options.html) and [DataTables](https://datatables.net/reference/option/columnDefs) documentation for more details)
