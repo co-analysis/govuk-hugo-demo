@@ -340,7 +340,7 @@ You have succeeded
     
   
 </div>
-<p>If you need to include further information then include you should provide the title and message as named arguments to the shortcode and include the further information within the opening and closing shortcodes. Note you will need to use raw HTML tags for inner content rather than markdown.</p>
+<p>If you need to include further information then include you should provide the <code>title</code> and <code>message</code> as named arguments to the shortcode and include the further information within the opening and closing shortcodes. Note you will need to use raw HTML tags for inner content rather than markdown.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -371,7 +371,145 @@ Please visit <a href="https://www.gov.uk">GOV.UK</a> for further details.
   </div>
   
 </div>
+<h2 id="tag">Tag</h2>
+<p>You can add the <a href="https://design-system.service.gov.uk/components/tag/">tag</a> component using the <code>{{&lt; tag &gt;}}</code> shortcode.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">{{&lt; tag &#34;Tag&#34; &gt;}}
+</code></pre></td></tr></table>
+</div>
+</div><p>
 
+<strong class="govuk-tag">
+  Tag
+</strong>
+
+</p>
+<p>Optionally you can define a colour (one of <code>grey</code>, <code>green</code>, <code>turquoise</code>, <code>blue</code>, <code>purple</code>, <code>pink</code>, <code>red</code>, <code>orange</code> or <code>yellow</code>), in this case you will need to provide the tag label as the argument <code>title</code>. When using alongside the standard tag, the convention is to use grey.</p>
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header" scope="col" width="50%"> Shortcode </th>
+      <th class="govuk-table__header" scope="col" width="50%"> Tag </th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code>{{< tag "Tag" >}}</code>
+      </td>
+      <td class="govuk-table__cell">
+        
+<strong class="govuk-tag">
+  Tag
+</strong>
+
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code>{{< tag title="Grey tag" colour="grey" >}}</code>
+      <td class="govuk-table__cell">
+        
+<strong class="govuk-tag govuk-tag--grey" >
+  Grey tag
+</strong>
+
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code>{{< tag title="Green tag" colour="green" >}}</code>
+      <td class="govuk-table__cell">
+        
+<strong class="govuk-tag govuk-tag--green" >
+  Green tag
+</strong>
+
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code>{{< tag title="Turquoise tag" colour="turquoise" >}}</code>
+      <td class="govuk-table__cell">
+        
+<strong class="govuk-tag govuk-tag--turquoise" >
+  Turquoise tag
+</strong>
+
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code>{{< tag title="Blue tag" colour="blue" >}}</code>
+      <td class="govuk-table__cell">
+        
+<strong class="govuk-tag govuk-tag--blue" >
+  Blue tag
+</strong>
+
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code>{{< tag title="Purple tag" colour="purple" >}}</code>
+      <td class="govuk-table__cell">
+        
+<strong class="govuk-tag govuk-tag--purple" >
+  Purple tag
+</strong>
+
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code>{{< tag title="Pink tag" colour="pink" >}}</code>
+      <td class="govuk-table__cell">
+        
+<strong class="govuk-tag govuk-tag--pink" >
+  Pink tag
+</strong>
+
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code>{{< tag title="Red tag" colour="red" >}}</code>
+      <td class="govuk-table__cell">
+        
+<strong class="govuk-tag govuk-tag--red" >
+  Red tag
+</strong>
+
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code>{{< tag title="Orange tag" colour="orange" >}}</code>
+      <td class="govuk-table__cell">
+        
+<strong class="govuk-tag govuk-tag--orange" >
+  Orange tag
+</strong>
+
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code>{{< tag title="Yellow tag" colour="yellow" >}}</code>
+      <td class="govuk-table__cell">
+        
+<strong class="govuk-tag govuk-tag--yellow" >
+  Yellow tag
+</strong>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 </div>
 
@@ -448,7 +586,12 @@ Please visit <a href="https://www.gov.uk">GOV.UK</a> for further details.
 
         var i;
         for (i = 0; i < elements.length; i++) {
-            elements[i].classList.add(govuk_class);
+            if (elements[i].classList.contains("lntable") || elements[i].classList.contains("lntd")) {
+                null;
+            } else {
+                elements[i].classList.add(govuk_class);
+            }
+            
         };
 
     };

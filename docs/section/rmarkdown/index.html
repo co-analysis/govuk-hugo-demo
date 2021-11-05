@@ -221,7 +221,7 @@
 <p><code>{govukhugo}</code> is an R package that enables the use of R Markdown documents in Hugo static sites using the <code>govuk-hugo</code> theme, it provides an easy way for R users to initialise a Hugo site using the <code>govuk-hugo</code> theme. The <code>govuk-hugo</code> theme is not compatible with <code>{blogdown}</code>, therefore the package also provides a means to render and build Rmarkdown documents.</p>
 <p>Examples of how <code>{govukhugo}</code> converts a <a href="https://co-analysis.github.io/govuk-hugo-demo/tests/static_rmd/">static R Markdown page</a> and an <a href="https://co-analysis.github.io/govuk-hugo-demo/tests/interactive_rmd/">interactive R Markdown page</a> are provided in the tests section of this documentation.</p>
 <aside id="page_toc" class="govuk-body toc govuk-body-s">
-  <span class="toc-header">Table of contents</span>
+  <span class="toc-header">Contents</span>
   <nav id="TableOfContents">
   <ul>
     <li><a href="#installing-and-using-govukhugo">Installing and using {govukhugo}</a></li>
@@ -327,7 +327,8 @@
 <p>The Hugo-ified HTML is then returned to <code>render_rmd()</code> which finishes the process by prepending the YAML front-matter of the Rmd file to the HTML. A <code>rmarkdown: true</code> parameter is also added to the YAML. Finally, the YAML is scanned for the <code>section</code> parameter, if present this is used to determine the sub-folder of the site&rsquo;s <code>content</code> directory that the HTML will be placed in.</p>
 <h2 id="supporting-htmlwidgets">Supporting htmlwidgets</h2>
 <p>R Markdown documents that do not include interactive content, e.g. that print a data frame or include a plot image, will now be converted when Hugo builds the site. However, a common reason for writing R Markdown documents is to include interactive components. When rendering an R Markdown document that include an <a href="http://www.htmlwidgets.org/"><code>{htmlwidgets}</code></a> component the rendering process will insert the relevant dependencies into the <code>&lt;head&gt;</code> component of the resulting HTML document.</p>
-<p>As just described, the &ldquo;Hugo-ified&rdquo; HTML process of <code>{govhugo}</code> removes the head component, thus removing these dependencies. This is rectified by the setting of the <code>rmarkdown: true</code> parameter in the YAML front matter of the HTML page. When Hugo processes the HTML it reads this parameter in adds back in the dependencies to the head component of the relevant page. At present it adds in the dependencies for the <a href="https://rstudio.github.io/DT/"><code>{DT}</code></a>, <a href="https://plot.ly/r/"><code>{plotly}</code></a> and  <a href="https://rstudio.github.io/leaflet/"><code>{leaflet}</code></a>.</p>
+<p>As just described, the &ldquo;Hugo-ified&rdquo; HTML process of <code>{govukhugo}</code> removes the head component, thus removing these dependencies. This is rectified by the setting of the <code>rmarkdown: true</code> parameter in the YAML front matter of the HTML page. When Hugo processes the HTML it reads this parameter in adds back in the dependencies to the head component of the relevant page. At present it adds in the dependencies for the <a href="https://rstudio.github.io/DT/"><code>{DT}</code></a>, <a href="https://plot.ly/r/"><code>{plotly}</code></a> and  <a href="https://rstudio.github.io/leaflet/"><code>{leaflet}</code></a>.</p>
+<p>The <a href="https://rstudio.github.io/crosstalk/"><code>{crosstalk}</code></a> package&rsquo;s filtering controls that allow dynamic filtering of the data used by these three widgets are also supported. However, users should wrap any calls to these controls in the package&rsquo;s <code>unstrap()</code> function which removes the dependencies associated with the Bootstrap framework, if you do not remove these the page may render incorrectly. Note that these controls make use of the selectize.js library and may not work properly for users of assistive technologies.</p>
 <h3 id="govuk_datatable">govuk_datatable()</h3>
 <p>The <code>{DT}</code> package provides an opinionated implementation of the <a href="https://datatables.net/">DataTables jQuery plugin</a>, which does not easily conform to the GOV.UK Design System. As a result <code>{govukhugo}</code> includes a <code>govuk_datatable()</code> function that acts as a wrapper around <code>DT::datatable()</code>. Note that <code>govuk_datatable()</code> only provides access to some aspects of the <code>datatable()</code> arguments, and does not support passing of additional arguments via a <code>...</code> argument, this is to minimise the potential for disrupting the application of GOV.UK style.</p>
 <div class="highlight"><div class="chroma">
@@ -339,12 +340,14 @@
 </span><span class="lnt">5
 </span><span class="lnt">6
 </span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-r" data-lang="r"><span class="n">govuk_datatable</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">,</span>
                             <span class="n">element_id</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">,</span>
                             <span class="n">col_names</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">,</span>
                             <span class="n">page_length</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span>
+                            <span class="n">search</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span>
                             <span class="n">small_text</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span>
                             <span class="n">buttons</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span>
                             <span class="n">col_defs</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">)</span>
@@ -355,6 +358,7 @@
 <li><code>element_id</code>: an id for the HTML chunk</li>
 <li><code>col_names</code>: a vector of column names, if not supplied the column names of the data object will be used</li>
 <li><code>page_length</code>: the number of rows to show in the table, note that end-users cannot change this setting</li>
+<li><code>search</code>: whether to include the table search functionality</li>
 <li><code>small_text</code>: whether the table should render with a smaller font-size (only recommended for very large tables)</li>
 <li><code>buttons</code>: whether to include a copy and csv download button with the table</li>
 <li><code>col_defs</code>: a list of column definitions (see the <a href="https://rstudio.github.io/DT/options.html"><code>{DT}</code></a> and <a href="https://datatables.net/reference/option/columnDefs">DataTables</a> documentation for more details)</li>
@@ -438,7 +442,12 @@
 
         var i;
         for (i = 0; i < elements.length; i++) {
-            elements[i].classList.add(govuk_class);
+            if (elements[i].classList.contains("lntable") || elements[i].classList.contains("lntd")) {
+                null;
+            } else {
+                elements[i].classList.add(govuk_class);
+            }
+            
         };
 
     };
