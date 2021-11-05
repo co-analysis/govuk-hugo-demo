@@ -76,7 +76,7 @@ You have succeeded
 You have succeeded
 {{< /success >}}
 
-If you need to include further information then include you should provide the title and message as named arguments to the shortcode and include the further information within the opening and closing shortcodes. Note you will need to use raw HTML tags for inner content rather than markdown.
+If you need to include further information then include you should provide the `title` and `message` as named arguments to the shortcode and include the further information within the opening and closing shortcodes. Note you will need to use raw HTML tags for inner content rather than markdown.
 
 ```txt
 {{</* success title="Success" message="You have succeeded" */>}}
@@ -87,3 +87,100 @@ Please visit <a href="https://www.gov.uk">GOV.UK</a> for further details.
 {{< success title="Success" message="You have succeeded" >}}
 Please visit <a href="https://www.gov.uk">GOV.UK</a> for further details.
 {{< /success >}}
+
+## Tag
+
+You can add the [tag](https://design-system.service.gov.uk/components/tag/) component using the `{{</* tag */>}}` shortcode.
+
+```txt
+{{</* tag "Tag" */>}}
+```
+
+<p>
+{{< tag "Tag" >}}
+</p>
+
+
+Optionally you can define a colour (one of `grey`, `green`, `turquoise`, `blue`, `purple`, `pink`, `red`, `orange` or `yellow`), in this case you will need to provide the tag label as the argument `title`. When using alongside the standard tag, the convention is to use grey.
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header" scope="col" width="50%"> Shortcode </th>
+      <th class="govuk-table__header" scope="col" width="50%"> Tag </th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code>{{</* tag "Tag" */>}}</code>
+      </td>
+      <td class="govuk-table__cell">
+        {{< tag "Tag" >}}
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code>{{</* tag title="Grey tag" colour="grey" */>}}</code>
+      <td class="govuk-table__cell">
+        {{< tag title="Grey tag" colour="grey">}}
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code>{{</* tag title="Green tag" colour="green" */>}}</code>
+      <td class="govuk-table__cell">
+        {{< tag title="Green tag" colour="green">}}
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code>{{</* tag title="Turquoise tag" colour="turquoise" */>}}</code>
+      <td class="govuk-table__cell">
+        {{< tag title="Turquoise tag" colour="turquoise">}}
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code>{{</* tag title="Blue tag" colour="blue" */>}}</code>
+      <td class="govuk-table__cell">
+        {{< tag title="Blue tag" colour="blue">}}
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code>{{</* tag title="Purple tag" colour="purple" */>}}</code>
+      <td class="govuk-table__cell">
+        {{< tag title="Purple tag" colour="purple">}}
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code>{{</* tag title="Pink tag" colour="pink" */>}}</code>
+      <td class="govuk-table__cell">
+        {{< tag title="Pink tag" colour="pink">}}
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code>{{</* tag title="Red tag" colour="red" */>}}</code>
+      <td class="govuk-table__cell">
+        {{< tag title="Red tag" colour="red">}}
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code>{{</* tag title="Orange tag" colour="orange" */>}}</code>
+      <td class="govuk-table__cell">
+        {{< tag title="Orange tag" colour="orange">}}
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code>{{</* tag title="Yellow tag" colour="yellow" */>}}</code>
+      <td class="govuk-table__cell">
+        {{< tag title="Yellow tag" colour="yellow">}}
+      </td>
+    </tr>
+  </tbody>
+</table>
