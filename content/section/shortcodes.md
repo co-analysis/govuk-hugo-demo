@@ -49,3 +49,41 @@ You can add the [warning text](https://design-system.service.gov.uk/components/w
 ```
 
 {{< warning "This is experimental and still under development" >}}
+
+
+## Notification banners
+You can add the neutral [notification banner](https://design-system.service.gov.uk/components/notification-banner/) component using the `{{</* notification */}}` shortcode. In the opening shortcode specify the banner heading, while between that and a closing `{{</* /notification */>}}` banner you include the content of the notification message.
+
+```txt
+{{</* notification "Important" */>}}
+Here is an important notice
+{{</* /notification */>}}
+```
+
+{{< notification "Important" >}}
+Here is an important notice
+{{< /notification >}}
+
+You can add the success notification banner using the `{{</* success */>}}` shortcode.
+
+```txt
+{{</* success "Success" */>}}
+You have succeeded
+{{</* /success */>}}
+```
+
+{{< success "Success" >}}
+You have succeeded
+{{< /success >}}
+
+If you need to include further information then include you should provide the title and message as named arguments to the shortcode and include the further information within the opening and closing shortcodes. Note you will need to use raw HTML tags for inner content rather than markdown.
+
+```txt
+{{</* success title="Success" message="You have succeeded" */>}}
+Please visit <a href="https://www.gov.uk">GOV.UK</a> for further details.
+{{</* /success */>}}
+```
+
+{{< success title="Success" message="You have succeeded" >}}
+Please visit <a href="https://www.gov.uk">GOV.UK</a> for further details.
+{{< /success >}}
