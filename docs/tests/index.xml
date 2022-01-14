@@ -34,5 +34,14 @@
       <description>Example of an R Markdown document with interactive content</description>
     </item>
     
+    <item>
+      <title>Filtering with crosstalk</title>
+      <link>https://co-analysis.github.io/govuk-hugo-demo/tests/crosstalk_rmd/</link>
+      <pubDate>Fri, 22 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://co-analysis.github.io/govuk-hugo-demo/tests/crosstalk_rmd/</guid>
+      <description>Filtering interactive content with crosstalk</description>
+    </item>
+    
   </channel>
 </rss>

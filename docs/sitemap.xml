@@ -28,6 +28,16 @@
   </url>
   
   <url>
+    <loc>https://co-analysis.github.io/govuk-hugo-demo/tests/interactive_rmd/</loc>
+    <lastmod>2021-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://co-analysis.github.io/govuk-hugo-demo/tests/crosstalk_rmd/</loc>
+    <lastmod>2021-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://co-analysis.github.io/govuk-hugo-demo/section/render_svg/</loc>
     <lastmod>2021-07-30T00:00:00+00:00</lastmod>
   </url>
@@ -35,11 +45,6 @@
   <url>
     <loc>https://co-analysis.github.io/govuk-hugo-demo/section/rmarkdown/</loc>
     <lastmod>2021-01-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://co-analysis.github.io/govuk-hugo-demo/tests/interactive_rmd/</loc>
-    <lastmod>2021-01-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
