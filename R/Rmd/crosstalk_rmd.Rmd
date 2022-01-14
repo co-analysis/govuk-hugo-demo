@@ -1,0 +1,79 @@
+---
+title: Filtering with crosstalk
+date: 2021-01-22
+section: tests
+summary: "Filtering interactive content with crosstalk"
+weight: 400
+---
+
+This is a test of an interactive `RMarkdown` document within the govuk-hugo theme, on `r Sys.Date()` using [`{crosstalk}`](https://rstudio.github.io/crosstalk/) to interactively filter data.
+
+## Prepare data
+
+`{crosstalk}` is an R package that supports interactive Rmarkdown files, it is particularly useful for `govukhugo` as it can support client-side data processing and therefore enables complex interactivity without relying on Shiny. To use `{crosstalk}` we initiate a `SharedData` object by a call to `crosstalk::SharedData$new()`.
+
+```{r setup, include = FALSE}
+penguins_sd <- crosstalk::SharedData$new(palmerpenguins::penguins)
+```
+
+Compatability issues means this only works with tables (via `govukhgo::govuk_datatable()`) and not yet with interactive plots (via `{plotly}`), it has not yet been tested with interactive maps (via `{leaflet}`).
+
+## Filtering the table
+
+Once enabled we can use `{crosstalk}` to filter the data object, and to link tables and plots. At present only the `filter_select()` filters are supported for use in `govukhugo`.
+
+``` {r}
+fs_species <- crosstalk::filter_select(
+  id = "filter-species",
+  label = "Penguin species",
+  sharedData = penguins_sd,
+  group = ~species,
+  multiple = FALSE
+)
+
+fs_island <- crosstalk::filter_select(
+  id = "filter-island",
+  label = "Island",
+  sharedData = penguins_sd,
+  group = ~island,
+  multiple = TRUE
+)
+```
+
+`{crosstalk}` is designed to work with the [Bootstrap CSS framework](https://getbootstrap.com/) which does not work well with the GOV.UK Design System, therefore the filters should be wrapped inside a call to `govukhugo::unstrap()` to remove the Bootstrap dependencies.
+
+```{r selector-example, eval=FALSE}
+govukhugo::unstrap(fs_species)
+govukhugo::unstrap(fs_island)
+```
+
+
+::::{.govuk-grid-row .data-row}
+
+:::{.govuk-grid-column-one-quarter .filter-controls .govuk-body-s}
+
+<span class="govuk-heading-s">Filters</span>
+
+```{r selectors, echo=FALSE}
+
+govukhugo::unstrap(fs_species)
+
+govukhugo::unstrap(fs_island)
+
+```
+<span style="display:block;clear:both;"></span>
+:::
+
+:::{.govuk-grid-column-three-quarters .tbl-display}
+```{r penguin-table, echo=FALSE}
+govukhugo::govuk_datatable(
+  penguins_sd,
+  col_names = c("Species", "Island", "Bill length (mm)", "Bill depth (mm)",
+                "Flipper length (mm)", "Body mass (g)", "Sex", "Year"),
+  page_length = 10,
+  search = FALSE
+)
+```
+:::
+
+::::
