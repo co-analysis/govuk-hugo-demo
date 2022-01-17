@@ -27,6 +27,53 @@ An in-page table of contents, suitable for long-form articles can be included by
 </nav>
 </aside>
 
+## Paragraph styling
+
+You can use the lead and small [paragraph typography](https://design-system.service.gov.uk/styles/typography/#paragraphs) through the `<</* lead */>>` and `<</* small */>>` shortcodes. These shortcodes do not take arguments, simply use an opening and then closing shortcode to apply the styling.
+
+```txt
+{{</* lead */>}}A lead paragraph{{</* /lead */>}}
+```
+
+{{< lead >}}A lead paragraph{{< /lead >}}
+
+```txt
+{{</* small */>}}A lead paragraph{{</* /small */>}}
+```
+
+{{< small >}}A small paragraph{{< /small >}}
+
+## Section breaks
+
+By default `govukhugo` renders section breaks into invisible breaks using the GOV.UK design system's large section break. The `break` shortcode allows you to set custom sizes (`xl`, `l` or `m`), you can make a break visible by setting that argument to `true`.
+
+```txt
+A section followed by an invisible `xl` break.
+{{</* break type="xl" */>}}
+A section followed by a visible `xl` break.
+{{</* break type="xl" visible=true */>}}
+A section followed by a visible `l` break.
+{{</* break type="l" visible=true */>}}
+A section followed by a visible `m` break.
+{{</* break type="m" visible=true */>}}
+```
+
+A section followed by an invisible `xl` break.
+
+{{< break type="xl" >}}
+
+A section followed a visible `xl` break.
+
+{{< break type="xl" visible=true >}}
+
+A section followed a visible `l` break.
+
+{{< break type="l" visible=true >}}
+
+A section followed a visible `m` break.
+
+{{< break type="m" visible=true >}}
+
 ## Details
 You can add the [details](https://design-system.service.gov.uk/components/details/) component using the `{{</* details */>}}` shortcode. In the opening shortcode you specify the summary text, while between that and a closing `{{</* /details */>}}` shortcode you include the content that you wish to be revealed when the user chooses to expand the details section.
 
@@ -50,6 +97,40 @@ You can add the [warning text](https://design-system.service.gov.uk/components/w
 
 {{< warning "This is experimental and still under development" >}}
 
+## Links as buttons
+
+You can add the [button](https://design-system.service.gov.uk/components/button/) component to style links as buttons using the `{{</* link_button */>}}` shortcode. You must name the arguments `link` (the link to visit) and `text` (the text for the button). These links will always open in a new tab/window.
+
+```txt
+{{</* link_button link="https://www.gov.uk" text="Go to GOV.UK" */>}}
+```
+
+<p>
+{{< link_button link="https://www.gov.uk" text="Go to GOV.UK" >}}
+</p>
+
+Optionally you can add a `type` argument to set the button as one of the alternative styles (a secondary button or a warning button).
+
+```txt
+{{</* link_button link="https://www.gov.uk" text="Go to GOV.UK" type="secondary" */>}}
+{{</* link_button link="https://www.gov.uk" text="Go to GOV.UK" type="warning" */>}}
+```
+
+<p>
+{{< link_button link="https://www.gov.uk" text="Go to GOV.UK" type="secondary">}}
+{{< link_button link="https://www.gov.uk" text="Go to GOV.UK" type="warning">}}
+</p>
+
+## File download links
+
+You can add a [file download](https://govspeak-preview.herokuapp.com/guide#download-links) component to style links as downloads using the `{{</* download_file */>}}` shortcode. As with button links must name the arguments `link` (the link to visit) and `text` (the text for the button), you must also specify the file `type` (e.g. "PDF", "ODS", "CSV") and the file `size` (e.g. "42KB", "1.4MB").
+
+```txt
+{{</* download_file link="my_file.ods" text="Download the spreadsheet" 
+     type="ODS" size="1.4MB" */>}}
+```
+
+{{< download_file link="" text="Download the spreadsheet" type="ODS" size="1.4MB" >}}
 
 ## Notification banners
 You can add the neutral [notification banner](https://design-system.service.gov.uk/components/notification-banner/) component using the `{{</* notification */}}` shortcode. In the opening shortcode specify the banner heading, while between that and a closing `{{</* /notification */>}}` banner you include the content of the notification message.
