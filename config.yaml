@@ -3,7 +3,7 @@ languageCode: en-gb
 title: govuk-hugo Demonstration
 theme: govukhugo
 publishDir: docs
-canonifyurls: false
+canonifyurls: true
 
 pygmentsUseClasses: true
 
