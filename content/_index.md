@@ -7,7 +7,7 @@ listpages: false
 
 This site demonstrates how the `govuk-hugo` theme works.
 
-`govuk-hugo` is a theme for the [Hugo](https://gohugo.io/) static site builder.
+`govuk-hugo` is a theme for the [Hugo](https://gohugo.io/) static site builder that provides a version of the [GOV.UK Design System](https://design-system.service.gov.uk/) for Hugo. Presently it is only designed for dashboard style content, and heavily inspired by Public Health England’s Coronavirus dashboard. While technology agnostic, it has also been developed with a view to supporting the development of data-based sites using [R and R Markdown]({{< ref "/section/rmarkdown.html" >}}).
 
 ## Getting started
 
@@ -84,7 +84,7 @@ markup:
 
 params:
   govuk: false
-  logotext: AAA
+  logo: none
   product: Your site
   phase: alpha
   feedbackurl: https://your.site/feedback
@@ -96,9 +96,7 @@ If deploying to GitHub Pages you must set `publishDir: docs` and `canonifyurls: 
 
 Set `unsafe: true` if you want to be able to use raw HTML in in markdown documents.
 
-Unless you are deploying to a .gov.uk subdomain you should set `govuk: false` - this ensures you do not use GOV.UK's New Transport font, nor use the GOV.UK crown in the header and as the favicon, these are only permitted for use on .gov.uk subdomains.
-
-You should provide a service acronym using `logotext: AAA` - this should be capitalised. If deploying to a .gov.uk domain you should set this as `logotext: GOV.UK`.
+Unless you are deploying to a .gov.uk subdomain you should set `govuk: false` - this ensures you do not use GOV.UK's New Transport font, nor use the GOV.UK crown in the header and as the favicon, these are only permitted for use on .gov.uk subdomains. Setting `govuk: true` will activate the use of the New Transport font, it should also be coupled with the setting `logo: crown` to include the GOV.UK crown to the site header.
 
 You can provide a product name using `product: Product Name` which will provide the product name in the header. If a product name is not provided the `title` specified at the top of the `config.yaml` file will be used.
 

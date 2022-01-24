@@ -26,9 +26,8 @@ markup:
 
 
 params:
-  govuk: false
-  logotext: GHD
-  product: Demonstration and Documentation of govuk-hugo
+  product: "Demonstration and Documentation of govuk-hugo"
+  logo: none
   phase: alpha
   feedbackurl: https://github.com/co-analysis/govuk-hugo-demo/issues/
   accessibility: accessibility.md
