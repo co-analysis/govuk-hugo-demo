@@ -20,7 +20,7 @@ Compatability issues means this only works with tables (via `govukhgo::govuk_dat
 
 ## Filtering the table
 
-Once enabled we can use `{crosstalk}` to filter the data object, and to link tables and plots. At present only the `filter_select()` filters are supported for use in `govukhugo`.
+Once enabled we can use `{crosstalk}` to filter the data object, and to link tables and plots. At present only the `filter_select()` and `filter_checkbo()` filters are supported for use in `govukhugo`.
 
 ``` {r}
 fs_species <- crosstalk::filter_select(
@@ -38,6 +38,15 @@ fs_island <- crosstalk::filter_select(
   group = ~island,
   multiple = TRUE
 )
+
+fs_sex <- crosstalk::filter_checkbox(
+  id = "filter-sex",
+  label = "Sex",
+  sharedData = penguins_sd,
+  group = ~sex,
+  columns = 1
+)
+
 ```
 
 `{crosstalk}` is designed to work with the [Bootstrap CSS framework](https://getbootstrap.com/) which does not work well with the GOV.UK Design System, therefore the filters should be wrapped inside a call to `govukhugo::unstrap()` to remove the Bootstrap dependencies.
@@ -45,12 +54,13 @@ fs_island <- crosstalk::filter_select(
 ```{r selector-example, eval=FALSE}
 govukhugo::unstrap(fs_species)
 govukhugo::unstrap(fs_island)
+govukhugo::unstrap(fs_sex)
 ```
 
 
 ::::{.govuk-grid-row .data-card}
 
-:::{.govuk-grid-column-one-quarter .filter-controls .govuk-body-s}
+:::{.govuk-grid-column-one-quarter .data-filters .govuk-body-s}
 
 <span class="govuk-heading-s">Filters</span>
 
@@ -60,11 +70,12 @@ govukhugo::unstrap(fs_species)
 
 govukhugo::unstrap(fs_island)
 
+govukhugo::unstrap(fs_sex)
+
 ```
-<span style="display:block;clear:both;"></span>
 :::
 
-:::{.govuk-grid-column-three-quarters .tbl-display}
+:::{.govuk-grid-column-three-quarters .data-display}
 ```{r penguin-table, echo=FALSE}
 govukhugo::govuk_datatable(
   penguins_sd,
