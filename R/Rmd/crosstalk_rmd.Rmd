@@ -48,7 +48,7 @@ govukhugo::unstrap(fs_island)
 ```
 
 
-::::{.govuk-grid-row .data-row}
+::::{.govuk-grid-row .data-card}
 
 :::{.govuk-grid-column-one-quarter .filter-controls .govuk-body-s}
 
@@ -77,3 +77,4 @@ govukhugo::govuk_datatable(
 :::
 
 ::::
+
