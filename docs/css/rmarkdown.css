@@ -64,7 +64,7 @@
 }
 
 .dt-buttons button.buttons-copy {
-  background-image: url("../assets/images/content_copy_grey_18dp.svg");
+  background-image: url("../assets/images/content_copy_blue_18dp.svg");
   background-repeat: no-repeat;
   background-size: 20px 20px;
   background-position: 5px 5px;
@@ -73,7 +73,7 @@
 }
 
 .dt-buttons button.buttons-csv {
-  background-image: url("../assets/images/file_download_grey_18dp.svg");
+  background-image: url("../assets/images/file_download_blue_18dp.svg");
   background-repeat: no-repeat;
   background-size: 20px 20px;
   background-position: 5px 5px;
@@ -113,13 +113,42 @@
   color: var(--govuk-secondary-text-colour) !important;
 }
 
+.govuk_dt_nav .dt-buttons:only-child {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.dt-button-info {
+  border: 5px solid var(--govuk-colour-black) !important;
+  background-color: var(--govuk-colour-black) !important;
+  box-shadow: 0px 0px 0px 5px var(--govuk-colour-yellow) !important;
+  border-radius: 0px !important;
+}
+
+.dt-button-info h2 {
+  color: #fff;
+  background-color: unset !important;
+  border: none !important;
+  font-weight: bold !important;
+  font-size: 1rem;
+  text-align: left;
+  padding: 10px 15px !important;
+}
+
+.dt-button-info > div {
+  background-color: #fff !important;
+  text-align: left;
+  padding: 15px !important;
+}
+
+
 /*  ===========================
     data-card section styling
     =========================== */
 
 .data-card {
   background-color: var(--govuk-colour-light-grey);
-  padding: 10px 0px;
+  padding: 15px 0px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -130,6 +159,11 @@
 
 .data-display {
   border-left: 2px solid var(--govuk-border-colour);
+}
+
+.data-card.govuk-grid-column-full,
+.data-card .govuk-grid-column-full {
+  padding: 0px 15px;
 }
 
 /*  ===========================
@@ -279,4 +313,10 @@
   transform: rotate(-45deg);
   border-left: 3px solid var(--govuk-colour-black);
   border-bottom: 3px solid var(--govuk-colour-black);
+}
+
+#clear-filters {
+  color: var(--govuk-link-colour);
+  font-weight: bold;
+  cursor: pointer;
 }

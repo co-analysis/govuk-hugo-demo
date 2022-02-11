@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en" class="govuk-template "><head>
+  <meta charset="utf-8">
+  
+  
+  <title>govuk-hugo Demonstration | Hugo-ify R Markdown documents</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0c0c">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  
+
+  
+
+  
+  <link href="https://co-analysis.github.io/govuk-hugo-demo/css/govuk-frontend-4.0.0.min.css" rel="stylesheet">
+  
+
+  
+
+  <link href="https://co-analysis.github.io/govuk-hugo-demo/css/dashboard-layout.css" rel="stylesheet">
+
+  
+  <link href="https://co-analysis.github.io/govuk-hugo-demo/css/font-override.css" rel="stylesheet">
+  
+
+  
+  <link href="https://co-analysis.github.io/govuk-hugo-demo/css/syntax.css" rel="stylesheet">
+
+  
+
+  <meta property="og:image" content="https://co-analysis.github.io/govuk-hugo-demo/assets/images/govuk-opengraph-image.png">
+
+</head><body class="govuk-template__body js-enabled"><script>
+    document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
+
+</script>
+
+<a href="#main-content" class="govuk-skip-link">Skip to main content</a>
+
+<header class="govuk-header " role="banner" data-module="govuk-header">
+    <div class="govuk-header__container govuk-width-container">
+
+        <div class="govuk-header__logo">
+            <a href="https://co-analysis.github.io/govuk-hugo-demo/" class="govuk-header__link govuk-header__link--homepage">
+
+                
+
+                
+                <span class="govuk-header__product-name">Demonstration and Documentation of govuk-hugo</span>
+                
+
+            </a>
+        </div>
+
+    </div>
+</header>
+
+
+<div class="govuk-width-container">
+    <div class="govuk-phase-banner">
+        <p class="govuk-phase-banner__content">
+            <strong class="govuk-tag govuk-phase-banner__content__tag">
+                alpha
+            </strong>
+            <span class="govuk-phase-banner__text">
+                This is a new service – your <a class="govuk-link" href="https://github.com/co-analysis/govuk-hugo-demo/issues/">feedback</a>
+                will
+                help us to improve it.
+            </span>
+        </p>
+    </div>
+</div>
+<div class="govuk-width-container ">
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="dashboard-container">
+
+                <div class="dashboard-nav">
+<nav class="sidebar-nav">
+
+        
+        
+
+        
+
+        <ul class="govuk-list">
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-section nav-active-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/docs/">Documentation</a>
+                </li>
+                
+                
+
+                
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/features/">Features</a></li>
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/pages/">Pages</a></li>
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/shortcodes/">Shortcodes</a></li>
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/render_svg/">Accessible charts</a></li>
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-item nav-active-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state "
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/rmarkdown/">Hugo-ify R Markdown documents</a></li>
+                
+
+                
+
+                
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/tests/">Examples</a>
+                </li>
+                
+                
+
+                
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                
+
+                
+
+        </ul>
+
+        
+
+        <ul class="govuk-list nav-extra">
+
+                
+                <li class="nav-item nav-about"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/about/">About page</a></li>
+                
+
+                </a>
+
+        </ul>
+        
+
+</nav></div>
+                <div class="dashboard-content">
+<h1 class="govuk-heading-xl">Hugo-ify R Markdown documents</h1>
+
+<div class="govuk-body">
+
+    <p><a href="https://gohugo.io">Hugo</a> is a static site builder that is fast and lightweight, it is the preferred engine for building <a href="https://cran.r-project.org/package=blogdown"><code>{blogdown}</code></a> sites.</p>
+<p><a href="https://github.com/co-analysis/govuk-hugo"><code>govuk-hugo</code></a> is a theme for Hugo that applies the <a href="https://design-system.service.gov.uk/">GOV.UK Design System</a>. The theme is designed with dashboard-/book-style output common for publishing data products, and has been strongly influenced by the application of the Design System&rsquo;s principle and components in Public Health England&rsquo;s <a href="https://coronavirus.data.gov.uk/">Coronavirus dashboard</a>.</p>
+<p><code>{govukhugo}</code> is an R package that enables the use of R Markdown documents in Hugo static sites using the <code>govuk-hugo</code> theme, it provides an easy way for R users to initialise a Hugo site using the <code>govuk-hugo</code> theme. The <code>govuk-hugo</code> theme is not compatible with <code>{blogdown}</code>, therefore the package also provides a means to render and build Rmarkdown documents.</p>
+<p>Examples of how <code>{govukhugo}</code> converts a <a href="https://co-analysis.github.io/govuk-hugo-demo/tests/static_rmd/">static R Markdown page</a> and an <a href="https://co-analysis.github.io/govuk-hugo-demo/tests/interactive_rmd/">interactive R Markdown page</a> are provided in the tests section of this documentation.</p>
+<aside id="page_toc" class="govuk-body toc govuk-body-s">
+  <span class="toc-header">Contents</span>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#installing-and-using-govukhugo">Installing and using {govukhugo}</a></li>
+    <li><a href="#converting-rmarkdown-documents">Converting RMarkdown documents</a>
+      <ul>
+        <li><a href="#under-the-hood-the-hugo-ification-process">Under the hood: the &ldquo;Hugo-ification&rdquo; process</a></li>
+      </ul>
+    </li>
+    <li><a href="#supporting-htmlwidgets">Supporting htmlwidgets</a>
+      <ul>
+        <li><a href="#govuk_datatable">govuk_datatable()</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</aside>
+<h2 id="installing-and-using-govukhugo">Installing and using {govukhugo}</h2>
+<p>The <code>{govukhugo}</code> package is not currently on CRAN, you can install it from GitHub:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">remotes</span><span class="o">::</span><span class="nf">install_github</span><span class="p">(</span><span class="s">&#34;co-analysis/govuk-hugo-r&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Within RStudio you can use <code>init_govuk_hugo()</code> to create a Hugo site with the <code>govuk-hugo</code> theme. Otherwise follow the general <a href="https://co-analysis.github.io/govuk-hugo-demo/">getting started info</a>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">library</span><span class="p">(</span><span class="n">govukhugo</span><span class="p">)</span>
+<span class="nf">init_govuk_hugo</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The package includes an R Markdown template that provides an outline skeleton which you can access from the R Markdown menu in R Studio.</p>
+<p>It is recommended that you save R Markdown documents in the <code>R/Rmd</code> folder of your project. In the R Markdown YAML header you should specify the <code>section</code> (i.e. sub-folder of the <code>content</code> directory) where you want the Rmd file to be placed after it has been converted.</p>
+<p>Once you have written and saved your R Markdown document(s), you can then build your Hugo site by calling <code>build_hugo_site()</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">build_hugo_site</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>By default <code>build_hugo()</code> will look for and process Rmd files in the <code>R/Rmd</code> folder, you can specify a different folder by the altering the <code>rmd_folder</code> argument, setting <code>with_rmd</code> to false skips the building of Rmd files.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># specify a different folder</span>
+<span class="nf">build_hugo</span><span class="p">(</span><span class="n">rmd_folder</span> <span class="o">=</span> <span class="s">&#34;code/Rmarkdown&#34;</span><span class="p">)</span>
+
+<span class="c1"># skip Rmd processing</span>
+<span class="nf">build_hugo</span><span class="p">(</span><span class="n">with_rmd</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>In more advanced site building you might not want to build the Hugo site, just convert your R Markdown files. You can do this by calling <code>build_hugo_rmd()</code>. As with <code>build_hugo()</code> the default assumption is that R Markdown is stored in the <code>R/Rmd</code> folder.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">build_hugo_rmd</span><span class="p">()</span>
+
+<span class="c1"># specify a different folder</span>
+<span class="nf">build_hugo_rmd</span><span class="p">(</span><span class="n">rmd_folder</span> <span class="o">=</span> <span class="s">&#34;code/Rmarkdown&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>You can render a single R Markdown file by calling <code>render_rmd()</code>. This will use the <code>section</code> as defined in the YAML header, however for testing purposes you may want to output file somewhere else, which you can do by specifying a different folder using the <code>out_dir</code> argument.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">render_rmd</span><span class="p">(</span><span class="s">&#34;R/Rmd/my_file.Rmd&#34;</span><span class="p">)</span>
+
+<span class="nf">render_rmd</span><span class="p">(</span><span class="s">&#34;R/Rmd/my_file.Rmd&#34;</span><span class="p">,</span> <span class="n">out_dir</span> <span class="o">=</span> <span class="s">&#34;R/test_output&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Interactive elements from the <a href="https://rstudio.github.io/DT/"><code>{DT}</code></a>, <a href="https://plot.ly/r/"><code>{plotly}</code></a> and  <a href="https://rstudio.github.io/leaflet/"><code>{leaflet}</code></a> packages are supported (see below).</p>
+<h2 id="converting-rmarkdown-documents">Converting RMarkdown documents</h2>
+<p>While Hugo is intended for converting plain markdown (<code>.md</code>) files, <code>{blogdown}</code> websites rely on the fact that Hugo also processes HTML files (given certain parameters). However, as outlined in the <a href="https://bookdown.org/yihui/blogdown/other-themes.html"><code>{blogdown}</code> documentation</a>, Hugo themes are not always compatible and &ldquo;it can be time-consuming&rdquo; to adapt them.</p>
+<p>This is the case for <code>govuk-hugo</code>. Trying to solve this problem, from investigating the inner workings of <code>{blogdown}</code> one learns that its <code>html_page()</code> format is a wrapper around the <code>bookdown::html_document2()</code> format, which itself is a wrapper around <code>rmarkdown::html_document()</code>.</p>
+<p>Rather than invest time in making the <code>govuk-hugo</code> theme work with <code>{blogdown}</code> the <code>{govukhugo}</code> package goes back to first principles to create HTML that Hugo will process.</p>
+<p>For end users the <code>build_hugo()</code> and <code>build_hugo_rmd()</code> functions are all that are required.</p>
+<h3 id="under-the-hood-the-hugo-ification-process">Under the hood: the &ldquo;Hugo-ification&rdquo; process</h3>
+<p>The site building functions call <code>render_rmd()</code> which processes an Rmd file and converts it to an HTML file that Hugo will process. The Rmd is minimally rendered into HTML by <code>rmarkdown::html_document()</code>: without a theme, without MathJax, data frames are printed via <code>knitr::kable()</code> and as a self-contained document. A self-contained document is chosen so that static plots are stored as base64 content within the file rather than having to deal with separate images.</p>
+<p>Having rendered the HTML file, it is then passed to a back-end function (<code>hugo_html()</code>), which &ldquo;Hugo-ifies&rdquo; the HTML. It replaces the HTML entities <code>&amp;lt;</code> and <code>&amp;gt;</code> with <code>&lt;</code> and <code>&gt;</code> so that code fragments will be processed by Hugo properly. It replaces the HTML tags for code blocks <code>&lt;pre&gt;&lt;code&gt;</code> with Hugo&rsquo;s shortcode for code block syntax highlighting. Finally, it extracts the HTML content between the <code>&lt;body&gt;</code> tags, excluding the lines where the title and date have been written by <code>html_document()</code>.</p>
+<p>The Hugo-ified HTML is then returned to <code>render_rmd()</code> which finishes the process by prepending the YAML front-matter of the Rmd file to the HTML. A <code>rmarkdown: true</code> parameter is also added to the YAML. Finally, the YAML is scanned for the <code>section</code> parameter, if present this is used to determine the sub-folder of the site&rsquo;s <code>content</code> directory that the HTML will be placed in.</p>
+<h2 id="supporting-htmlwidgets">Supporting htmlwidgets</h2>
+<p>R Markdown documents that do not include interactive content, e.g. that print a data frame or include a plot image, will now be converted when Hugo builds the site. However, a common reason for writing R Markdown documents is to include interactive components. When rendering an R Markdown document that include an <a href="http://www.htmlwidgets.org/"><code>{htmlwidgets}</code></a> component the rendering process will insert the relevant dependencies into the <code>&lt;head&gt;</code> component of the resulting HTML document.</p>
+<p>As just described, the &ldquo;Hugo-ified&rdquo; HTML process of <code>{govukhugo}</code> removes the head component, thus removing these dependencies. This is rectified by the setting of the <code>rmarkdown: true</code> parameter in the YAML front matter of the HTML page. When Hugo processes the HTML it reads this parameter in adds back in the dependencies to the head component of the relevant page. At present it adds in the dependencies for the <a href="https://rstudio.github.io/DT/"><code>{DT}</code></a>, <a href="https://plot.ly/r/"><code>{plotly}</code></a> and  <a href="https://rstudio.github.io/leaflet/"><code>{leaflet}</code></a>.</p>
+<p>The <a href="https://rstudio.github.io/crosstalk/"><code>{crosstalk}</code></a> package&rsquo;s filtering controls that allow dynamic filtering of the data used by these three widgets are also supported. However, users should wrap any calls to these controls in the package&rsquo;s <code>unstrap()</code> function which removes the dependencies associated with the Bootstrap framework, if you do not remove these the page may render incorrectly. Note that these controls make use of the selectize.js library and may not work properly for users of assistive technologies.</p>
+<h3 id="govuk_datatable">govuk_datatable()</h3>
+<p>The <code>{DT}</code> package provides an opinionated implementation of the <a href="https://datatables.net/">DataTables jQuery plugin</a>, which does not easily conform to the GOV.UK Design System. As a result <code>{govukhugo}</code> includes a <code>govuk_datatable()</code> function that acts as a wrapper around <code>DT::datatable()</code>. Note that <code>govuk_datatable()</code> only provides access to some aspects of the <code>datatable()</code> arguments, and does not support passing of additional arguments via a <code>...</code> argument, this is to minimise the potential for disrupting the application of GOV.UK style.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">govuk_datatable</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">data</span><span class="p">,</span>
+                            <span class="n">element_id</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">,</span>
+                            <span class="n">col_names</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">,</span>
+                            <span class="n">page_length</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span>
+                            <span class="n">search</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span>
+                            <span class="n">small_text</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span>
+                            <span class="n">buttons</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span>
+                            <span class="n">col_defs</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>govuk_datatable()</code> requires only a <code>data</code> argument, this should be either a data frame or a matrix, it provides the following optional arguments:</p>
+<ul>
+<li><code>element_id</code>: an id for the HTML chunk</li>
+<li><code>col_names</code>: a vector of column names, if not supplied the column names of the data object will be used</li>
+<li><code>page_length</code>: the number of rows to show in the table, note that end-users cannot change this setting</li>
+<li><code>search</code>: whether to include the table search functionality</li>
+<li><code>small_text</code>: whether the table should render with a smaller font-size (only recommended for very large tables)</li>
+<li><code>buttons</code>: whether to include a copy and csv download button with the table</li>
+<li><code>col_defs</code>: a list of column definitions (see the <a href="https://rstudio.github.io/DT/options.html"><code>{DT}</code></a> and <a href="https://datatables.net/reference/option/columnDefs">DataTables</a> documentation for more details)</li>
+</ul>
+<p><code>govuk_datatable()</code> returns a <code>DT::datatable</code> object, meaning that <code>{DT}</code> formatting <a href="https://rstudio.github.io/DT/functions.html">functions</a>, such as <code>DT::formatPercentage()</code>, should work on the returned object. Styling functions should be used with caution.</p>
+<p>An example of <code>govuk_datatable()</code> can be seen on the interactive R Markdown <a href="https://co-analysis.github.io/govuk-hugo-demo/tests/interactive_rmd/">test page</a></p>
+
+
+</div>
+
+
+
+                </div>
+
+            </div>
+        </main>
+    </div><footer class="govuk-footer " role="contentinfo">
+    <div class="govuk-width-container ">
+        <div class="govuk-footer__meta">
+            <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+                <h2 class="govuk-visually-hidden">Support links</h2>
+                <ul class="govuk-footer__inline-list">
+
+                    
+
+                    
+                    
+                    <li class="govuk-footer__inline-list-item">
+                        <a class="govuk-footer__link" href="https://co-analysis.github.io/govuk-hugo-demo/accessibility/">
+                            Accessibility
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="govuk-footer__inline-list-item">
+                        <a class="govuk-footer__link" href="https://co-analysis.github.io/govuk-hugo-demo/cookies/">
+                            Cookies
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="govuk-footer__inline-list-item">
+                        Built by <a class="govuk-footer__link" href="https://www.github.com/co-analysis">
+                            Cabinet Office Analysis &amp; Insight
+                        </a>
+                    </li>
+                    
+
+                </ul>
+
+                <svg aria-hidden="true" focusable="false" class="govuk-footer__licence-logo"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 483.2 195.7" height="17" width="41">
+                    <path fill="currentColor"
+                        d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145" />
+                </svg>
+                <span class="govuk-footer__licence-description">
+                    All content is available under the
+                    <a class="govuk-footer__link"
+                        href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+                        rel="license">Open Government Licence v3.0</a>, except where otherwise stated
+                </span>
+            </div>
+            <div class="govuk-footer__meta-item">
+                <a style="background-image:url(https://co-analysis.github.io/govuk-hugo-demo/assets/images/govuk-crest.png);"
+                    class="govuk-footer__link govuk-footer__copyright-logo"
+                    href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">©
+                    Crown copyright </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+
+    function applyGOVUK(tag, govuk_class) {
+        var elements = document.querySelector("div.dashboard-content").getElementsByTagName(tag)
+
+        var i;
+        for (i = 0; i < elements.length; i++) {
+            if (elements[i].classList.contains("lntable") || elements[i].classList.contains("lntd")) {
+                null;
+            } else if (tag == "P" && (elements[i].classList.contains("govuk-body-l") || elements[i].classList.contains("govuk-body-s"))) {
+                null;
+            } else if (tag == "HR" && (elements[i].classList.contains("govuk-section-break"))) {
+                null;
+            } else {
+                elements[i].classList.add(govuk_class);
+            }
+
+        };
+
+    };
+
+     
+    applyGOVUK("P", "govuk-body");
+
+     
+    applyGOVUK("H1", "govuk-heading-xl");
+    applyGOVUK("H2", "govuk-heading-l");
+    applyGOVUK("H3", "govuk-heading-m");
+    applyGOVUK("H4", "govuk-heading-s");
+
+     
+    applyGOVUK("TABLE", "govuk-table");
+    applyGOVUK("CAPTION", "govuk-table__caption");
+    applyGOVUK("CAPTION", "govuk-table__caption--m");
+    applyGOVUK("TR", "govuk-table__row");
+    applyGOVUK("TD", "govuk-table__cell");
+    applyGOVUK("THEAD", "govuk-table__head");
+    applyGOVUK("TH", "govuk-table__header");
+
+     
+    applyGOVUK("BLOCKQUOTE", "govuk-inset-text");
+    applyGOVUK("STRONG", "govuk-!-font-weight-bold");
+    applyGOVUK("B", "govuk-!-font-weight-bold");
+
+     
+    applyGOVUK("UL", "govuk-list");
+    applyGOVUK("UL", "govuk-list--bullet");
+    applyGOVUK("OL", "govuk-list");
+    applyGOVUK("OL", "govuk-list--number");
+
+     
+    applyGOVUK("HR", "govuk-section-break--l");
+    applyGOVUK("HR", "govuk-section-break");
+
+     
+    function styleCodeBlocks() {
+        var code_elements = document.querySelectorAll("div.highlight")
+        var i;
+
+        for (i = 0; i < code_elements.length; i++) {
+            code_elements[i].classList.add("govuk-body");
+        };
+    };
+    styleCodeBlocks();
+
+     
+    function restyleTOC() {
+
+        var toc_elements = document.querySelectorAll("#page_toc #TableOfContents ul")
+
+        var i;
+
+        for (i = 0; i < toc_elements.length; i++) {
+            toc_elements[i].classList.remove("govuk-list");
+            toc_elements[i].classList.remove("govuk-list--bullet");
+            toc_elements[i].classList.add("toc-list");
+
+        };
+
+        var toc_links = document.querySelectorAll("#page_toc #TableOfContents a")
+
+        for (i = 0; i < toc_links.length; i++) {
+            toc_links[i].classList.add("toc-link");
+        };
+
+    };
+    restyleTOC();
+
+    
+
+</script></body>
+
+</html>

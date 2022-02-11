@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Documentation on govuk-hugo Demonstration</title>
+    <link>https://co-analysis.github.io/govuk-hugo-demo/docs/</link>
+    <description>Recent content in Documentation on govuk-hugo Demonstration</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Fri, 22 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://co-analysis.github.io/govuk-hugo-demo/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pages</title>
+      <link>https://co-analysis.github.io/govuk-hugo-demo/docs/pages/</link>
+      <pubDate>Fri, 22 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://co-analysis.github.io/govuk-hugo-demo/docs/pages/</guid>
+      <description>How to create pages using govuk-hugo</description>
+    </item>
+    
+    <item>
+      <title>Features</title>
+      <link>https://co-analysis.github.io/govuk-hugo-demo/docs/features/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://co-analysis.github.io/govuk-hugo-demo/docs/features/</guid>
+      <description>Features of govuk-hugo</description>
+    </item>
+    
+    <item>
+      <title>Shortcodes</title>
+      <link>https://co-analysis.github.io/govuk-hugo-demo/docs/shortcodes/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://co-analysis.github.io/govuk-hugo-demo/docs/shortcodes/</guid>
+      <description>Custom shortcodes</description>
+    </item>
+    
+    <item>
+      <title>Accessible charts</title>
+      <link>https://co-analysis.github.io/govuk-hugo-demo/docs/render_svg/</link>
+      <pubDate>Fri, 30 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://co-analysis.github.io/govuk-hugo-demo/docs/render_svg/</guid>
+      <description>Rendering charts as accessible SVG objects</description>
+    </item>
+    
+    <item>
+      <title>Hugo-ify R Markdown documents</title>
+      <link>https://co-analysis.github.io/govuk-hugo-demo/docs/rmarkdown/</link>
+      <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://co-analysis.github.io/govuk-hugo-demo/docs/rmarkdown/</guid>
+      <description>Using the {govukhugo} package to render and build sites with R Markdown documents</description>
+    </item>
+    
+  </channel>
+</rss>

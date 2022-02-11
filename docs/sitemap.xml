@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://co-analysis.github.io/govuk-hugo-demo/section/pages/</loc>
+    <loc>https://co-analysis.github.io/govuk-hugo-demo/docs/pages/</loc>
     <lastmod>2021-01-22T00:00:00+00:00</lastmod>
   </url>
   
@@ -13,12 +13,12 @@
   </url>
   
   <url>
-    <loc>https://co-analysis.github.io/govuk-hugo-demo/section/features/</loc>
+    <loc>https://co-analysis.github.io/govuk-hugo-demo/docs/features/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://co-analysis.github.io/govuk-hugo-demo/section/shortcodes/</loc>
+    <loc>https://co-analysis.github.io/govuk-hugo-demo/docs/shortcodes/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -38,12 +38,12 @@
   </url>
   
   <url>
-    <loc>https://co-analysis.github.io/govuk-hugo-demo/section/render_svg/</loc>
+    <loc>https://co-analysis.github.io/govuk-hugo-demo/docs/render_svg/</loc>
     <lastmod>2021-07-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://co-analysis.github.io/govuk-hugo-demo/section/rmarkdown/</loc>
+    <loc>https://co-analysis.github.io/govuk-hugo-demo/docs/rmarkdown/</loc>
     <lastmod>2021-01-28T00:00:00+00:00</lastmod>
   </url>
   
@@ -68,7 +68,7 @@
   </url>
   
   <url>
-    <loc>https://co-analysis.github.io/govuk-hugo-demo/section/</loc>
+    <loc>https://co-analysis.github.io/govuk-hugo-demo/docs/</loc>
     <lastmod>2021-01-22T00:00:00+00:00</lastmod>
   </url>
   

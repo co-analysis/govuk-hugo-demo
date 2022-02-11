@@ -123,46 +123,13 @@
                 
 
                 
-                <li class="nav-section "><a class="govuk-!-font-size-14" href="https://co-analysis.github.io/govuk-hugo-demo/section/">Section</a>
+
+                
+
+                
+                <li class="nav-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/docs/">Documentation</a>
                 </li>
                 
-
-                
-                
-
-                
-                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/section/features/">Features</a></li>
-                
-
-                
-
-                
-                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/section/pages/">Pages</a></li>
-                
-
-                
-
-                
-                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/section/shortcodes/">Shortcodes</a></li>
-                
-
-                
-                
-                
-
-                
-                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/section/render_svg/">Accessible charts</a></li>
-                
-
-                
-
-                
-                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/section/rmarkdown/">Hugo-ify R Markdown documents</a></li>
                 
 
                 
@@ -171,11 +138,41 @@
                 
 
                 
-                <li class="nav-section "><a class="govuk-!-font-size-14" href="https://co-analysis.github.io/govuk-hugo-demo/tests/">Tests</a>
+
+                
+
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-section nav-active-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/tests/">Examples</a>
                 </li>
                 
+                
 
                 
+                
+
                 
 
                 
@@ -184,7 +181,11 @@
                 
 
                 
+
                 
+                
+                
+
                 
 
                 
@@ -194,7 +195,11 @@
                 
 
                 
+
                 
+                
+                
+
                 
 
                 
@@ -203,12 +208,18 @@
                 
 
                 
+
                 
+                
+                
+
                 
 
                 
                 <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
                                 href="https://co-analysis.github.io/govuk-hugo-demo/tests/crosstalk_rmd/">Filtering with crosstalk</a></li>
+                
+
                 
 
                 
@@ -218,8 +229,6 @@
 
         </ul>
 
-        
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
         
 
         <ul class="govuk-list nav-extra">
@@ -247,7 +256,7 @@
 
 
 
-<p>This is a test of a static <code>RMarkdown</code> document within the govuk-hugo theme, on 2022-02-10.</p>
+<p>This is a test of a static <code>RMarkdown</code> document within the govuk-hugo theme, on 2022-02-11.</p>
 <div id="printing-a-data-frame" class="section level2">
 <h2>Printing a data frame</h2>
 <div class="highlight"><div class="chroma">
@@ -854,6 +863,8 @@
 
      
     applyGOVUK("TABLE", "govuk-table");
+    applyGOVUK("CAPTION", "govuk-table__caption");
+    applyGOVUK("CAPTION", "govuk-table__caption--m");
     applyGOVUK("TR", "govuk-table__row");
     applyGOVUK("TD", "govuk-table__cell");
     applyGOVUK("THEAD", "govuk-table__head");
@@ -913,6 +924,7 @@
      
     govuk_DT_styling = function () {
         $("table.dataTable").addClass("govuk-table");
+        $("table.dataTable caption").addClass("govuk-table__caption govuk-table__caption--m");
         $("table.dataTable thead").addClass("govuk-table__head");
         $("table.dataTable tbody").addClass("govuk-table__body");
         $("table.dataTable tr").addClass("govuk-table__row");
@@ -931,12 +943,25 @@
         $(".crosstalk-input .control-label").addClass("govuk-label govuk-!-font-size-16");
     };
 
+    reset_filters = function () {
+        $(".selectized").each(function (index, element) {
+            element.selectize && element.selectize.clear()
+        });
+
+        $("input[type='search']").val('')
+
+        $(".datatables table").DataTable().search("")
+
+    };
+
     $(".datatables").on('init.dt', function () {
         $('.dataTables_filter').insertAfter("#fs_org");
         $('.loading').css("display", "none");
     });
 
     $(".datatables").on('draw.dt', function () { govuk_DT_styling(); });
+
+    $("#clear-filters").on('click', function () { reset_filters();});
 
     
 

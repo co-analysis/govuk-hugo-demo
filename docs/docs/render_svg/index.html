@@ -1,11 +1,262 @@
----
-title: Accessible charts
-date: 2021-07-30
-summary: Rendering charts as accessible SVG objects
-weight: 900
-rmarkdown: true
----
+<!DOCTYPE html>
+<html lang="en" class="govuk-template "><head>
+  <meta charset="utf-8">
+  
+  
+  <title>govuk-hugo Demonstration | Accessible charts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0c0c">
 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  
+
+  
+
+  
+  <link href="https://co-analysis.github.io/govuk-hugo-demo/css/govuk-frontend-4.0.0.min.css" rel="stylesheet">
+  
+
+  
+
+  <link href="https://co-analysis.github.io/govuk-hugo-demo/css/dashboard-layout.css" rel="stylesheet">
+
+  
+  <link href="https://co-analysis.github.io/govuk-hugo-demo/css/font-override.css" rel="stylesheet">
+  
+
+  
+  <link href="https://co-analysis.github.io/govuk-hugo-demo/css/syntax.css" rel="stylesheet">
+
+  
+  
+  <script src="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/header-attrs-2.11/header-attrs.js"></script>
+  <script src="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  
+  <script src="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/selectize-0.12.4/js/selectize.min.js"></script>
+  <link href="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+  <script src="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+  <script src="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <link href="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+  <script src="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/datatables-binding-0.20/datatables.js"></script>
+  <link href="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/dt-core-jqueryui-1.11.3/css/dataTables.jqueryui.min.css" rel="stylesheet" />
+  <script src="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/dt-core-jqueryui-1.11.3/js/jquery.dataTables.min.js"></script>
+  <script src="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/dt-core-jqueryui-1.11.3/js/dataTables.jqueryui.min.js"></script>
+  <link href="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/dt-ext-buttons-jqueryui-1.11.3/css/buttons.jqueryui.min.css" rel="stylesheet" />
+  <script src="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/dt-ext-buttons-jqueryui-1.11.3/js/dataTables.buttons.min.js"></script>
+  <script src="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/dt-ext-buttons-jqueryui-1.11.3/js/buttons.html5.min.js"></script>
+  <script src="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/dt-ext-buttons-jqueryui-1.11.3/js/buttons.colVis.min.js"></script>
+  <script src="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/dt-ext-buttons-jqueryui-1.11.3/js/buttons.print.min.js"></script>
+  <script src="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/dt-ext-buttons-jqueryui-1.11.3/js/buttons.jqueryui.min.js"></script>
+  <script src="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/plotly-binding-4.10.0/plotly.js"></script>
+  <script src="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/typedarray-0.1/typedarray.min.js"></script>
+  <link href="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+  <script src="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/plotly-main-2.5.1/plotly-latest.min.js"></script>
+  <link href="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+  <script src="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/leaflet-1.3.1/leaflet.js"></script>
+  <link href="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+  <script src="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/proj4-2.6.2/proj4.min.js"></script>
+  <script src="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+  <link href="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+  <script src="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/leaflet-binding-2.0.4.1/leaflet.js"></script>
+  <script src="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+  <script src="https://co-analysis.github.io/govuk-hugo-demo/assets/rmarkdown/leaflet-providers-plugin-2.0.4.1/leaflet-providers-plugin.js"></script>
+  <link href="https://co-analysis.github.io/govuk-hugo-demo/css/rmarkdown.css" rel="stylesheet" />
+  
+
+  <meta property="og:image" content="https://co-analysis.github.io/govuk-hugo-demo/assets/images/govuk-opengraph-image.png">
+
+</head><body class="govuk-template__body js-enabled"><script>
+    document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
+
+</script>
+
+<a href="#main-content" class="govuk-skip-link">Skip to main content</a>
+
+<header class="govuk-header " role="banner" data-module="govuk-header">
+    <div class="govuk-header__container govuk-width-container">
+
+        <div class="govuk-header__logo">
+            <a href="https://co-analysis.github.io/govuk-hugo-demo/" class="govuk-header__link govuk-header__link--homepage">
+
+                
+
+                
+                <span class="govuk-header__product-name">Demonstration and Documentation of govuk-hugo</span>
+                
+
+            </a>
+        </div>
+
+    </div>
+</header>
+
+
+<div class="govuk-width-container">
+    <div class="govuk-phase-banner">
+        <p class="govuk-phase-banner__content">
+            <strong class="govuk-tag govuk-phase-banner__content__tag">
+                alpha
+            </strong>
+            <span class="govuk-phase-banner__text">
+                This is a new service – your <a class="govuk-link" href="https://github.com/co-analysis/govuk-hugo-demo/issues/">feedback</a>
+                will
+                help us to improve it.
+            </span>
+        </p>
+    </div>
+</div>
+<div class="govuk-width-container ">
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="dashboard-container">
+
+                <div class="dashboard-nav">
+<nav class="sidebar-nav">
+
+        
+        
+
+        
+
+        <ul class="govuk-list">
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-section nav-active-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/docs/">Documentation</a>
+                </li>
+                
+                
+
+                
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/features/">Features</a></li>
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/pages/">Pages</a></li>
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/shortcodes/">Shortcodes</a></li>
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                <li class="nav-item nav-active-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state "
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/render_svg/">Accessible charts</a></li>
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/rmarkdown/">Hugo-ify R Markdown documents</a></li>
+                
+
+                
+
+                
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/tests/">Examples</a>
+                </li>
+                
+                
+
+                
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                
+
+                
+
+        </ul>
+
+        
+
+        <ul class="govuk-list nav-extra">
+
+                
+                <li class="nav-item nav-about"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/about/">About page</a></li>
+                
+
+                </a>
+
+        </ul>
+        
+
+</nav></div>
+                <div class="dashboard-content">
+<h1 class="govuk-heading-xl">Accessible charts</h1>
+
+<div class="govuk-body">
+
+    
 
 
 
@@ -16,9 +267,18 @@ rmarkdown: true
 <div id="introducing-render_svg" class="section level2">
 <h2>Introducing render_svg()</h2>
 <p>To solve this problem the <code>{govukhugo}</code> package includes a <code>render_svg()</code> function that will take a <code>ggplot2::ggplot()</code> object and render it as in-line SVG.</p>
-{{< highlight r >}}govukhugo::render_svg(plot, width, height, units = "px",
-                      alt_title = NULL, alt_desc = NULL, caption = NULL,
-                      dpi = 96){{< /highlight >}}
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">govukhugo</span><span class="o">::</span><span class="nf">render_svg</span><span class="p">(</span><span class="n">plot</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">units</span> <span class="o">=</span> <span class="s">&#34;px&#34;</span><span class="p">,</span>
+                      <span class="n">alt_title</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">,</span> <span class="n">alt_desc</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">,</span> <span class="n">caption</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">,</span>
+                      <span class="n">dpi</span> <span class="o">=</span> <span class="m">96</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
 <p><code>render_svg()</code> requires you supply it with a plot object (from <code>{ggplot2}</code>), and the width and height of the plot (in pixels by default). You can supply other measurements (mm, cm and in), if you do so you should change the dpi argument from 96 to 300.</p>
 <p>There are three optional arguments to provide alt text and captions.</p>
 <p>The <code>alt_title</code> argument is used to produce a tool-tip (similar to how the <code>alt</code> argument for images works), <code>alt_desc</code> allows you to embed a more detailed description in the SVG plot that screen readers can access.</p>
@@ -26,13 +286,26 @@ rmarkdown: true
 <div id="examples" class="section level3">
 <h3>Examples</h3>
 <p>A plot without any alt text or caption (not advised).</p>
-{{< highlight r >}}penguins <- palmerpenguins::penguins
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">penguins</span> <span class="o">&lt;-</span> <span class="n">palmerpenguins</span><span class="o">::</span><span class="n">penguins</span>
 
-p <- ggplot2::ggplot(penguins, 
-                     ggplot2::aes(x = bill_length_mm, y = bill_depth_mm)) +
-  ggplot2::geom_point()
+<span class="n">p</span> <span class="o">&lt;-</span> <span class="n">ggplot2</span><span class="o">::</span><span class="nf">ggplot</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span> 
+                     <span class="n">ggplot2</span><span class="o">::</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">bill_length_mm</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">bill_depth_mm</span><span class="p">))</span> <span class="o">+</span>
+  <span class="n">ggplot2</span><span class="o">::</span><span class="nf">geom_point</span><span class="p">()</span>
 
-govukhugo::render_svg(plot = p, width = 600, height = 400){{< /highlight >}}
+<span class="n">govukhugo</span><span class="o">::</span><span class="nf">render_svg</span><span class="p">(</span><span class="n">plot</span> <span class="o">=</span> <span class="n">p</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="m">600</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="m">400</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
 <figure id="wyeah183186051093279-figure" , class="govuk_chart">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="450.00pt" height="300.00pt" viewBox="0 0 450.00 300.00" role="img">
 <defs>
@@ -437,14 +710,28 @@ govukhugo::render_svg(plot = p, width = 600, height = 400){{< /highlight >}}
 </svg>
 </figure>
 <p>A plot with an <code>alt_title</code>, hover over the plot to see the tool-tip.</p>
-{{< highlight r >}}penguins <- palmerpenguins::penguins
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">penguins</span> <span class="o">&lt;-</span> <span class="n">palmerpenguins</span><span class="o">::</span><span class="n">penguins</span>
 
-p <- ggplot2::ggplot(penguins, 
-                     ggplot2::aes(x = bill_length_mm, y = bill_depth_mm)) +
-  ggplot2::geom_point()
+<span class="n">p</span> <span class="o">&lt;-</span> <span class="n">ggplot2</span><span class="o">::</span><span class="nf">ggplot</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span> 
+                     <span class="n">ggplot2</span><span class="o">::</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">bill_length_mm</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">bill_depth_mm</span><span class="p">))</span> <span class="o">+</span>
+  <span class="n">ggplot2</span><span class="o">::</span><span class="nf">geom_point</span><span class="p">()</span>
 
-govukhugo::render_svg(plot = p, width = 600, height = 400, 
-                      alt_title = "Penguin bill measurements plot"){{< /highlight >}}
+<span class="n">govukhugo</span><span class="o">::</span><span class="nf">render_svg</span><span class="p">(</span><span class="n">plot</span> <span class="o">=</span> <span class="n">p</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="m">600</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="m">400</span><span class="p">,</span> 
+                      <span class="n">alt_title</span> <span class="o">=</span> <span class="s">&#34;Penguin bill measurements plot&#34;</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
 <figure id="qajht914197829786128-figure" , class="govuk_chart">
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="450.00pt" height="300.00pt" viewBox="0 0 450.00 300.00" aria-labelledby="qajht914197829786128-title" role="img">
 <title id="qajht914197829786128-title">Penguin bill measurements plot</title>
@@ -850,15 +1137,30 @@ govukhugo::render_svg(plot = p, width = 600, height = 400,
 </svg>
 </figure>
 <p>A plot with an <code>alt_title</code>, and a custom <code>caption</code>.</p>
-{{< highlight r >}}penguins <- palmerpenguins::penguins
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">penguins</span> <span class="o">&lt;-</span> <span class="n">palmerpenguins</span><span class="o">::</span><span class="n">penguins</span>
 
-p <- ggplot2::ggplot(penguins, 
-                     ggplot2::aes(x = bill_length_mm, y = bill_depth_mm)) +
-  ggplot2::geom_point()
+<span class="n">p</span> <span class="o">&lt;-</span> <span class="n">ggplot2</span><span class="o">::</span><span class="nf">ggplot</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span> 
+                     <span class="n">ggplot2</span><span class="o">::</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">bill_length_mm</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">bill_depth_mm</span><span class="p">))</span> <span class="o">+</span>
+  <span class="n">ggplot2</span><span class="o">::</span><span class="nf">geom_point</span><span class="p">()</span>
 
-govukhugo::render_svg(plot = p, width = 600, height = 400,
-                      alt_title = "Penguin bill measurements plot",
-                      caption = "A scatterplot of penguin bill measurements"){{< /highlight >}}
+<span class="n">govukhugo</span><span class="o">::</span><span class="nf">render_svg</span><span class="p">(</span><span class="n">plot</span> <span class="o">=</span> <span class="n">p</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="m">600</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="m">400</span><span class="p">,</span>
+                      <span class="n">alt_title</span> <span class="o">=</span> <span class="s">&#34;Penguin bill measurements plot&#34;</span><span class="p">,</span>
+                      <span class="n">caption</span> <span class="o">=</span> <span class="s">&#34;A scatterplot of penguin bill measurements&#34;</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
 <figure id="yicxa951873145502680-figure" , class="govuk_chart">
 <figcaption class="govuk-heading-m">A scatterplot of penguin bill measurements</figcaption>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="450.00pt" height="300.00pt" viewBox="0 0 450.00 300.00" aria-labelledby="yicxa951873145502680-title" role="img">
@@ -1265,16 +1567,32 @@ govukhugo::render_svg(plot = p, width = 600, height = 400,
 </svg>
 </figure>
 <p>A plot with an <code>alt_title</code> and <code>alt_desc</code>, using <code>alt_desc</code> for the <code>caption</code>.</p>
-{{< highlight r >}}penguins <- palmerpenguins::penguins
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">penguins</span> <span class="o">&lt;-</span> <span class="n">palmerpenguins</span><span class="o">::</span><span class="n">penguins</span>
 
-p <- ggplot2::ggplot(penguins, 
-                     ggplot2::aes(x = bill_length_mm, y = bill_depth_mm)) +
-  ggplot2::geom_point()
+<span class="n">p</span> <span class="o">&lt;-</span> <span class="n">ggplot2</span><span class="o">::</span><span class="nf">ggplot</span><span class="p">(</span><span class="n">penguins</span><span class="p">,</span> 
+                     <span class="n">ggplot2</span><span class="o">::</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">bill_length_mm</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">bill_depth_mm</span><span class="p">))</span> <span class="o">+</span>
+  <span class="n">ggplot2</span><span class="o">::</span><span class="nf">geom_point</span><span class="p">()</span>
 
-govukhugo::render_svg(plot = p, width = 600, height = 400,
-                      alt_title = "Penguin bill measurements plot",
-                      alt_desc = "A scatterplot of penguin bill length versus depth",
-                      caption = "alt_desc"){{< /highlight >}}
+<span class="n">govukhugo</span><span class="o">::</span><span class="nf">render_svg</span><span class="p">(</span><span class="n">plot</span> <span class="o">=</span> <span class="n">p</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="m">600</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="m">400</span><span class="p">,</span>
+                      <span class="n">alt_title</span> <span class="o">=</span> <span class="s">&#34;Penguin bill measurements plot&#34;</span><span class="p">,</span>
+                      <span class="n">alt_desc</span> <span class="o">=</span> <span class="s">&#34;A scatterplot of penguin bill length versus depth&#34;</span><span class="p">,</span>
+                      <span class="n">caption</span> <span class="o">=</span> <span class="s">&#34;alt_desc&#34;</span><span class="p">)</span></code></pre></td></tr></table>
+</div>
+</div>
 <figure id="drxln143987805089549-figure" , class="govuk_chart">
 <figcaption class="govuk-heading-m">A scatterplot of penguin bill length versus depth</figcaption>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="svglite" width="450.00pt" height="300.00pt" viewBox="0 0 450.00 300.00" aria-labelledby="drxln143987805089549-title drxln143987805089549-description" role="img">
@@ -1690,3 +2008,210 @@ govukhugo::render_svg(plot = p, width = 600, height = 400,
 
 
 
+
+
+</div>
+
+
+
+                </div>
+
+            </div>
+        </main>
+    </div><footer class="govuk-footer " role="contentinfo">
+    <div class="govuk-width-container ">
+        <div class="govuk-footer__meta">
+            <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+
+                <h2 class="govuk-visually-hidden">Support links</h2>
+                <ul class="govuk-footer__inline-list">
+
+                    
+
+                    
+                    
+                    <li class="govuk-footer__inline-list-item">
+                        <a class="govuk-footer__link" href="https://co-analysis.github.io/govuk-hugo-demo/accessibility/">
+                            Accessibility
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    <li class="govuk-footer__inline-list-item">
+                        <a class="govuk-footer__link" href="https://co-analysis.github.io/govuk-hugo-demo/cookies/">
+                            Cookies
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li class="govuk-footer__inline-list-item">
+                        Built by <a class="govuk-footer__link" href="https://www.github.com/co-analysis">
+                            Cabinet Office Analysis &amp; Insight
+                        </a>
+                    </li>
+                    
+
+                </ul>
+
+                <svg aria-hidden="true" focusable="false" class="govuk-footer__licence-logo"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 483.2 195.7" height="17" width="41">
+                    <path fill="currentColor"
+                        d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145" />
+                </svg>
+                <span class="govuk-footer__licence-description">
+                    All content is available under the
+                    <a class="govuk-footer__link"
+                        href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+                        rel="license">Open Government Licence v3.0</a>, except where otherwise stated
+                </span>
+            </div>
+            <div class="govuk-footer__meta-item">
+                <a style="background-image:url(https://co-analysis.github.io/govuk-hugo-demo/assets/images/govuk-crest.png);"
+                    class="govuk-footer__link govuk-footer__copyright-logo"
+                    href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">©
+                    Crown copyright </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+
+    function applyGOVUK(tag, govuk_class) {
+        var elements = document.querySelector("div.dashboard-content").getElementsByTagName(tag)
+
+        var i;
+        for (i = 0; i < elements.length; i++) {
+            if (elements[i].classList.contains("lntable") || elements[i].classList.contains("lntd")) {
+                null;
+            } else if (tag == "P" && (elements[i].classList.contains("govuk-body-l") || elements[i].classList.contains("govuk-body-s"))) {
+                null;
+            } else if (tag == "HR" && (elements[i].classList.contains("govuk-section-break"))) {
+                null;
+            } else {
+                elements[i].classList.add(govuk_class);
+            }
+
+        };
+
+    };
+
+     
+    applyGOVUK("P", "govuk-body");
+
+     
+    applyGOVUK("H1", "govuk-heading-xl");
+    applyGOVUK("H2", "govuk-heading-l");
+    applyGOVUK("H3", "govuk-heading-m");
+    applyGOVUK("H4", "govuk-heading-s");
+
+     
+    applyGOVUK("TABLE", "govuk-table");
+    applyGOVUK("CAPTION", "govuk-table__caption");
+    applyGOVUK("CAPTION", "govuk-table__caption--m");
+    applyGOVUK("TR", "govuk-table__row");
+    applyGOVUK("TD", "govuk-table__cell");
+    applyGOVUK("THEAD", "govuk-table__head");
+    applyGOVUK("TH", "govuk-table__header");
+
+     
+    applyGOVUK("BLOCKQUOTE", "govuk-inset-text");
+    applyGOVUK("STRONG", "govuk-!-font-weight-bold");
+    applyGOVUK("B", "govuk-!-font-weight-bold");
+
+     
+    applyGOVUK("UL", "govuk-list");
+    applyGOVUK("UL", "govuk-list--bullet");
+    applyGOVUK("OL", "govuk-list");
+    applyGOVUK("OL", "govuk-list--number");
+
+     
+    applyGOVUK("HR", "govuk-section-break--l");
+    applyGOVUK("HR", "govuk-section-break");
+
+     
+    function styleCodeBlocks() {
+        var code_elements = document.querySelectorAll("div.highlight")
+        var i;
+
+        for (i = 0; i < code_elements.length; i++) {
+            code_elements[i].classList.add("govuk-body");
+        };
+    };
+    styleCodeBlocks();
+
+     
+    function restyleTOC() {
+
+        var toc_elements = document.querySelectorAll("#page_toc #TableOfContents ul")
+
+        var i;
+
+        for (i = 0; i < toc_elements.length; i++) {
+            toc_elements[i].classList.remove("govuk-list");
+            toc_elements[i].classList.remove("govuk-list--bullet");
+            toc_elements[i].classList.add("toc-list");
+
+        };
+
+        var toc_links = document.querySelectorAll("#page_toc #TableOfContents a")
+
+        for (i = 0; i < toc_links.length; i++) {
+            toc_links[i].classList.add("toc-link");
+        };
+
+    };
+    restyleTOC();
+
+    
+
+     
+    govuk_DT_styling = function () {
+        $("table.dataTable").addClass("govuk-table");
+        $("table.dataTable caption").addClass("govuk-table__caption govuk-table__caption--m");
+        $("table.dataTable thead").addClass("govuk-table__head");
+        $("table.dataTable tbody").addClass("govuk-table__body");
+        $("table.dataTable tr").addClass("govuk-table__row");
+        $("table.dataTable th").addClass("govuk-table__header");
+        $("table.dataTable td").addClass("govuk-table__cell");
+        $(".datatables label").addClass("govuk-label govuk-!-font-size-16");
+        $(".datatables select").addClass("govuk-select govuk-!-font-size-16");
+        $(".datatables input").addClass("govuk-input govuk-!-font-size-16");
+        $(".datatables .dataTables_info").addClass("govuk-!-font-size-14");
+        $(".dataTables_paginate").addClass("govuk-!-font-size-14");
+        $(".datatables a.ui-button.ui-state-disabled").addClass("govuk-tag govuk-!-font-size-14");
+        $(".datatables a.ui-button.previous.ui-state-disabled").css("display", "none");
+        $(".datatables a.ui-button.next.ui-state-disabled").css("display", "none");
+        $(".datatables table").css("border-bottom", "unset");
+        $("button.dt-button.ui-button").addClass("govuk-!-font-size-14");
+        $(".crosstalk-input .control-label").addClass("govuk-label govuk-!-font-size-16");
+    };
+
+    reset_filters = function () {
+        $(".selectized").each(function (index, element) {
+            element.selectize && element.selectize.clear()
+        });
+
+        $("input[type='search']").val('')
+
+        $(".datatables table").DataTable().search("")
+
+    };
+
+    $(".datatables").on('init.dt', function () {
+        $('.dataTables_filter').insertAfter("#fs_org");
+        $('.loading').css("display", "none");
+    });
+
+    $(".datatables").on('draw.dt', function () { govuk_DT_styling(); });
+
+    $("#clear-filters").on('click', function () { reset_filters();});
+
+    
+
+</script></body>
+
+</html>

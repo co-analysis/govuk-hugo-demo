@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   
   
-  <title>govuk-hugo Demonstration | Sections</title>
+  <title>govuk-hugo Demonstration | Features</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0b0c0c">
 
@@ -91,10 +91,49 @@
                 
 
                 
-                <li class="nav-section nav-active-section nav-current"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/section/">Sections</a>
+
+                
+                <li class="nav-section nav-active-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/docs/">Documentation</a>
                 </li>
                 
+                
 
+                
+                
+
+                
+
+                
+                <li class="nav-item nav-active-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state "
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/features/">Features</a></li>
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/pages/">Pages</a></li>
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/shortcodes/">Shortcodes</a></li>
+                
+
+                
+
+                
                 
                 
 
@@ -102,27 +141,7 @@
 
                 
                 <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/section/render_svg/">Accessible charts</a></li>
-                
-
-                
-
-                
-                
-
-                
-
-                
-
-                
-
-                
-                <li class="nav-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/docs/">Documentation</a>
-                </li>
-                
-                
-
-                
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/render_svg/">Accessible charts</a></li>
                 
 
                 
@@ -132,15 +151,8 @@
                 
 
                 
-
-                
-
-                
-                
-                
-
-                
-
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/rmarkdown/">Hugo-ify R Markdown documents</a></li>
                 
 
                 
@@ -206,14 +218,34 @@
 
 </nav></div>
                 <div class="dashboard-content">
+<h1 class="govuk-heading-xl">Features</h1>
 
 <div class="govuk-body">
-    <h1 class="govuk-heading-xl">Sections</h1>
 
-    
-
-
-    
+    <p>The <code>govuk-hugo</code> theme provides a version of the GOV.UK Design System for Hugo, presently it is only designed for dashboard and book-style content, which is inspired by Public Health England&rsquo;s <a href="https://coronavirus.data.gov.uk/">Coronavirus dashboard</a>. The majority of this is done via Hugo templates to construct the site scaffold.</p>
+<h2 id="govuk-design-system">GOV.UK Design System</h2>
+<p>The following <a href="https://design-system.service.gov.uk/components/">Design System components</a> are natively supported by <code>govuk-hugo</code>:</p>
+<ul>
+<li>Headings</li>
+<li>Lists (all UL lists will be bullet lists)</li>
+<li>Blockquotes</li>
+<li>Tables</li>
+</ul>
+<p>A lightweight JavaScript function enables this support, making <code>govuk-hugo</code> unsuitable for environments that do not support JavaScript.</p>
+<p>The default <code>config.yaml</code> sets <code>unsafe: true</code>  in the markdown configuration, this allows you to include raw HTML in your markdown documents (by default Hugo ignores raw HTML in markdown documents), this allows you to include other components as desired. In due course it is intended to provide support for (some) Design System Components via Hugo shortcodes.</p>
+<p>The GOV.UK <a href="https://design-system.service.gov.uk/styles/colour/">colour palette</a> is available via CSS variables, for example <code>background-color: var(--govuk-colour-bright-purple)</code> gives you the &ldquo;bright-purple&rdquo; <span style="width: 0.7em; height: 0.7em; background-color: var(--govuk-colour-bright-purple); display: inline-block; vertical-align: middle; border: 1px solid var(--govuk-border-colour);"> </span> from the palette.</p>
+<h2 id="code-blocks-and-syntax-highlighting">Code blocks and syntax highlighting</h2>
+<p>The GOV.UK Design System does not include a component or styles for code blocks/highlighting. While the Design System documentation does include code blocks itself, as <code>govuk-hugo</code> is intended for use by analysts it is likely to feature a larger amount of code visible to uses that the design the styling of code blocks in <code>govuk-hugo</code> has been designed separately.</p>
+<p>Both in-line code and code blocks use <a href="https://github.com/tonsky/FiraCode">Fira Code</a>, a version of Fira Mono that has been specifically designed for use with code. Notably it provides a lighter weight and greater x-height than Courier (the default monospace font), as well as ligatures to enhance readability.</p>
+<p><code>govuk-hugo</code> makes use of Hugo&rsquo;s native support for <a href="https://gohugo.io/content-management/syntax-highlighting/">syntax highlighting</a> of code blocks via <a href="https://github.com/alecthomas/chroma">Chroma</a>. Code blocks are rendered with line numbers to make it easier to reference and follow code. It uses a limited colour palette, comments are styled in grey italics, names/functions are coloured in blue, literal values (strings, numbers) are coloured in purple, while keywords/reserved terms are displayed in bold.</p>
+<h2 id="r-markdown">R Markdown</h2>
+<p>R Markdown documents are supported via the <code>{govukhugo}</code> R package, this provides complete support for fully static RMarkdown output. Interactive R Markdown documents that use the following <code>{htmlwidgets}</code> are supported:</p>
+<ul>
+<li><a href="https://rstudio.github.io/DT/"><code>{DT}</code></a> for interactive tables</li>
+<li><a href="https://plot.ly/r/"><code>{plotly}</code></a> for interactive charts</li>
+<li><a href="https://rstudio.github.io/leaflet/"><code>{leaflet}</code></a>. for interactive maps</li>
+</ul>
+<p>You can read more about the package on the <a href="https://co-analysis.github.io/govuk-hugo-demo/docs/rmarkdown/">R Markdown page</a>.</p>
 
 
 </div>

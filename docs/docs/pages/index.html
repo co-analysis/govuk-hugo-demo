@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   
   
-  <title>govuk-hugo Demonstration | Sections</title>
+  <title>govuk-hugo Demonstration | Pages</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0b0c0c">
 
@@ -91,8 +91,11 @@
                 
 
                 
-                <li class="nav-section nav-active-section nav-current"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/section/">Sections</a>
+
+                
+                <li class="nav-section nav-active-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/docs/">Documentation</a>
                 </li>
+                
                 
 
                 
@@ -102,27 +105,7 @@
 
                 
                 <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/section/render_svg/">Accessible charts</a></li>
-                
-
-                
-
-                
-                
-
-                
-
-                
-
-                
-
-                
-                <li class="nav-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/docs/">Documentation</a>
-                </li>
-                
-                
-
-                
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/features/">Features</a></li>
                 
 
                 
@@ -131,6 +114,21 @@
 
                 
 
+                
+                <li class="nav-item nav-active-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state "
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/pages/">Pages</a></li>
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/shortcodes/">Shortcodes</a></li>
                 
 
                 
@@ -141,6 +139,20 @@
 
                 
 
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/render_svg/">Accessible charts</a></li>
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/rmarkdown/">Hugo-ify R Markdown documents</a></li>
                 
 
                 
@@ -206,15 +218,81 @@
 
 </nav></div>
                 <div class="dashboard-content">
+<h1 class="govuk-heading-xl">Pages</h1>
 
 <div class="govuk-body">
-    <h1 class="govuk-heading-xl">Sections</h1>
 
-    
+    <p>Pages are created by writing a markdown (.md) files with a YAML header.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">---
+title: &#34;Pages&#34;
+date: 2021-01-22
+type: post
+weight: 100
+---
 
+Pages are created by writing a markdown (.md) files with a YAML header.
 
-    
-
+</code></pre></td></tr></table>
+</div>
+</div><p>Optionally you can add a weight to the YAML header to adjust the page&rsquo;s ordering within their section. The default page weight is 0, it is recommended however that pages have a default weight of 100. Pages with the same weight will be ordered alphabetically by title.</p>
+<p>If using the <code>listpages: true</code> parameter in a section <code>_index.md</code> file to generate a list of the pages within the section then it is recommended that you add a summary parameter to the YAML header: <code>summary: &quot;This is post about pages&quot;</code>.</p>
+<h2 id="about-page">About page</h2>
+<p><code>govuk-hugo</code> provides in-built support for an about page that will appear at the bottom of the nav bar. To enable this create the file <code>about.md</code> in the content directory. The page title will be used for the text displayed in the nav bar.</p>
+<h2 id="support-pages">Support pages</h2>
+<p><code>govuk-hugo</code> provides in-built support for the following types of &lsquo;support&rsquo; pages.</p>
+<ul>
+<li>Help</li>
+<li>Accessbility</li>
+<li>Privacy notice</li>
+<li>Cookies</li>
+<li>Contact information</li>
+<li>Terms and conditions</li>
+</ul>
+<p>You should create these as pages within the content directory and then specify the file in the params section of you config.yaml file:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yml" data-lang="yml"><span class="nt">params</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">govuk</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="w">  </span><span class="nt">logotext</span><span class="p">:</span><span class="w"> </span><span class="l">AAA</span><span class="w">
+</span><span class="w">  </span><span class="nt">product</span><span class="p">:</span><span class="w"> </span><span class="l">Your site</span><span class="w">
+</span><span class="w">  </span><span class="nt">phase</span><span class="p">:</span><span class="w"> </span><span class="l">alpha</span><span class="w">
+</span><span class="w">  </span><span class="nt">feedbackurl</span><span class="p">:</span><span class="w"> </span><span class="l">https://your.site/feedback</span><span class="w">
+</span><span class="w">  </span><span class="nt">help</span><span class="p">:</span><span class="w"> </span><span class="l">help.md</span><span class="w">
+</span><span class="w">  </span><span class="nt">accessibility</span><span class="p">:</span><span class="w"> </span><span class="l">accessbility.md</span><span class="w">
+</span><span class="w">  </span><span class="nt">privacy</span><span class="p">:</span><span class="w"> </span><span class="l">privacy.md</span><span class="w">
+</span><span class="w">  </span><span class="nt">cookies</span><span class="p">:</span><span class="w"> </span><span class="l">cookies.md</span><span class="w">
+</span><span class="w">  </span><span class="nt">contact</span><span class="p">:</span><span class="w"> </span><span class="l">contact.md</span><span class="w">
+</span><span class="w">  </span><span class="nt">terms</span><span class="p">:</span><span class="w"> </span><span class="l">terms_conditions.md</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div>
 
 </div>
 
