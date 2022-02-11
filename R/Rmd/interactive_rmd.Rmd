@@ -14,7 +14,7 @@ This is a test of the [`{DT}`](https://rstudio.github.io/DT/) package that imple
 
 ```{r}
 new_cars <- tibble::rownames_to_column(mtcars, var = "model")
-govukhugo::govuk_datatable(new_cars)
+govukhugo::govuk_datatable(new_cars, search = FALSE)
 ```
 
 ## Testing Plotly
