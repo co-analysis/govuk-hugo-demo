@@ -7,7 +7,7 @@ listpages: false
 
 This site demonstrates how the `govuk-hugo` theme works.
 
-`govuk-hugo` is a theme for the [Hugo](https://gohugo.io/) static site builder that provides a version of the [GOV.UK Design System](https://design-system.service.gov.uk/) for Hugo. Presently it is only designed for dashboard style content, and heavily inspired by the UK government [Coronavirus dashboard](https://coronavirus.data.gov.uk/). While technology agnostic, it has also been developed with a view to supporting the development of data-based sites using [R and R Markdown]({{< ref "/section/rmarkdown.html" >}}).
+`govuk-hugo` is a theme for the [Hugo](https://gohugo.io/) static site builder that provides a version of the [GOV.UK Design System](https://design-system.service.gov.uk/) for Hugo. Presently it is only designed for dashboard style content, and heavily inspired by the UK government [Coronavirus dashboard](https://coronavirus.data.gov.uk/). While technology agnostic, it has also been developed with a view to supporting the development of data-based sites using [R and R Markdown]({{< ref "/docs/rmarkdown.html" >}}).
 
 ## Getting started
 
