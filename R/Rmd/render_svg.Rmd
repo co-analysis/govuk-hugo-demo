@@ -1,7 +1,7 @@
 ---
 title: Accessible charts
 date: 2021-07-30
-section: section
+section: docs
 summary: "Rendering charts as accessible SVG objects"
 weight: 900
 ---
