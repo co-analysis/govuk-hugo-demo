@@ -91,7 +91,7 @@
                 
 
                 
-                <li class="nav-section nav-active-section nav-current"><a class="govuk-!-font-size-14" href="https://co-analysis.github.io/govuk-hugo-demo/docs/">Documentation</a>
+                <li class="nav-section nav-active-section nav-current"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/docs/">Documentation</a>
                 </li>
                 
 
@@ -124,6 +124,19 @@
 
                 
                 <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/sections/">Sections</a></li>
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
                                 href="https://co-analysis.github.io/govuk-hugo-demo/docs/shortcodes/">Shortcodes</a></li>
                 
 
@@ -137,18 +150,20 @@
 
                 
                 <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/render_svg/">Accessible charts</a></li>
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/rmarkdown/">Hugo-ify R Markdown documents</a></li>
                 
 
                 
 
+                
+                
                 
 
                 
 
                 
                 <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/rmarkdown/">Hugo-ify R Markdown documents</a></li>
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/render_svg/">Accessible charts</a></li>
                 
 
                 
@@ -216,10 +231,11 @@
                 <div class="dashboard-content">
 
 <div class="govuk-body">
+    
     <h1 class="govuk-heading-xl">Documentation</h1>
+    
 
-    <p>Use folders under the <code>content</code> folder to create sections. Use an <code>_index.md</code> file to write an index page for the section.</p>
-<p>Set <code>listpages: true</code> in the <code>_index.md</code> file to add a list of pages at the bottom of the page.</p>
+    <p>This section provides documentation on how to use <code>govukhugo</code> in your projects, see below for a list of individual pages.</p>
 
 
 
@@ -239,7 +255,7 @@
                 Features
             </dt>
             <dd class="govuk-summary-list__value">
-                Features of govuk-hugo
+                Features of govukhugo
             </dd>
             <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="https://co-analysis.github.io/govuk-hugo-demo/docs/features/">
@@ -254,7 +270,7 @@
                 Pages
             </dt>
             <dd class="govuk-summary-list__value">
-                How to create pages using govuk-hugo
+                How to create pages using govukhugo
             </dd>
             <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="https://co-analysis.github.io/govuk-hugo-demo/docs/pages/">
@@ -263,6 +279,23 @@
             </dd>
 
         </div>
+        
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Sections
+            </dt>
+            <dd class="govuk-summary-list__value">
+                How to structure content in govukhugo
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="https://co-analysis.github.io/govuk-hugo-demo/docs/sections/">
+                    Read/View</span>
+                </a>
+            </dd>
+
+        </div>
+        
+        
         
         <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -283,21 +316,6 @@
         
         <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-                Accessible charts
-            </dt>
-            <dd class="govuk-summary-list__value">
-                Rendering charts as accessible SVG objects
-            </dd>
-            <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="https://co-analysis.github.io/govuk-hugo-demo/docs/render_svg/">
-                    Read/View</span>
-                </a>
-            </dd>
-
-        </div>
-        
-        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
                 Hugo-ify R Markdown documents
             </dt>
             <dd class="govuk-summary-list__value">
@@ -305,6 +323,23 @@
             </dd>
             <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="https://co-analysis.github.io/govuk-hugo-demo/docs/rmarkdown/">
+                    Read/View</span>
+                </a>
+            </dd>
+
+        </div>
+        
+        
+        
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Accessible charts
+            </dt>
+            <dd class="govuk-summary-list__value">
+                Rendering charts as accessible SVG objects
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="https://co-analysis.github.io/govuk-hugo-demo/docs/render_svg/">
                     Read/View</span>
                 </a>
             </dd>
@@ -409,12 +444,6 @@
 
      
     applyGOVUK("P", "govuk-body");
-
-     
-    applyGOVUK("H1", "govuk-heading-xl");
-    applyGOVUK("H2", "govuk-heading-l");
-    applyGOVUK("H3", "govuk-heading-m");
-    applyGOVUK("H4", "govuk-heading-s");
 
      
     applyGOVUK("TABLE", "govuk-table");

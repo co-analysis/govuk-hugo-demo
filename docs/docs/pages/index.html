@@ -93,7 +93,7 @@
                 
 
                 
-                <li class="nav-section nav-active-section"><a class="govuk-!-font-size-14" href="https://co-analysis.github.io/govuk-hugo-demo/docs/">Documentation</a>
+                <li class="nav-section nav-active-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/docs/">Documentation</a>
                 </li>
                 
                 
@@ -128,6 +128,19 @@
 
                 
                 <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/sections/">Sections</a></li>
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
                                 href="https://co-analysis.github.io/govuk-hugo-demo/docs/shortcodes/">Shortcodes</a></li>
                 
 
@@ -141,18 +154,20 @@
 
                 
                 <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/render_svg/">Accessible charts</a></li>
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/rmarkdown/">Hugo-ify R Markdown documents</a></li>
                 
 
                 
 
+                
+                
                 
 
                 
 
                 
                 <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/rmarkdown/">Hugo-ify R Markdown documents</a></li>
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/render_svg/">Accessible charts</a></li>
                 
 
                 
@@ -218,7 +233,10 @@
 
 </nav></div>
                 <div class="dashboard-content">
+
+
 <h1 class="govuk-heading-xl">Pages</h1>
+
 
 <div class="govuk-body">
 
@@ -247,12 +265,14 @@ Pages are created by writing a markdown (.md) files with a YAML header.
 
 </code></pre></td></tr></table>
 </div>
-</div><p>Optionally you can add a weight to the YAML header to adjust the page&rsquo;s ordering within their section. The default page weight is 0, it is recommended however that pages have a default weight of 100. Pages with the same weight will be ordered alphabetically by title.</p>
-<p>If using the <code>listpages: true</code> parameter in a section <code>_index.md</code> file to generate a list of the pages within the section then it is recommended that you add a summary parameter to the YAML header: <code>summary: &quot;This is post about pages&quot;</code>.</p>
-<h2 id="about-page">About page</h2>
-<p><code>govuk-hugo</code> provides in-built support for an about page that will appear at the bottom of the nav bar. To enable this create the file <code>about.md</code> in the content directory. The page title will be used for the text displayed in the nav bar.</p>
-<h2 id="support-pages">Support pages</h2>
-<p><code>govuk-hugo</code> provides in-built support for the following types of &lsquo;support&rsquo; pages.</p>
+</div><p>The <code>title</code> parameter is used to provide the lead heading on a page, the page&rsquo;s label in site navigation and the title used by the user&rsquo;s web browser (e.g. to name a window/tab). You can provide a different lead heading by setting the <code>custom_title</code> parameter, the title will still be used for site navigation and by web browsers.</p>
+<p>Optionally you can add a <code>weight</code> parameter to the YAML header to adjust the page&rsquo;s ordering within their section. The default page weight is 0, it is recommended however that pages have a default weight of 100. Pages with the same weight will be ordered alphabetically by <code>title</code>.</p>
+
+<h2 id="about-page" class="govuk-heading-l">About page</h2>
+<p><code>govukhugo</code> provides in-built support for an about page that will appear at the bottom of the nav bar. To enable this create the file <code>about.md</code> in the content directory. The page title will be used for the text displayed in the nav bar.</p>
+
+<h2 id="support-pages" class="govuk-heading-l">Support pages</h2>
+<p><code>govukhugo</code> provides in-built support for the following types of &lsquo;support&rsquo; pages.</p>
 <ul>
 <li>Help</li>
 <li>Accessbility</li>
@@ -385,12 +405,6 @@ Pages are created by writing a markdown (.md) files with a YAML header.
 
      
     applyGOVUK("P", "govuk-body");
-
-     
-    applyGOVUK("H1", "govuk-heading-xl");
-    applyGOVUK("H2", "govuk-heading-l");
-    applyGOVUK("H3", "govuk-heading-m");
-    applyGOVUK("H4", "govuk-heading-s");
 
      
     applyGOVUK("TABLE", "govuk-table");

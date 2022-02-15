@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   
   
-  <title>govuk-hugo Demonstration | 404 Page not found</title>
+  <title>govuk-hugo Demonstration | Sections</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0b0c0c">
 
@@ -93,7 +93,7 @@
                 
 
                 
-                <li class="nav-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/docs/">Documentation</a>
+                <li class="nav-section nav-active-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/docs/">Documentation</a>
                 </li>
                 
                 
@@ -104,6 +104,20 @@
                 
 
                 
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/features/">Features</a></li>
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/pages/">Pages</a></li>
+                
 
                 
 
@@ -112,7 +126,22 @@
                 
 
                 
+                <li class="nav-item nav-active-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state "
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/sections/">Sections</a></li>
                 
+
+                
+
+                
+                
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/shortcodes/">Shortcodes</a></li>
                 
 
                 
@@ -124,7 +153,21 @@
                 
 
                 
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/rmarkdown/">Hugo-ify R Markdown documents</a></li>
                 
+
+                
+
+                
+                
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/render_svg/">Accessible charts</a></li>
                 
 
                 
@@ -190,9 +233,49 @@
 
 </nav></div>
                 <div class="dashboard-content">
-<h1 class="govuk-heading-l">Page not found [404 error]</h1>
-<p class="govuk-body">If you typed the web address, check it is correct.</p>
-<p class="govuk-body">If you pasted the web address, check you copied the entire address.</p>
+
+
+<h1 class="govuk-heading-xl">Sections</h1>
+
+
+<div class="govuk-body">
+
+    <p>Hugo sites are structured into sections, each section is a separate directory under the <code>content</code> directory in the base Hugo directory.</p>
+<p>While Hugo will auto-generate an index page for each section, it is strongly recommended that you write an <code>_index.md</code> page to provide content for the page itself. You should write these in the same way as you write regular <a href="https://co-analysis.github.io/govuk-hugo-demo/docs/pages/" class="govuk-link" >pages</a>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">---
+title: &#34;Sections&#34;
+date: 2021-01-22
+weight: 100
+---
+
+Section index pages are also created by writing a markdown (.md) file with a YAML header.
+
+</code></pre></td></tr></table>
+</div>
+</div><p>You can add to a section index an auto-generated list of pages within the section, this is done by setting the parameter <code>listpages: true</code> in the YAML header information. If doing this you should include a <code>summary</code> parameter in the individual pages, for example <code>summary: &quot;This is page about creating sections&quot;</code>.</p>
+
+<h2 id="site-navigation" class="govuk-heading-l">Site navigation</h2>
+<p>The <code>govukhugo</code> scaffold generates a navigation menu in a left-hand sidebar. At the home page level the sidebar will show the site sections, and if present a link to the site&rsquo;s about page. Once inside a section the sidebar will show the pages within that section.</p>
+<p>The ordering of sections in the site navigation is similar to that of pages, sections are ordered by the <code>weight</code> set in their <code>_index.md</code> page and then alphabetically by the <code>title</code>.</p>
+<p>Note that responsive web design settings within the site&rsquo;s CSS collapses the navigation to a &ldquo;breadcrumbs&rdquo; style navigation on small screens, therefore it is recommended that the site and section index pages include links to their child content (either manually written or auto-generated).</p>
+<p>The default settings of <code>govukhugo</code> assume that below the content directory there is a single layer of directories - further levels can exist but they will not be included in site navigation. Other structures will require writing a custom navigation Hugo template.</p>
+
+
+</div>
+
+
 
                 </div>
 

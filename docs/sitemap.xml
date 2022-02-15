@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>https://co-analysis.github.io/govuk-hugo-demo/docs/sections/</loc>
+    <lastmod>2021-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://co-analysis.github.io/govuk-hugo-demo/tests/tests/</loc>
     <lastmod>2021-01-22T00:00:00+00:00</lastmod>
   </url>
@@ -18,13 +23,18 @@
   </url>
   
   <url>
+    <loc>https://co-analysis.github.io/govuk-hugo-demo/tests/static_rmd/</loc>
+    <lastmod>2021-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://co-analysis.github.io/govuk-hugo-demo/docs/shortcodes/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://co-analysis.github.io/govuk-hugo-demo/tests/static_rmd/</loc>
-    <lastmod>2021-01-22T00:00:00+00:00</lastmod>
+    <loc>https://co-analysis.github.io/govuk-hugo-demo/docs/rmarkdown/</loc>
+    <lastmod>2021-01-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -40,11 +50,6 @@
   <url>
     <loc>https://co-analysis.github.io/govuk-hugo-demo/docs/render_svg/</loc>
     <lastmod>2021-07-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://co-analysis.github.io/govuk-hugo-demo/docs/rmarkdown/</loc>
-    <lastmod>2021-01-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>

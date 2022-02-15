@@ -45,6 +45,20 @@
     max-width: 1440px;
 }
 
+@media screen and (max-width:768px) {    
+    .govuk-width-container {
+        margin-left: max(30px, calc(15px + env(safe-area-inset-left)));
+        margin-right: max(30px, calc(15px + env(safe-area-inset-left)));
+    }
+}
+
+@media screen and (max-width:425px) {
+    .govuk-width-container {
+        margin-left: max(15px, calc(15px + env(safe-area-inset-left)));
+        margin-right: max(15px, calc(15px + env(safe-area-inset-left)));
+    }
+}
+
 .govuk-body p {
     max-width: min(100%, var(--govuk-max-width-text));
 }
@@ -72,8 +86,16 @@ td, th {
     max-width: min(100%, var(--govuk-max-width-inset));
 }
 
+.govuk-header__logo {
+    width: 100%;
+}
+
+.govuk-header__logotype {
+    padding-right: 10px;
+}
+
 .govuk-header__product-name {
-    padding-left: 10px;
+    font-size: 1.5rem !important;
 }
 
 .govuk-footer__copyright-logo {
@@ -81,9 +103,10 @@ td, th {
 }
 
 .dashboard-container {
+    width: 100%;
     display: grid;
     grid-column-gap: 20px;
-    grid-template-columns: 200px auto;
+    grid-template-columns: 200px calc(100% - 220px);
 }
 
 .dashboard-nav {
@@ -123,12 +146,14 @@ td, th {
     .sidebar-nav li a {
         text-decoration: underline;
         font-weight: normal;
+        font-size: 0.875rem !important;
         color: var(--govuk-text-colour) !important;
     }
 
     li.nav-section.nav-active-section {
         display: inline;
-        padding: 0;
+        padding: 0px !important;
+        border: none;
     }
 
     li.nav-active-section.nav-current {
@@ -182,10 +207,6 @@ td, th {
         border: none !important;
     }
 
-    .govuk-phase-banner__text {
-        font-size: 0.75rem
-    }
-
 }
 
 .sidebar-nav {
@@ -197,10 +218,11 @@ td, th {
 
 .nav-section,
 .nav-item {
-    line-height: 1rem;
+    line-height: 1.2rem;
     padding-right: 5px;
     padding-top: 5px;
     padding-bottom: 5px;
+    margin-bottom: 0px !important;
 }
 
 .nav-section {
@@ -210,7 +232,6 @@ td, th {
 
 .nav-section:first-of-type {
     margin-top: 0px;
-    padding-left: 15px;
 }
 
 .nav-active-section.nav-current {
@@ -220,7 +241,8 @@ td, th {
 }
 
 .nav-active-section {
-    padding-left: 10px;
+    border-left: 5px solid var(--govuk-colour-mid-grey);
+    padding-left: 10px !important;
 }
 
 .nav-section:hover {
@@ -249,6 +271,12 @@ td, th {
 }
 
 .nav-item {
+    border-left: 2px solid var(--govuk-colour-mid-grey);
+    padding-left: 13px;
+}
+
+.nav-item.nav-about {
+    border-left: unset;
     padding-left: 15px;
 }
 
@@ -334,7 +362,7 @@ a.download-link {
     background-repeat: no-repeat;
     background-size: 40px 40px;
     min-height: 2.5em;
-    padding: 0 0 0 50px;
+    padding: 5px 0 0 45px;
 }
 
 /*  ===========================
@@ -346,6 +374,7 @@ a.download-link {
     padding: 15px 0px;
     display: flex;
     flex-wrap: wrap;
+    margin: 0px;
 }
 
 .data-filters {

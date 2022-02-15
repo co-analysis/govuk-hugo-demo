@@ -13,7 +13,16 @@
       <pubDate>Fri, 22 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://co-analysis.github.io/govuk-hugo-demo/docs/pages/</guid>
-      <description>How to create pages using govuk-hugo</description>
+      <description>How to create pages using govukhugo</description>
+    </item>
+    
+    <item>
+      <title>Sections</title>
+      <link>https://co-analysis.github.io/govuk-hugo-demo/docs/sections/</link>
+      <pubDate>Fri, 22 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://co-analysis.github.io/govuk-hugo-demo/docs/sections/</guid>
+      <description>How to structure content in govukhugo</description>
     </item>
     
     <item>
@@ -22,7 +31,7 @@
       <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://co-analysis.github.io/govuk-hugo-demo/docs/features/</guid>
-      <description>Features of govuk-hugo</description>
+      <description>Features of govukhugo</description>
     </item>
     
     <item>
@@ -35,21 +44,21 @@
     </item>
     
     <item>
-      <title>Accessible charts</title>
-      <link>https://co-analysis.github.io/govuk-hugo-demo/docs/render_svg/</link>
-      <pubDate>Fri, 30 Jul 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://co-analysis.github.io/govuk-hugo-demo/docs/render_svg/</guid>
-      <description>Rendering charts as accessible SVG objects</description>
-    </item>
-    
-    <item>
       <title>Hugo-ify R Markdown documents</title>
       <link>https://co-analysis.github.io/govuk-hugo-demo/docs/rmarkdown/</link>
       <pubDate>Thu, 28 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://co-analysis.github.io/govuk-hugo-demo/docs/rmarkdown/</guid>
       <description>Using the {govukhugo} package to render and build sites with R Markdown documents</description>
+    </item>
+    
+    <item>
+      <title>Accessible charts</title>
+      <link>https://co-analysis.github.io/govuk-hugo-demo/docs/render_svg/</link>
+      <pubDate>Fri, 30 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://co-analysis.github.io/govuk-hugo-demo/docs/render_svg/</guid>
+      <description>Rendering charts as accessible SVG objects</description>
     </item>
     
   </channel>

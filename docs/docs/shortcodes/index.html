@@ -93,7 +93,7 @@
                 
 
                 
-                <li class="nav-section nav-active-section"><a class="govuk-!-font-size-14" href="https://co-analysis.github.io/govuk-hugo-demo/docs/">Documentation</a>
+                <li class="nav-section nav-active-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/docs/">Documentation</a>
                 </li>
                 
                 
@@ -126,6 +126,19 @@
                 
 
                 
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/sections/">Sections</a></li>
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
                 <li class="nav-item nav-active-item"><a
                                 class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state "
                                 href="https://co-analysis.github.io/govuk-hugo-demo/docs/shortcodes/">Shortcodes</a></li>
@@ -141,18 +154,20 @@
 
                 
                 <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/render_svg/">Accessible charts</a></li>
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/rmarkdown/">Hugo-ify R Markdown documents</a></li>
                 
 
                 
 
+                
+                
                 
 
                 
 
                 
                 <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/rmarkdown/">Hugo-ify R Markdown documents</a></li>
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/render_svg/">Accessible charts</a></li>
                 
 
                 
@@ -218,15 +233,35 @@
 
 </nav></div>
                 <div class="dashboard-content">
+
+
 <h1 class="govuk-heading-xl">Shortcodes</h1>
+
 
 <div class="govuk-body">
 
-    <p>In addition to the default <a href="https://gohugo.io/content-management/shortcodes/">Hugo shortcodes</a>, <code>govuk-hugo</code> includes the following custom shortcodes, most of which are intended to make it easier to add GOV.UK Design System <a href="https://design-system.service.gov.uk/components/">components</a>.</p>
-<h2 id="in-page-table-of-contents">In-page table of contents</h2>
+    <p>In addition to the default <a href="https://gohugo.io/content-management/shortcodes/" class="govuk-link"  target="_blank" rel="noreferrer noopener">Hugo shortcodes</a>, <code>govuk-hugo</code> includes the following custom shortcodes, most of which are intended to make it easier to add GOV.UK Design System <a href="https://design-system.service.gov.uk/components/" class="govuk-link"  target="_blank" rel="noreferrer noopener">components</a>.</p>
+<aside id="page_toc" class="govuk-body toc govuk-body-s">
+  <span class="toc-header govuk-caption-l">Contents</span>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#in-page-table-of-contents">In-page table of contents</a></li>
+    <li><a href="#paragraph-styling">Paragraph styling</a></li>
+    <li><a href="#section-breaks">Section breaks</a></li>
+    <li><a href="#details">Details</a></li>
+    <li><a href="#warning-text">Warning text</a></li>
+    <li><a href="#links-as-buttons">Links as buttons</a></li>
+    <li><a href="#file-download-links">File download links</a></li>
+    <li><a href="#notification-banners">Notification banners</a></li>
+    <li><a href="#tag">Tag</a></li>
+  </ul>
+</nav>
+</aside>
+
+<h2 id="in-page-table-of-contents" class="govuk-heading-l">In-page table of contents</h2>
 <p>An in-page table of contents, suitable for long-form articles can be included by using the shortcode <code>{{&lt; TOC &gt;}}</code> within your document. Preferably, you should include this after the first section of text but before the first secondary heading.</p>
 <aside id="page_toc" class="govuk-body toc govuk-body-s">
-  <span class="toc-header">Table of contents</span>
+  <span class="toc-header govuk-caption-l">Contents</span>
   <nav id="TableOfContents">
   <ul class="toc-list">
     <li><a href="#" class="toc-link">Section</a></li>
@@ -240,8 +275,9 @@
   </ul>
 </nav>
 </aside>
-<h2 id="paragraph-styling">Paragraph styling</h2>
-<p>You can use the lead and small <a href="https://design-system.service.gov.uk/styles/typography/#paragraphs">paragraph typography</a> through the <code>&lt;&lt;/* lead */&gt;&gt;</code> and <code>&lt;&lt;/* small */&gt;&gt;</code> shortcodes. These shortcodes do not take arguments, simply use an opening and then closing shortcode to apply the styling.</p>
+
+<h2 id="paragraph-styling" class="govuk-heading-l">Paragraph styling</h2>
+<p>You can use the lead and small <a href="https://design-system.service.gov.uk/styles/typography/#paragraphs" class="govuk-link"  target="_blank" rel="noreferrer noopener">paragraph typography</a> through the <code>&lt;&lt;/* lead */&gt;&gt;</code> and <code>&lt;&lt;/* small */&gt;&gt;</code> shortcodes. These shortcodes do not take arguments, simply use an opening and then closing shortcode to apply the styling.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -260,7 +296,8 @@
 </code></pre></td></tr></table>
 </div>
 </div><p class="govuk-body-s">A small paragraph</p>
-<h2 id="section-breaks">Section breaks</h2>
+
+<h2 id="section-breaks" class="govuk-heading-l">Section breaks</h2>
 <p>By default <code>govukhugo</code> renders section breaks into invisible breaks using the GOV.UK design system&rsquo;s large section break. The <code>break</code> shortcode allows you to set custom sizes (<code>xl</code>, <code>l</code> or <code>m</code>), you can make a break visible by setting that argument to <code>true</code>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -308,8 +345,9 @@ A section followed by a visible `m` break.
   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 </div>
-<h2 id="details">Details</h2>
-<p>You can add the <a href="https://design-system.service.gov.uk/components/details/">details</a> component using the <code>{{&lt; details &gt;}}</code> shortcode. In the opening shortcode you specify the summary text, while between that and a closing <code>{{&lt; /details &gt;}}</code> shortcode you include the content that you wish to be revealed when the user chooses to expand the details section.</p>
+
+<h2 id="details" class="govuk-heading-l">Details</h2>
+<p>You can add the <a href="https://design-system.service.gov.uk/components/details/" class="govuk-link"  target="_blank" rel="noreferrer noopener">details</a> component using the <code>{{&lt; details &gt;}}</code> shortcode. In the opening shortcode you specify the summary text, while between that and a closing <code>{{&lt; /details &gt;}}</code> shortcode you include the content that you wish to be revealed when the user chooses to expand the details section.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -334,8 +372,9 @@ that might be relevant to only some users.
     The details component allows you to hide more detailed information that might be relevant to only some users.
   </div>
 </details>
-<h2 id="warning-text">Warning text</h2>
-<p>You can add the <a href="https://design-system.service.gov.uk/components/warning-text/">warning text</a> component using the <code>{{&lt; warning &gt;}}</code> shortcode.</p>
+
+<h2 id="warning-text" class="govuk-heading-l">Warning text</h2>
+<p>You can add the <a href="https://design-system.service.gov.uk/components/warning-text/" class="govuk-link"  target="_blank" rel="noreferrer noopener">warning text</a> component using the <code>{{&lt; warning &gt;}}</code> shortcode.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -351,8 +390,9 @@ that might be relevant to only some users.
     This is experimental and still under development
   </strong>
 </div>
-<h2 id="links-as-buttons">Links as buttons</h2>
-<p>You can add the <a href="https://design-system.service.gov.uk/components/button/">button</a> component to style links as buttons using the <code>{{&lt; link_button &gt;}}</code> shortcode. You must name the arguments <code>link</code> (the link to visit) and <code>text</code> (the text for the button). These links will always open in a new tab/window.</p>
+
+<h2 id="links-as-buttons" class="govuk-heading-l">Links as buttons</h2>
+<p>You can add the <a href="https://design-system.service.gov.uk/components/button/" class="govuk-link"  target="_blank" rel="noreferrer noopener">button</a> component to style links as buttons using the <code>{{&lt; link_button &gt;}}</code> shortcode. You must name the arguments <code>link</code> (the link to visit) and <code>text</code> (the text for the button). These links will always open in a new tab/window.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -389,8 +429,9 @@ that might be relevant to only some users.
     
 
 </p>
-<h2 id="file-download-links">File download links</h2>
-<p>You can add a <a href="https://govspeak-preview.herokuapp.com/guide#download-links">file download</a> component to style links as downloads using the <code>{{&lt; download_file &gt;}}</code> shortcode. As with button links must name the arguments <code>link</code> (the link to visit) and <code>text</code> (the text for the button), you must also specify the file <code>type</code> (e.g. &ldquo;PDF&rdquo;, &ldquo;ODS&rdquo;, &ldquo;CSV&rdquo;) and the file <code>size</code> (e.g. &ldquo;42KB&rdquo;, &ldquo;1.4MB&rdquo;).</p>
+
+<h2 id="file-download-links" class="govuk-heading-l">File download links</h2>
+<p>You can add a <a href="https://govspeak-preview.herokuapp.com/guide#download-links" class="govuk-link"  target="_blank" rel="noreferrer noopener">file download</a> component to style links as downloads using the <code>{{&lt; download_file &gt;}}</code> shortcode. As with button links must name the arguments <code>link</code> (the link to visit) and <code>text</code> (the text for the button), you must also specify the file <code>type</code> (e.g. &ldquo;PDF&rdquo;, &ldquo;ODS&rdquo;, &ldquo;CSV&rdquo;) and the file <code>size</code> (e.g. &ldquo;42KB&rdquo;, &ldquo;1.4MB&rdquo;).</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -404,8 +445,9 @@ that might be relevant to only some users.
 </div><div class="govuk-body file-download">
   <a href="" class="govuk-link download-link" download>Download the spreadsheet (ODS, 1.4MB)</a>
 </div>
-<h2 id="notification-banners">Notification banners</h2>
-<p>You can add the neutral <a href="https://design-system.service.gov.uk/components/notification-banner/">notification banner</a> component using the <code>{{&lt; notification */}}</code> shortcode. In the opening shortcode specify the banner heading, while between that and a closing <code>{{&lt;/* /notification &gt;}}</code> banner you include the content of the notification message.</p>
+
+<h2 id="notification-banners" class="govuk-heading-l">Notification banners</h2>
+<p>You can add the neutral <a href="https://design-system.service.gov.uk/components/notification-banner/" class="govuk-link"  target="_blank" rel="noreferrer noopener">notification banner</a> component using the <code>{{&lt; notification */}}</code> shortcode. In the opening shortcode specify the banner heading, while between that and a closing <code>{{&lt;/* /notification &gt;}}</code> banner you include the content of the notification message.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -496,8 +538,9 @@ Please visit <a href="https://www.gov.uk">GOV.UK</a> for further details.
   </div>
   
 </div>
-<h2 id="tag">Tag</h2>
-<p>You can add the <a href="https://design-system.service.gov.uk/components/tag/">tag</a> component using the <code>{{&lt; tag &gt;}}</code> shortcode.</p>
+
+<h2 id="tag" class="govuk-heading-l">Tag</h2>
+<p>You can add the <a href="https://design-system.service.gov.uk/components/tag/" class="govuk-link"  target="_blank" rel="noreferrer noopener">tag</a> component using the <code>{{&lt; tag &gt;}}</code> shortcode.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -727,12 +770,6 @@ Please visit <a href="https://www.gov.uk">GOV.UK</a> for further details.
 
      
     applyGOVUK("P", "govuk-body");
-
-     
-    applyGOVUK("H1", "govuk-heading-xl");
-    applyGOVUK("H2", "govuk-heading-l");
-    applyGOVUK("H3", "govuk-heading-m");
-    applyGOVUK("H4", "govuk-heading-s");
 
      
     applyGOVUK("TABLE", "govuk-table");

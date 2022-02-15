@@ -119,6 +119,14 @@
                 
 
                 
+                
+                
+
+                
+
+                
+                
+                
 
                 
 
@@ -188,10 +196,12 @@
 
     <h1 class="govuk-heading-xl">Build GOV.UK style static sites with Hugo</h1>
 
-    <p>This site demonstrates how the <code>govuk-hugo</code> theme works.</p>
-<p><code>govuk-hugo</code> is a theme for the <a href="https://gohugo.io/">Hugo</a> static site builder that provides a version of the <a href="https://design-system.service.gov.uk/">GOV.UK Design System</a> for Hugo. Presently it is only designed for dashboard style content, and heavily inspired by the UK government <a href="https://coronavirus.data.gov.uk/">Coronavirus dashboard</a>. While technology agnostic, it has also been developed with a view to supporting the development of data-based sites using <a href="https://co-analysis.github.io/govuk-hugo-demo/docs/rmarkdown/">R and R Markdown</a>.</p>
-<h2 id="getting-started">Getting started</h2>
-<p>To use <code>govuk-hugo</code>, install Hugo as per the <a href="https://gohugo.io/getting-started/">getting started</a> advice and then create a new site.</p>
+    <p>This site demonstrates how the <code>govukhugo</code> theme works.</p>
+<p><code>govukhugo</code> is a theme for the <a href="https://gohugo.io/" class="govuk-link"  target="_blank" rel="noreferrer noopener">Hugo</a> static site builder that provides a version of the <a href="https://design-system.service.gov.uk/" class="govuk-link"  target="_blank" rel="noreferrer noopener">GOV.UK Design System</a> for Hugo. Presently it is only designed for dashboard style content, and heavily inspired by the UK government <a href="https://coronavirus.data.gov.uk/" class="govuk-link"  target="_blank" rel="noreferrer noopener">Coronavirus dashboard</a>. While technology agnostic, it has also been developed with a view to supporting the development of data-based sites using <a href="https://co-analysis.github.io/govuk-hugo-demo/docs/rmarkdown/" class="govuk-link" >R and R Markdown</a> and there is an associated <a href="https://github.com/co-analysis/govuk-hugo-r" class="govuk-link"  target="_blank" rel="noreferrer noopener">R package</a> to support this.</p>
+<p>This site provides both <a href="https://co-analysis.github.io/govuk-hugo-demo/docs/" class="govuk-link" >documentation</a> and <a href="https://co-analysis.github.io/govuk-hugo-demo/tests/" class="govuk-link" >examples</a>.</p>
+
+<h2 id="getting-started" class="govuk-heading-l">Getting started</h2>
+<p>To use <code>govukhugo</code>, install Hugo as per the <a href="https://gohugo.io/getting-started/" class="govuk-link"  target="_blank" rel="noreferrer noopener">getting started</a> advice and then create a new site.</p>
 <p>If creating from scratch (i.e. without an existing directory) the following code will create a Hugo site in the folder called <code>SITEDIR</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -212,8 +222,9 @@
 $ hugo new site . --force -f <span class="s2">&#34;yaml&#34;</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>Note that YAML is preferred for the format of config files, all documentation for <code>govuk-hugo</code> will use YAML. TOML (Hugo&rsquo;s default) should work, but is not supported and has not been tested.</p>
-<h3 id="add-the-govuk-hugo-theme">Add the <code>govuk-hugo</code> theme</h3>
+</div><p>Note that YAML is preferred for the format of config files, all documentation for <code>govukhugo</code> will use YAML. TOML (Hugo&rsquo;s default) should work, but is not supported and has not been tested.</p>
+
+<h3 id="add-the-govukhugo-theme" class="govuk-heading-m">Add the <code>govukhugo</code> theme</h3>
 <p>Add as a git clone/submodule, as the theme is under active development it is recommended that you use git to add the theme so that you can easily get updates.</p>
 <p>If your hugo site is in its own git repo then add as a submodule:</p>
 <div class="highlight"><div class="chroma">
@@ -221,7 +232,7 @@ $ hugo new site . --force -f <span class="s2">&#34;yaml&#34;</span>
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git submodule add https://github.com/co-analysis/govuk-hugo.git themes/govukhugo
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ git submodule add https://github.com/co-analysis/govukhugo.git themes/govukhugo
 </code></pre></td></tr></table>
 </div>
 </div><p>If you hugo site is not a git repo then clone the theme:</p>
@@ -230,17 +241,18 @@ $ hugo new site . --force -f <span class="s2">&#34;yaml&#34;</span>
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">$ git clone https://github.com/co-analysis/govuk-hugo.git themes/govukhugo
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ git clone https://github.com/co-analysis/govukhugo.git themes/govukhugo
 </code></pre></td></tr></table>
 </div>
 </div><p>You can also manually add the theme, this is not recommended as it will be less easy for you to track updates:</p>
 <ol>
-<li>Download the govuk-hugo repo&rsquo;s <a href="https://github.com/co-analysis/govuk-hugo/archive/main.zip">zip file</a></li>
+<li>Download the govukhugo repo&rsquo;s <a href="https://github.com/co-analysis/govukhugo/archive/main.zip" class="govuk-link"  target="_blank" rel="noreferrer noopener">zip file</a></li>
 <li>Create a <code>govukhugo</code> folder inside the <code>themes</code> folder</li>
 <li>Extract the zip file and copy the files and folders into the themes/govukhugo folder</li>
 </ol>
-<h3 id="configure">Configure</h3>
-<p>To apply the <code>govuk-hugo</code> theme, your <code>config.yaml</code> file should look like:</p>
+
+<h3 id="configure" class="govuk-heading-m">Configure</h3>
+<p>To apply the <code>govukhugo</code> theme, your <code>config.yaml</code> file should look like:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -415,12 +427,6 @@ $ hugo new site . --force -f <span class="s2">&#34;yaml&#34;</span>
 
      
     applyGOVUK("P", "govuk-body");
-
-     
-    applyGOVUK("H1", "govuk-heading-xl");
-    applyGOVUK("H2", "govuk-heading-l");
-    applyGOVUK("H3", "govuk-heading-m");
-    applyGOVUK("H4", "govuk-heading-s");
 
      
     applyGOVUK("TABLE", "govuk-table");

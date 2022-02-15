@@ -93,7 +93,7 @@
                 
 
                 
-                <li class="nav-section nav-active-section"><a class="govuk-!-font-size-14" href="https://co-analysis.github.io/govuk-hugo-demo/docs/">Documentation</a>
+                <li class="nav-section nav-active-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/docs/">Documentation</a>
                 </li>
                 
                 
@@ -127,7 +127,34 @@
 
                 
                 <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/sections/">Sections</a></li>
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
                                 href="https://co-analysis.github.io/govuk-hugo-demo/docs/shortcodes/">Shortcodes</a></li>
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                <li class="nav-item nav-active-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state "
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/rmarkdown/">Hugo-ify R Markdown documents</a></li>
                 
 
                 
@@ -141,18 +168,6 @@
                 
                 <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
                                 href="https://co-analysis.github.io/govuk-hugo-demo/docs/render_svg/">Accessible charts</a></li>
-                
-
-                
-
-                
-
-                
-
-                
-                <li class="nav-item nav-active-item"><a
-                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state "
-                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/rmarkdown/">Hugo-ify R Markdown documents</a></li>
                 
 
                 
@@ -218,18 +233,22 @@
 
 </nav></div>
                 <div class="dashboard-content">
+
+
 <h1 class="govuk-heading-xl">Hugo-ify R Markdown documents</h1>
+
 
 <div class="govuk-body">
 
-    <p><a href="https://gohugo.io">Hugo</a> is a static site builder that is fast and lightweight, it is the preferred engine for building <a href="https://cran.r-project.org/package=blogdown"><code>{blogdown}</code></a> sites.</p>
-<p><a href="https://github.com/co-analysis/govuk-hugo"><code>govuk-hugo</code></a> is a theme for Hugo that applies the <a href="https://design-system.service.gov.uk/">GOV.UK Design System</a>. The theme is designed with dashboard-/book-style output common for publishing data products, and has been strongly influenced by the application of the Design System&rsquo;s principle and components in Public Health England&rsquo;s <a href="https://coronavirus.data.gov.uk/">Coronavirus dashboard</a>.</p>
-<p><code>{govukhugo}</code> is an R package that enables the use of R Markdown documents in Hugo static sites using the <code>govuk-hugo</code> theme, it provides an easy way for R users to initialise a Hugo site using the <code>govuk-hugo</code> theme. The <code>govuk-hugo</code> theme is not compatible with <code>{blogdown}</code>, therefore the package also provides a means to render and build Rmarkdown documents.</p>
-<p>Examples of how <code>{govukhugo}</code> converts a <a href="https://co-analysis.github.io/govuk-hugo-demo/tests/static_rmd/">static R Markdown page</a> and an <a href="https://co-analysis.github.io/govuk-hugo-demo/tests/interactive_rmd/">interactive R Markdown page</a> are provided in the tests section of this documentation.</p>
+    <p><a href="https://gohugo.io" class="govuk-link"  target="_blank" rel="noreferrer noopener">Hugo</a> is a static site builder that is fast and lightweight, it is the preferred engine for building <a href="https://cran.r-project.org/package=blogdown" class="govuk-link"  target="_blank" rel="noreferrer noopener"><code>{blogdown}</code></a> sites.</p>
+<p><a href="https://github.com/co-analysis/govukhugo" class="govuk-link"  target="_blank" rel="noreferrer noopener"><code>govukhugo</code></a> is a theme for Hugo that applies the <a href="https://design-system.service.gov.uk/" class="govuk-link"  target="_blank" rel="noreferrer noopener">GOV.UK Design System</a>. The theme is designed with dashboard-/book-style output common for publishing data products, and has been strongly influenced by the application of the Design System&rsquo;s principle and components in Public Health England&rsquo;s <a href="https://coronavirus.data.gov.uk/" class="govuk-link"  target="_blank" rel="noreferrer noopener">Coronavirus dashboard</a>.</p>
+<p><code>{govukhugo}</code> is an R package that enables the use of R Markdown documents in Hugo static sites using the <code>govukhugo</code> theme, it provides an easy way for R users to initialise a Hugo site using the <code>govukhugo</code> theme. The <code>govukhugo</code> theme is not compatible with <code>{blogdown}</code>, therefore the package also provides a means to render and build Rmarkdown documents.</p>
+<p>Examples of how <code>{govukhugo}</code> converts a <a href="https://co-analysis.github.io/govuk-hugo-demo/tests/static_rmd/" class="govuk-link" >static R Markdown page</a> and an <a href="https://co-analysis.github.io/govuk-hugo-demo/tests/interactive_rmd/" class="govuk-link" >interactive R Markdown page</a> are provided in the tests section of this documentation.</p>
 <aside id="page_toc" class="govuk-body toc govuk-body-s">
-  <span class="toc-header">Contents</span>
+  <span class="toc-header govuk-caption-l">Contents</span>
   <nav id="TableOfContents">
   <ul>
+    <li><a href="#govdown-or-govukhugo">govdown or govukhugo</a></li>
     <li><a href="#installing-and-using-govukhugo">Installing and using {govukhugo}</a></li>
     <li><a href="#converting-rmarkdown-documents">Converting RMarkdown documents</a>
       <ul>
@@ -244,7 +263,15 @@
   </ul>
 </nav>
 </aside>
-<h2 id="installing-and-using-govukhugo">Installing and using {govukhugo}</h2>
+
+<h2 id="govdown-or-govukhugo" class="govuk-heading-l">govdown or govukhugo</h2>
+<p>The work of <code>govukhugo</code> is inspired by the earlier efforts of the <a href="https://ukgovdatascience.github.io/govdown/" class="govuk-link"  target="_blank" rel="noreferrer noopener"><code>{govdown}</code></a> package that worked entirely within the Rmarkdown ecosystem, <code>govukhugo</code> builds on the early lessons learnt by the <code>{govdown}</code> project and aims to overcome some of its limitations.</p>
+<p>The design of <code>{govdown}</code> is itself inspired by the <a href="https://bookdown.org/yihui/bookdown/" class="govuk-link"  target="_blank" rel="noreferrer noopener"><code>{bookdown}</code></a> package which is designed to enable R users to write books using Rmarkdown, including rendering them as HTML. Unfortunately <code>{bookdown}</code> rendered websites do not easily support sub-directories and all content is assumed to sit at the same level.</p>
+<p><code>{govdown}</code> renders content to look similar to that for standard GOV.UK service pages, this is a layout optimised for prose (guidance and reports) and transactional services (such as applying for a passport). However, this layout is not necessarily optimised for communicating data, statistics and analysis, <code>govukhugo</code> seeks to overcome this by adopting a &lsquo;dashboard&rsquo; layout. In simple terms the standard layout supported by <code>{govdown}</code> can be considered a &lsquo;portrait&rsquo; orientation, whereas the dashboard layout of <code>govukhugo</code> as having a &lsquo;landscape&rsquo; orientation by default.</p>
+<p>As a complete Rmarkdown package, <code>{govdown}</code> uses Pandoc and its lua filters to render content into the GOV.UK design system. This is particularly complicated to maintain and update, especially the support of design system components. The Hugo templating system makes it much easier to maintain the base scaffold of the <code>govukhugo</code> theme, and to customise individual sites as necessary. Furthermore, the Hugo shortcode system makes it easy to extend support for different design system components and patterns.</p>
+<p><code>govukhugo</code> and its R package are not a complete Rmarkdown package, as discussed below you cannot &ldquo;knit&rdquo; an Rmarkdown document into a govukhugo page, rather Rmarkdown is used to create interactive pages within the framework of a <code>govukhugo</code> site. The added benefit here is that the <code>govukhugo</code> can be used with other data science technologies and languages that can generate markdown or HTML content.</p>
+
+<h2 id="installing-and-using-govukhugo" class="govuk-heading-l">Installing and using {govukhugo}</h2>
 <p>The <code>{govukhugo}</code> package is not currently on CRAN, you can install it from GitHub:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -254,7 +281,7 @@
 <pre class="chroma"><code class="language-r" data-lang="r"><span class="n">remotes</span><span class="o">::</span><span class="nf">install_github</span><span class="p">(</span><span class="s">&#34;co-analysis/govuk-hugo-r&#34;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>Within RStudio you can use <code>init_govuk_hugo()</code> to create a Hugo site with the <code>govuk-hugo</code> theme. Otherwise follow the general <a href="https://co-analysis.github.io/govuk-hugo-demo/">getting started info</a>.</p>
+</div><p>Within RStudio you can use <code>init_govuk_hugo()</code> to create a Hugo site with the <code>govukhugo</code> theme. Otherwise follow the general <a href="https://co-analysis.github.io/govuk-hugo-demo/" class="govuk-link" >getting started info</a>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -321,22 +348,26 @@
 <span class="nf">render_rmd</span><span class="p">(</span><span class="s">&#34;R/Rmd/my_file.Rmd&#34;</span><span class="p">,</span> <span class="n">out_dir</span> <span class="o">=</span> <span class="s">&#34;R/test_output&#34;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>Interactive elements from the <a href="https://rstudio.github.io/DT/"><code>{DT}</code></a>, <a href="https://plot.ly/r/"><code>{plotly}</code></a> and  <a href="https://rstudio.github.io/leaflet/"><code>{leaflet}</code></a> packages are supported (see below).</p>
-<h2 id="converting-rmarkdown-documents">Converting RMarkdown documents</h2>
-<p>While Hugo is intended for converting plain markdown (<code>.md</code>) files, <code>{blogdown}</code> websites rely on the fact that Hugo also processes HTML files (given certain parameters). However, as outlined in the <a href="https://bookdown.org/yihui/blogdown/other-themes.html"><code>{blogdown}</code> documentation</a>, Hugo themes are not always compatible and &ldquo;it can be time-consuming&rdquo; to adapt them.</p>
-<p>This is the case for <code>govuk-hugo</code>. Trying to solve this problem, from investigating the inner workings of <code>{blogdown}</code> one learns that its <code>html_page()</code> format is a wrapper around the <code>bookdown::html_document2()</code> format, which itself is a wrapper around <code>rmarkdown::html_document()</code>.</p>
-<p>Rather than invest time in making the <code>govuk-hugo</code> theme work with <code>{blogdown}</code> the <code>{govukhugo}</code> package goes back to first principles to create HTML that Hugo will process.</p>
+</div><p>Interactive elements from the <a href="https://rstudio.github.io/DT/" class="govuk-link"  target="_blank" rel="noreferrer noopener"><code>{DT}</code></a>, <a href="https://plot.ly/r/" class="govuk-link"  target="_blank" rel="noreferrer noopener"><code>{plotly}</code></a> and  <a href="https://rstudio.github.io/leaflet/" class="govuk-link"  target="_blank" rel="noreferrer noopener"><code>{leaflet}</code></a> packages are supported (see below).</p>
+
+<h2 id="converting-rmarkdown-documents" class="govuk-heading-l">Converting RMarkdown documents</h2>
+<p>While Hugo is intended for converting plain markdown (<code>.md</code>) files, <code>{blogdown}</code> websites rely on the fact that Hugo also processes HTML files (given certain parameters). However, as outlined in the <a href="https://bookdown.org/yihui/blogdown/other-themes.html" class="govuk-link"  target="_blank" rel="noreferrer noopener"><code>{blogdown}</code> documentation</a>, Hugo themes are not always compatible and &ldquo;it can be time-consuming&rdquo; to adapt them.</p>
+<p>This is the case for <code>govukhugo</code>. Trying to solve this problem, from investigating the inner workings of <code>{blogdown}</code> one learns that its <code>html_page()</code> format is a wrapper around the <code>bookdown::html_document2()</code> format, which itself is a wrapper around <code>rmarkdown::html_document()</code>.</p>
+<p>Rather than invest time in making the <code>govukhugo</code> theme work with <code>{blogdown}</code> the <code>{govukhugo}</code> package goes back to first principles to create HTML that Hugo will process.</p>
 <p>For end users the <code>build_hugo()</code> and <code>build_hugo_rmd()</code> functions are all that are required.</p>
-<h3 id="under-the-hood-the-hugo-ification-process">Under the hood: the &ldquo;Hugo-ification&rdquo; process</h3>
+
+<h3 id="under-the-hood-the-hugo-ification-process" class="govuk-heading-m">Under the hood: the &ldquo;Hugo-ification&rdquo; process</h3>
 <p>The site building functions call <code>render_rmd()</code> which processes an Rmd file and converts it to an HTML file that Hugo will process. The Rmd is minimally rendered into HTML by <code>rmarkdown::html_document()</code>: without a theme, without MathJax, data frames are printed via <code>knitr::kable()</code> and as a self-contained document. A self-contained document is chosen so that static plots are stored as base64 content within the file rather than having to deal with separate images.</p>
 <p>Having rendered the HTML file, it is then passed to a back-end function (<code>hugo_html()</code>), which &ldquo;Hugo-ifies&rdquo; the HTML. It replaces the HTML entities <code>&amp;lt;</code> and <code>&amp;gt;</code> with <code>&lt;</code> and <code>&gt;</code> so that code fragments will be processed by Hugo properly. It replaces the HTML tags for code blocks <code>&lt;pre&gt;&lt;code&gt;</code> with Hugo&rsquo;s shortcode for code block syntax highlighting. Finally, it extracts the HTML content between the <code>&lt;body&gt;</code> tags, excluding the lines where the title and date have been written by <code>html_document()</code>.</p>
 <p>The Hugo-ified HTML is then returned to <code>render_rmd()</code> which finishes the process by prepending the YAML front-matter of the Rmd file to the HTML. A <code>rmarkdown: true</code> parameter is also added to the YAML. Finally, the YAML is scanned for the <code>section</code> parameter, if present this is used to determine the sub-folder of the site&rsquo;s <code>content</code> directory that the HTML will be placed in.</p>
-<h2 id="supporting-htmlwidgets">Supporting htmlwidgets</h2>
-<p>R Markdown documents that do not include interactive content, e.g. that print a data frame or include a plot image, will now be converted when Hugo builds the site. However, a common reason for writing R Markdown documents is to include interactive components. When rendering an R Markdown document that include an <a href="http://www.htmlwidgets.org/"><code>{htmlwidgets}</code></a> component the rendering process will insert the relevant dependencies into the <code>&lt;head&gt;</code> component of the resulting HTML document.</p>
-<p>As just described, the &ldquo;Hugo-ified&rdquo; HTML process of <code>{govukhugo}</code> removes the head component, thus removing these dependencies. This is rectified by the setting of the <code>rmarkdown: true</code> parameter in the YAML front matter of the HTML page. When Hugo processes the HTML it reads this parameter in adds back in the dependencies to the head component of the relevant page. At present it adds in the dependencies for the <a href="https://rstudio.github.io/DT/"><code>{DT}</code></a>, <a href="https://plot.ly/r/"><code>{plotly}</code></a> and  <a href="https://rstudio.github.io/leaflet/"><code>{leaflet}</code></a>.</p>
-<p>The <a href="https://rstudio.github.io/crosstalk/"><code>{crosstalk}</code></a> package&rsquo;s filtering controls that allow dynamic filtering of the data used by these three widgets are also supported. However, users should wrap any calls to these controls in the package&rsquo;s <code>unstrap()</code> function which removes the dependencies associated with the Bootstrap framework, if you do not remove these the page may render incorrectly. Note that these controls make use of the selectize.js library and may not work properly for users of assistive technologies.</p>
-<h3 id="govuk_datatable">govuk_datatable()</h3>
-<p>The <code>{DT}</code> package provides an opinionated implementation of the <a href="https://datatables.net/">DataTables jQuery plugin</a>, which does not easily conform to the GOV.UK Design System. As a result <code>{govukhugo}</code> includes a <code>govuk_datatable()</code> function that acts as a wrapper around <code>DT::datatable()</code>. Note that <code>govuk_datatable()</code> only provides access to some aspects of the <code>datatable()</code> arguments, and does not support passing of additional arguments via a <code>...</code> argument, this is to minimise the potential for disrupting the application of GOV.UK style.</p>
+
+<h2 id="supporting-htmlwidgets" class="govuk-heading-l">Supporting htmlwidgets</h2>
+<p>R Markdown documents that do not include interactive content, e.g. that print a data frame or include a plot image, will now be converted when Hugo builds the site. However, a common reason for writing R Markdown documents is to include interactive components. When rendering an R Markdown document that include an <a href="http://www.htmlwidgets.org/" class="govuk-link"  target="_blank" rel="noreferrer noopener"><code>{htmlwidgets}</code></a> component the rendering process will insert the relevant dependencies into the <code>&lt;head&gt;</code> component of the resulting HTML document.</p>
+<p>As just described, the &ldquo;Hugo-ified&rdquo; HTML process of <code>{govukhugo}</code> removes the head component, thus removing these dependencies. This is rectified by the setting of the <code>rmarkdown: true</code> parameter in the YAML front matter of the HTML page. When Hugo processes the HTML it reads this parameter in adds back in the dependencies to the head component of the relevant page. At present it adds in the dependencies for the <a href="https://rstudio.github.io/DT/" class="govuk-link"  target="_blank" rel="noreferrer noopener"><code>{DT}</code></a>, <a href="https://plot.ly/r/" class="govuk-link"  target="_blank" rel="noreferrer noopener"><code>{plotly}</code></a> and  <a href="https://rstudio.github.io/leaflet/" class="govuk-link"  target="_blank" rel="noreferrer noopener"><code>{leaflet}</code></a>.</p>
+<p>The <a href="https://rstudio.github.io/crosstalk/" class="govuk-link"  target="_blank" rel="noreferrer noopener"><code>{crosstalk}</code></a> package&rsquo;s filtering controls that allow dynamic filtering of the data used by these three widgets are also supported. However, users should wrap any calls to these controls in the package&rsquo;s <code>unstrap()</code> function which removes the dependencies associated with the Bootstrap framework, if you do not remove these the page may render incorrectly. Note that these controls make use of the selectize.js library and may not work properly for users of assistive technologies.</p>
+
+<h3 id="govuk_datatable" class="govuk-heading-m">govuk_datatable()</h3>
+<p>The <code>{DT}</code> package provides an opinionated implementation of the <a href="https://datatables.net/" class="govuk-link"  target="_blank" rel="noreferrer noopener">DataTables jQuery plugin</a>, which does not easily conform to the GOV.UK Design System. As a result <code>{govukhugo}</code> includes a <code>govuk_datatable()</code> function that acts as a wrapper around <code>DT::datatable()</code>. Note that <code>govuk_datatable()</code> only provides access to some aspects of the <code>datatable()</code> arguments, and does not support passing of additional arguments via a <code>...</code> argument, this is to minimise the potential for disrupting the application of GOV.UK style.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -367,10 +398,10 @@
 <li><code>search</code>: whether to include the table search functionality</li>
 <li><code>small_text</code>: whether the table should render with a smaller font-size (only recommended for very large tables)</li>
 <li><code>buttons</code>: whether to include a copy and csv download button with the table</li>
-<li><code>col_defs</code>: a list of column definitions (see the <a href="https://rstudio.github.io/DT/options.html"><code>{DT}</code></a> and <a href="https://datatables.net/reference/option/columnDefs">DataTables</a> documentation for more details)</li>
+<li><code>col_defs</code>: a list of column definitions (see the <a href="https://rstudio.github.io/DT/options.html" class="govuk-link"  target="_blank" rel="noreferrer noopener"><code>{DT}</code></a> and <a href="https://datatables.net/reference/option/columnDefs" class="govuk-link"  target="_blank" rel="noreferrer noopener">DataTables</a> documentation for more details)</li>
 </ul>
-<p><code>govuk_datatable()</code> returns a <code>DT::datatable</code> object, meaning that <code>{DT}</code> formatting <a href="https://rstudio.github.io/DT/functions.html">functions</a>, such as <code>DT::formatPercentage()</code>, should work on the returned object. Styling functions should be used with caution.</p>
-<p>An example of <code>govuk_datatable()</code> can be seen on the interactive R Markdown <a href="https://co-analysis.github.io/govuk-hugo-demo/tests/interactive_rmd/">test page</a></p>
+<p><code>govuk_datatable()</code> returns a <code>DT::datatable</code> object, meaning that <code>{DT}</code> formatting <a href="https://rstudio.github.io/DT/functions.html" class="govuk-link"  target="_blank" rel="noreferrer noopener">functions</a>, such as <code>DT::formatPercentage()</code>, should work on the returned object. Styling functions should be used with caution.</p>
+<p>An example of <code>govuk_datatable()</code> can be seen on the interactive R Markdown <a href="https://co-analysis.github.io/govuk-hugo-demo/tests/interactive_rmd/" class="govuk-link" >test page</a></p>
 
 
 </div>
@@ -464,12 +495,6 @@
 
      
     applyGOVUK("P", "govuk-body");
-
-     
-    applyGOVUK("H1", "govuk-heading-xl");
-    applyGOVUK("H2", "govuk-heading-l");
-    applyGOVUK("H3", "govuk-heading-m");
-    applyGOVUK("H4", "govuk-heading-s");
 
      
     applyGOVUK("TABLE", "govuk-table");
