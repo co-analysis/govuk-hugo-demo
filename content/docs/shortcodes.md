@@ -2,17 +2,19 @@
 title: "Shortcodes"
 date: 2021-01-01
 type: post
-weight: 100
+weight: 200
 summary: "Custom shortcodes"
 ---
 
 In addition to the default [Hugo shortcodes](https://gohugo.io/content-management/shortcodes/), `govuk-hugo` includes the following custom shortcodes, most of which are intended to make it easier to add GOV.UK Design System [components](https://design-system.service.gov.uk/components/).
 
+{{< TOC >}}
+
 ## In-page table of contents
 An in-page table of contents, suitable for long-form articles can be included by using the shortcode `{{</* TOC */>}}` within your document. Preferably, you should include this after the first section of text but before the first secondary heading.
 
 <aside id="page_toc" class="govuk-body toc govuk-body-s">
-  <span class="toc-header">Table of contents</span>
+  <span class="toc-header govuk-caption-l">Contents</span>
   <nav id="TableOfContents">
   <ul class="toc-list">
     <li><a href="#" class="toc-link">Section</a></li>

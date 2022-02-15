@@ -5,13 +5,15 @@ type: post
 listpages: false
 ---
 
-This site demonstrates how the `govuk-hugo` theme works.
+This site demonstrates how the `govukhugo` theme works.
 
-`govuk-hugo` is a theme for the [Hugo](https://gohugo.io/) static site builder that provides a version of the [GOV.UK Design System](https://design-system.service.gov.uk/) for Hugo. Presently it is only designed for dashboard style content, and heavily inspired by the UK government [Coronavirus dashboard](https://coronavirus.data.gov.uk/). While technology agnostic, it has also been developed with a view to supporting the development of data-based sites using [R and R Markdown]({{< ref "/docs/rmarkdown.html" >}}).
+`govukhugo` is a theme for the [Hugo](https://gohugo.io/) static site builder that provides a version of the [GOV.UK Design System](https://design-system.service.gov.uk/) for Hugo. Presently it is only designed for dashboard style content, and heavily inspired by the UK government [Coronavirus dashboard](https://coronavirus.data.gov.uk/). While technology agnostic, it has also been developed with a view to supporting the development of data-based sites using [R and R Markdown]({{< ref "/docs/rmarkdown.html" >}}) and there is an associated [R package](https://github.com/co-analysis/govuk-hugo-r) to support this.
+
+This site provides both [documentation]({{< ref "/docs/_index.md" >}}) and [examples]({{< ref "/tests/_index.md" >}}).
 
 ## Getting started
 
-To use `govuk-hugo`, install Hugo as per the [getting started](https://gohugo.io/getting-started/) advice and then create a new site.
+To use `govukhugo`, install Hugo as per the [getting started](https://gohugo.io/getting-started/) advice and then create a new site.
 
 If creating from scratch (i.e. without an existing directory) the following code will create a Hugo site in the folder called `SITEDIR`:
 
@@ -26,33 +28,33 @@ $ cd SITEDIR
 $ hugo new site . --force -f "yaml"
 ```
 
-Note that YAML is preferred for the format of config files, all documentation for `govuk-hugo` will use YAML. TOML (Hugo's default) should work, but is not supported and has not been tested.
+Note that YAML is preferred for the format of config files, all documentation for `govukhugo` will use YAML. TOML (Hugo's default) should work, but is not supported and has not been tested.
 
-### Add the `govuk-hugo` theme
+### Add the `govukhugo` theme
 
 Add as a git clone/submodule, as the theme is under active development it is recommended that you use git to add the theme so that you can easily get updates.
 
 If your hugo site is in its own git repo then add as a submodule:
 
 ```shell
-$ git submodule add https://github.com/co-analysis/govuk-hugo.git themes/govukhugo
+$ git submodule add https://github.com/co-analysis/govukhugo.git themes/govukhugo
 ```
 
 If you hugo site is not a git repo then clone the theme:
 
 ```shell
-$ git clone https://github.com/co-analysis/govuk-hugo.git themes/govukhugo
+$ git clone https://github.com/co-analysis/govukhugo.git themes/govukhugo
 ```
 
 You can also manually add the theme, this is not recommended as it will be less easy for you to track updates:
 
-1. Download the govuk-hugo repo's [zip file](https://github.com/co-analysis/govuk-hugo/archive/main.zip)
+1. Download the govukhugo repo's [zip file](https://github.com/co-analysis/govukhugo/archive/main.zip)
 1. Create a `govukhugo` folder inside the `themes` folder
 1. Extract the zip file and copy the files and folders into the themes/govukhugo folder
 
 ### Configure
 
-To apply the `govuk-hugo` theme, your `config.yaml` file should look like:
+To apply the `govukhugo` theme, your `config.yaml` file should look like:
 
 ```yaml
 baseURL: https://your.site/

@@ -1,19 +1,31 @@
 ---
 title: "Hugo-ify R Markdown documents"
 date: 2021-01-28
-weight: 900
+weight: 300
 Summary: Using the {govukhugo} package to render and build sites with R Markdown documents
 ---
 
 [Hugo](https://gohugo.io) is a static site builder that is fast and lightweight, it is the preferred engine for building [`{blogdown}`](https://cran.r-project.org/package=blogdown) sites.
 
-[`govuk-hugo`](https://github.com/co-analysis/govuk-hugo) is a theme for Hugo that applies the [GOV.UK Design System](https://design-system.service.gov.uk/). The theme is designed with dashboard-/book-style output common for publishing data products, and has been strongly influenced by the application of the Design System's principle and components in Public Health England's [Coronavirus dashboard](https://coronavirus.data.gov.uk/).
+[`govukhugo`](https://github.com/co-analysis/govukhugo) is a theme for Hugo that applies the [GOV.UK Design System](https://design-system.service.gov.uk/). The theme is designed with dashboard-/book-style output common for publishing data products, and has been strongly influenced by the application of the Design System's principle and components in Public Health England's [Coronavirus dashboard](https://coronavirus.data.gov.uk/).
 
-`{govukhugo}` is an R package that enables the use of R Markdown documents in Hugo static sites using the `govuk-hugo` theme, it provides an easy way for R users to initialise a Hugo site using the `govuk-hugo` theme. The `govuk-hugo` theme is not compatible with `{blogdown}`, therefore the package also provides a means to render and build Rmarkdown documents.
+`{govukhugo}` is an R package that enables the use of R Markdown documents in Hugo static sites using the `govukhugo` theme, it provides an easy way for R users to initialise a Hugo site using the `govukhugo` theme. The `govukhugo` theme is not compatible with `{blogdown}`, therefore the package also provides a means to render and build Rmarkdown documents.
 
 Examples of how `{govukhugo}` converts a [static R Markdown page]({{< relref "tests/static_rmd.html" >}}) and an [interactive R Markdown page]({{< relref "tests/interactive_rmd.html" >}}) are provided in the tests section of this documentation.
 
 {{< TOC >}}
+
+## govdown or govukhugo
+The work of `govukhugo` is inspired by the earlier efforts of the [`{govdown}`](https://ukgovdatascience.github.io/govdown/) package that worked entirely within the Rmarkdown ecosystem, `govukhugo` builds on the early lessons learnt by the `{govdown}` project and aims to overcome some of its limitations.
+
+The design of `{govdown}` is itself inspired by the [`{bookdown}`](https://bookdown.org/yihui/bookdown/) package which is designed to enable R users to write books using Rmarkdown, including rendering them as HTML. Unfortunately `{bookdown}` rendered websites do not easily support sub-directories and all content is assumed to sit at the same level.
+
+`{govdown}` renders content to look similar to that for standard GOV.UK service pages, this is a layout optimised for prose (guidance and reports) and transactional services (such as applying for a passport). However, this layout is not necessarily optimised for communicating data, statistics and analysis, `govukhugo` seeks to overcome this by adopting a 'dashboard' layout. In simple terms the standard layout supported by `{govdown}` can be considered a 'portrait' orientation, whereas the dashboard layout of `govukhugo` as having a 'landscape' orientation by default.
+
+As a complete Rmarkdown package, `{govdown}` uses Pandoc and its lua filters to render content into the GOV.UK design system. This is particularly complicated to maintain and update, especially the support of design system components. The Hugo templating system makes it much easier to maintain the base scaffold of the `govukhugo` theme, and to customise individual sites as necessary. Furthermore, the Hugo shortcode system makes it easy to extend support for different design system components and patterns.
+
+`govukhugo` and its R package are not a complete Rmarkdown package, as discussed below you cannot "knit" an Rmarkdown document into a govukhugo page, rather Rmarkdown is used to create interactive pages within the framework of a `govukhugo` site. The added benefit here is that the `govukhugo` can be used with other data science technologies and languages that can generate markdown or HTML content.
+
 
 ## Installing and using {govukhugo}
 
@@ -23,7 +35,7 @@ The `{govukhugo}` package is not currently on CRAN, you can install it from GitH
 remotes::install_github("co-analysis/govuk-hugo-r")
 ```
 
-Within RStudio you can use `init_govuk_hugo()` to create a Hugo site with the `govuk-hugo` theme. Otherwise follow the general [getting started info]({{< relref "../_index.md" >}}).
+Within RStudio you can use `init_govuk_hugo()` to create a Hugo site with the `govukhugo` theme. Otherwise follow the general [getting started info]({{< relref "../_index.md" >}}).
 
 ```r
 library(govukhugo)
@@ -73,9 +85,9 @@ Interactive elements from the [`{DT}`](https://rstudio.github.io/DT/), [`{plotly
 
 While Hugo is intended for converting plain markdown (`.md`) files, `{blogdown}` websites rely on the fact that Hugo also processes HTML files (given certain parameters). However, as outlined in the [`{blogdown}` documentation](https://bookdown.org/yihui/blogdown/other-themes.html), Hugo themes are not always compatible and "it can be time-consuming" to adapt them.
 
-This is the case for `govuk-hugo`. Trying to solve this problem, from investigating the inner workings of `{blogdown}` one learns that its `html_page()` format is a wrapper around the `bookdown::html_document2()` format, which itself is a wrapper around `rmarkdown::html_document()`.
+This is the case for `govukhugo`. Trying to solve this problem, from investigating the inner workings of `{blogdown}` one learns that its `html_page()` format is a wrapper around the `bookdown::html_document2()` format, which itself is a wrapper around `rmarkdown::html_document()`.
 
-Rather than invest time in making the `govuk-hugo` theme work with `{blogdown}` the `{govukhugo}` package goes back to first principles to create HTML that Hugo will process.
+Rather than invest time in making the `govukhugo` theme work with `{blogdown}` the `{govukhugo}` package goes back to first principles to create HTML that Hugo will process.
 
 For end users the `build_hugo()` and `build_hugo_rmd()` functions are all that are required.
 
