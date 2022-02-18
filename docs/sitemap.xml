@@ -53,6 +53,26 @@
   </url>
   
   <url>
+    <loc>https://co-analysis.github.io/govuk-hugo-demo/rpkg/build/</loc>
+    <lastmod>2021-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://co-analysis.github.io/govuk-hugo-demo/rpkg/filters/</loc>
+    <lastmod>2021-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://co-analysis.github.io/govuk-hugo-demo/rpkg/render_svg/</loc>
+    <lastmod>2021-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://co-analysis.github.io/govuk-hugo-demo/rpkg/govuk_datatable/</loc>
+    <lastmod>2021-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://co-analysis.github.io/govuk-hugo-demo/accessibility/</loc>
     <lastmod>2021-02-01T00:00:00+00:00</lastmod>
   </url>
@@ -79,6 +99,11 @@
   
   <url>
     <loc>https://co-analysis.github.io/govuk-hugo-demo/tests/</loc>
+    <lastmod>2021-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://co-analysis.github.io/govuk-hugo-demo/rpkg/</loc>
     <lastmod>2021-01-22T00:00:00+00:00</lastmod>
   </url>
   

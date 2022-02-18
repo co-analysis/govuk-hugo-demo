@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R package documentation on govuk-hugo Demonstration</title>
+    <link>https://co-analysis.github.io/govuk-hugo-demo/rpkg/</link>
+    <description>Recent content in R package documentation on govuk-hugo Demonstration</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Fri, 22 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Build tools</title>
+      <link>https://co-analysis.github.io/govuk-hugo-demo/rpkg/build/</link>
+      <pubDate>Thu, 18 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://co-analysis.github.io/govuk-hugo-demo/rpkg/build/</guid>
+      <description>Functions for building govukhugo sites from Rmarkdown</description>
+    </item>
+    
+    <item>
+      <title>Crosstalk filters</title>
+      <link>https://co-analysis.github.io/govuk-hugo-demo/rpkg/filters/</link>
+      <pubDate>Thu, 18 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://co-analysis.github.io/govuk-hugo-demo/rpkg/filters/</guid>
+      <description>Supporting interactive filtering controls</description>
+    </item>
+    
+    <item>
+      <title>Image tools</title>
+      <link>https://co-analysis.github.io/govuk-hugo-demo/rpkg/render_svg/</link>
+      <pubDate>Thu, 18 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://co-analysis.github.io/govuk-hugo-demo/rpkg/render_svg/</guid>
+      <description>Improving the accessibility of ggplot charts</description>
+    </item>
+    
+    <item>
+      <title>Interactive tables</title>
+      <link>https://co-analysis.github.io/govuk-hugo-demo/rpkg/govuk_datatable/</link>
+      <pubDate>Thu, 18 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://co-analysis.github.io/govuk-hugo-demo/rpkg/govuk_datatable/</guid>
+      <description>Enabling interactive tables in govukhugo</description>
+    </item>
+    
+  </channel>
+</rss>

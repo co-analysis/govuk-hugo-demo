@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   
   
-  <title>govuk-hugo Demonstration | Tests</title>
+  <title>govuk-hugo Demonstration | Image tools</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0b0c0c">
 
@@ -139,12 +139,72 @@
                 
 
                 
-                <li class="nav-section nav-active-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/tests/">Examples</a>
+                <li class="nav-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/tests/">Examples</a>
                 </li>
                 
                 
 
                 
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-section nav-active-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/">R package documentation</a>
+                </li>
+                
+                
+
+                
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/build/">Build tools</a></li>
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/filters/">Crosstalk filters</a></li>
+                
+
+                
+
                 
 
                 
@@ -152,78 +212,18 @@
                 
                 <li class="nav-item nav-active-item"><a
                                 class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state "
-                                href="https://co-analysis.github.io/govuk-hugo-demo/tests/tests/">Tests</a></li>
+                                href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/render_svg/">Image tools</a></li>
                 
 
                 
 
-                
-                
                 
 
                 
 
                 
                 <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/tests/static_rmd/">Static R Markdown</a></li>
-                
-
-                
-
-                
-                
-                
-
-                
-
-                
-                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/tests/interactive_rmd/">Interactive R Markdown</a></li>
-                
-
-                
-
-                
-                
-                
-
-                
-
-                
-                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/tests/crosstalk_rmd/">Filtering with crosstalk</a></li>
-                
-
-                
-
-                
-                
-
-                
-
-                
-
-                
-
-                
-                <li class="nav-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/">R package documentation</a>
-                </li>
-                
-                
-
-                
-                
-
-                
-
-                
-
-                
-
-                
-
-                
-
+                                href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/govuk_datatable/">Interactive tables</a></li>
                 
 
                 
@@ -253,64 +253,110 @@
                 <div class="dashboard-content">
 
 
-<h1 class="govuk-heading-xl">Tests</h1>
+<h1 class="govuk-heading-xl">Image tools</h1>
 
 
 <div class="govuk-body">
 
-    <p>A page for tests</p>
-<p>Here is an <code>inline code block</code>.</p>
+    <p>The <code>{govukhugo}</code> R package includes the <code>render_svg()</code> function to provide improved accessibility of ggplot charts. A fuller description of this function is provided in the <a href="https://co-analysis.github.io/govuk-hugo-demo/docs/render_svg/" class="govuk-link" >main documentation</a>. This function expects that the <a href="https://svglite.r-lib.org/" class="govuk-link"  target="_blank" rel="noreferrer noopener"><code>{svglite}</code></a> package is also installed.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># A code block for R</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
-
-<span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
-
-<span class="n">x</span> <span class="o">%&gt;%</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="s">&#34;b&#34;</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="m">12382</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-
-<span class="c1"># This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line.s</span>
-
-</code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># A code block for python</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-
-<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-
-</code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!--&gt; A code block for HTML&lt;--&gt;</span>
-<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://www.example.com&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;link&#34;</span><span class="p">&gt;</span>a link<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">render_svg</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span>
+  <span class="n">plot</span><span class="p">,</span>
+  <span class="n">width</span><span class="p">,</span>
+  <span class="n">height</span><span class="p">,</span>
+  <span class="n">units</span> <span class="o">=</span> <span class="s">&#34;px&#34;</span><span class="p">,</span>
+  <span class="n">alt_title</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">,</span>
+  <span class="n">alt_desc</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">,</span>
+  <span class="n">caption</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">,</span>
+  <span class="n">dpi</span> <span class="o">=</span> <span class="m">96</span>
+<span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div>
+<h2 id="arguments" class="govuk-heading-l">Arguments</h2>
+<dl class="govuk-summary-list govuk-summary-list--no-border">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      plot
+    </dt>
+    <dd class="govuk-summary-list__value">
+      A [`ggplot2::ggplot()`](https://ggplot2.tidyverse.org/reference/ggplot.html) object.
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      width
+    </dt>
+    <dd class="govuk-summary-list__value">
+      The desired width of the object.
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      height
+    </dt>
+    <dd class="govuk-summary-list__value">
+      The desired height of the object.
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      units
+    </dt>
+    <dd class="govuk-summary-list__value">
+      The units of width and height, the default is pixels (`"px"`).
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      alt_title
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Short alt text (will show as a tool-tip)
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      alt_desc
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Longer alt text (for assistive technology)
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      caption
+    </dt>
+    <dd class="govuk-summary-list__value">
+      A caption to display to all users, can also be set to `"alt_title"` or `"alt_desc"` to reuse those values.
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      dpi
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Dots per inch, default for 96 for screen resolution, switch to 300 if using physical units (e.g. mm, cm or inches).
+    </dd>
+  </div>
+</dl>
+
+<h2 id="render_svg" class="govuk-heading-l">render_svg()</h2>
+<p>The <code>render_svg()</code> function uses svglite to render the ggplot object, it will then insert into the plot the supplied alt text and if specified will also provide a caption for the figure.</p>
+
 
 </div>
 

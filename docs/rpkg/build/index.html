@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   
   
-  <title>govuk-hugo Demonstration | Tests</title>
+  <title>govuk-hugo Demonstration | Build tools</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0b0c0c">
 
@@ -139,7 +139,45 @@
                 
 
                 
-                <li class="nav-section nav-active-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/tests/">Examples</a>
+                <li class="nav-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/tests/">Examples</a>
+                </li>
+                
+                
+
+                
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-section nav-active-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/">R package documentation</a>
                 </li>
                 
                 
@@ -152,78 +190,40 @@
                 
                 <li class="nav-item nav-active-item"><a
                                 class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state "
-                                href="https://co-analysis.github.io/govuk-hugo-demo/tests/tests/">Tests</a></li>
+                                href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/build/">Build tools</a></li>
                 
 
                 
 
-                
-                
                 
 
                 
 
                 
                 <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/tests/static_rmd/">Static R Markdown</a></li>
+                                href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/filters/">Crosstalk filters</a></li>
                 
 
                 
 
-                
-                
                 
 
                 
 
                 
                 <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/tests/interactive_rmd/">Interactive R Markdown</a></li>
+                                href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/render_svg/">Image tools</a></li>
                 
 
                 
 
-                
-                
                 
 
                 
 
                 
                 <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/tests/crosstalk_rmd/">Filtering with crosstalk</a></li>
-                
-
-                
-
-                
-                
-
-                
-
-                
-
-                
-
-                
-                <li class="nav-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/">R package documentation</a>
-                </li>
-                
-                
-
-                
-                
-
-                
-
-                
-
-                
-
-                
-
-                
-
+                                href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/govuk_datatable/">Interactive tables</a></li>
                 
 
                 
@@ -253,64 +253,93 @@
                 <div class="dashboard-content">
 
 
-<h1 class="govuk-heading-xl">Tests</h1>
+<h1 class="govuk-heading-xl">Build tools</h1>
 
 
 <div class="govuk-body">
 
-    <p>A page for tests</p>
-<p>Here is an <code>inline code block</code>.</p>
+    <p>The <code>{govukhugo}</code> R package includes two functions for building the Hugo. Use <code>build_hugo()</code> to convert Rmarkdown files and the Hugo site, use <code>build_hugo_rmd()</code> if you only want to convert Rmarkdown files. The custom rendering function <code>render_rmd()</code> is exported to the user, but is not intended for general use. A fuller description of the process is provided in the <a href="https://co-analysis.github.io/govuk-hugo-demo/docs/rmarkdown/" class="govuk-link" >main documentation</a>.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># A code block for R</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">build_hugo</span><span class="p">(</span>
+  <span class="n">with_rmd</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> 
+  <span class="n">rmd_folder</span> <span class="o">=</span> <span class="s">&#34;R/Rmd&#34;</span><span class="p">,</span> 
+  <span class="n">rebuild</span> <span class="o">=</span> <span class="kc">FALSE</span>
+<span class="p">)</span>
 
-<span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+<span class="nf">build_hugo_rmd</span><span class="p">(</span>
+  <span class="n">rmd_folder</span> <span class="o">=</span> <span class="s">&#34;R/Rmd&#34;</span><span class="p">,</span>
+  <span class="n">rebuild</span> <span class="o">=</span> <span class="kc">FALSE</span>
+<span class="p">)</span>
 
-<span class="n">x</span> <span class="o">%&gt;%</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="s">&#34;b&#34;</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="m">12382</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-
-<span class="c1"># This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line.s</span>
-
-</code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># A code block for python</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-
-<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-
-</code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!--&gt; A code block for HTML&lt;--&gt;</span>
-<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://www.example.com&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;link&#34;</span><span class="p">&gt;</span>a link<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="nf">render_rmd</span><span class="p">(</span>
+  <span class="n">rmd_file</span><span class="p">,</span> 
+  <span class="n">tmp_dir</span> <span class="o">=</span> <span class="nf">tempdir</span><span class="p">(),</span> 
+  <span class="n">out_dir</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">,</span>
+  <span class="n">quiet</span> <span class="o">=</span> <span class="kc">TRUE</span>
+<span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div>
+<h2 id="arguments" class="govuk-heading-l">Arguments</h2>
+<dl class="govuk-summary-list govuk-summary-list--no-border">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      with_rmd
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Whether to build Rmarkdown files, default is `TRUE`.
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      rmd_folder
+    </dt>
+    <dd class="govuk-summary-list__value">
+      The location of the Rmarkdown files, default is `R/Rmd`.
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      rebuild
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Whether to rebuild all the Rmarkdown files, default is `FALSE`
+    </dd>
+  </div>
+</dl>
+
+<h2 id="build_hugo" class="govuk-heading-l">build_hugo()</h2>
+<p><code>build_hugo()</code> is a wrapper around <code>build_hugo_rmd()</code> that calls the Hugo site builder after the Rmarkdown files have been converted to the format the govukhugo theme expects, this removes the need to call <code>build_hugo_rmd()</code> and then switch to a shell terminal to call Hugo directly. The arguments <code>rmd_folder</code> and <code>rebuild</code> are passed directly to <code>build_hugo_rmd()</code>. Calling <code>build_hugo(with_rmd = FALSE)</code> is equivalent to calling Hugo from the terminal.</p>
+
+<h2 id="build_hugo_rmd" class="govuk-heading-l">build_hugo_rmd()</h2>
+<p><code>build_hugo_rmd()</code> controls the process of building Rmarkdown files into HTML files that can be processed by Hugo.</p>
+<p>It is assumed that the Rmarkdown files are stored in an <code>R/Rmd</code> folder under the main site directory, however this can be changed via the argument <code>rmd_folder</code>. Any data used by the Rmarkdown files is assumed to be in an <code>R/data</code> folder under the main site directory, this cannot be changed programmatically at this stage.</p>
+<p>The default behaviour of <code>build_hugo_rmd()</code> is to only process files that have been changed. This is done by checking the file <code>rmd.log</code> in the Rmarkdown folder, which logs ths md5 checksums of the Rmarkdown files. If the log is not available or the setting <code>rebuild = TRUE</code> is supplied then all Rmarkdown files will be reprocessed.</p>
+
+<h2 id="render_rmd" class="govuk-heading-l">render_rmd()</h2>
+<p>The process of converting an Rmarkdown file to govukhugo format is controlled by <code>render_rmd()</code>, it is called by <code>build_hugo_rmd()</code> to convert each Rmarkdown file. While exposed to end users it is not intended for general purpose usage as it implicitly relies on assumptions put in place by <code>build_hugo_rmd()</code>.</p>
+<p>The main purpose of <code>render_rmd()</code> is to post-process a knitted Rmarkdown document. The function knits a file to HTML using <code>rmarkdown::html_document()</code> but then strips out header information, reverts the conversion of some punctuation and applies Hugo shortcodes to code blocks. It will then append the Rmarkdown YAML front matter to the HTML and adds a <code>rmarkdown: true</code> parameter that ensures the relevant javascript and CSS plugins are added for supported HTML widgets.</p>
+
 
 </div>
 

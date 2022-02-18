@@ -98,6 +98,42 @@
     </item>
     
     <item>
+      <title>Build tools</title>
+      <link>https://co-analysis.github.io/govuk-hugo-demo/rpkg/build/</link>
+      <pubDate>Thu, 18 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://co-analysis.github.io/govuk-hugo-demo/rpkg/build/</guid>
+      <description>Functions for building govukhugo sites from Rmarkdown</description>
+    </item>
+    
+    <item>
+      <title>Crosstalk filters</title>
+      <link>https://co-analysis.github.io/govuk-hugo-demo/rpkg/filters/</link>
+      <pubDate>Thu, 18 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://co-analysis.github.io/govuk-hugo-demo/rpkg/filters/</guid>
+      <description>Supporting interactive filtering controls</description>
+    </item>
+    
+    <item>
+      <title>Image tools</title>
+      <link>https://co-analysis.github.io/govuk-hugo-demo/rpkg/render_svg/</link>
+      <pubDate>Thu, 18 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://co-analysis.github.io/govuk-hugo-demo/rpkg/render_svg/</guid>
+      <description>Improving the accessibility of ggplot charts</description>
+    </item>
+    
+    <item>
+      <title>Interactive tables</title>
+      <link>https://co-analysis.github.io/govuk-hugo-demo/rpkg/govuk_datatable/</link>
+      <pubDate>Thu, 18 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://co-analysis.github.io/govuk-hugo-demo/rpkg/govuk_datatable/</guid>
+      <description>Enabling interactive tables in govukhugo</description>
+    </item>
+    
+    <item>
       <title>Accessibility statement</title>
       <link>https://co-analysis.github.io/govuk-hugo-demo/accessibility/</link>
       <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>

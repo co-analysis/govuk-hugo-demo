@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   
   
-  <title>govuk-hugo Demonstration | Tests</title>
+  <title>govuk-hugo Demonstration | R package documentation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0b0c0c">
 
@@ -139,7 +139,7 @@
                 
 
                 
-                <li class="nav-section nav-active-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/tests/">Examples</a>
+                <li class="nav-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/tests/">Examples</a>
                 </li>
                 
                 
@@ -150,22 +150,7 @@
                 
 
                 
-                <li class="nav-item nav-active-item"><a
-                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state "
-                                href="https://co-analysis.github.io/govuk-hugo-demo/tests/tests/">Tests</a></li>
                 
-
-                
-
-                
-                
-                
-
-                
-
-                
-                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/tests/static_rmd/">Static R Markdown</a></li>
                 
 
                 
@@ -177,21 +162,7 @@
                 
 
                 
-                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/tests/interactive_rmd/">Interactive R Markdown</a></li>
                 
-
-                
-
-                
-                
-                
-
-                
-
-                
-                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/tests/crosstalk_rmd/">Filtering with crosstalk</a></li>
                 
 
                 
@@ -204,12 +175,9 @@
                 
 
                 
-
-                
-                <li class="nav-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/">R package documentation</a>
+                <li class="nav-section nav-active-section nav-current"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/">R package documentation</a>
                 </li>
                 
-                
 
                 
                 
@@ -217,13 +185,41 @@
                 
 
                 
-
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/build/">Build tools</a></li>
                 
 
                 
 
                 
 
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/filters/">Crosstalk filters</a></li>
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/render_svg/">Image tools</a></li>
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/govuk_datatable/">Interactive tables</a></li>
                 
 
                 
@@ -252,65 +248,101 @@
 </nav></div>
                 <div class="dashboard-content">
 
-
-<h1 class="govuk-heading-xl">Tests</h1>
-
-
 <div class="govuk-body">
+    
+    <h1 class="govuk-heading-xl">R package documentation</h1>
+    
 
-    <p>A page for tests</p>
-<p>Here is an <code>inline code block</code>.</p>
+    <p>This section provides documentation for the <code>{govukhugo}</code> R package that enables the use of the govukhugo theme with Rmarkdown files. A fuller discussion of the approach to <a href="https://co-analysis.github.io/govuk-hugo-demo/docs/rmarkdown/" class="govuk-link" >working with Rmarkdown</a> is provided in the main documentation.</p>
+<p>The <code>{govukhugo}</code> package is not currently on CRAN, you can install it from GitHub:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># A code block for R</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
-
-<span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
-
-<span class="n">x</span> <span class="o">%&gt;%</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="s">&#34;b&#34;</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="m">12382</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-
-<span class="c1"># This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line.s</span>
-
-</code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># A code block for python</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-
-<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-
-</code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!--&gt; A code block for HTML&lt;--&gt;</span>
-<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://www.example.com&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;link&#34;</span><span class="p">&gt;</span>a link<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">remotes</span><span class="o">::</span><span class="nf">install_github</span><span class="p">(</span><span class="s">&#34;co-analysis/govuk-hugo-r&#34;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div>
+
+
+    
+
+    <hr class="govuk-section-break govuk-section-break--l" />
+
+    <h2 class="govuk-caption-xl">Pages</h2>
+    <hr class="govuk-section-break govuk-section-break--m" />
+
+    <dl class="govuk-summary-list">
+
+        
+        
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Build tools
+            </dt>
+            <dd class="govuk-summary-list__value">
+                Functions for building govukhugo sites from Rmarkdown
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/build/">
+                    Read/View</span>
+                </a>
+            </dd>
+
+        </div>
+        
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Crosstalk filters
+            </dt>
+            <dd class="govuk-summary-list__value">
+                Supporting interactive filtering controls
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/filters/">
+                    Read/View</span>
+                </a>
+            </dd>
+
+        </div>
+        
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Image tools
+            </dt>
+            <dd class="govuk-summary-list__value">
+                Improving the accessibility of ggplot charts
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/render_svg/">
+                    Read/View</span>
+                </a>
+            </dd>
+
+        </div>
+        
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Interactive tables
+            </dt>
+            <dd class="govuk-summary-list__value">
+                Enabling interactive tables in govukhugo
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/govuk_datatable/">
+                    Read/View</span>
+                </a>
+            </dd>
+
+        </div>
+        
+        
+        
+    </dl>
+
+    
+
 
 </div>
 

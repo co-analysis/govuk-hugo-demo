@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   
   
-  <title>govuk-hugo Demonstration | Tests</title>
+  <title>govuk-hugo Demonstration | Interactive tables</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0b0c0c">
 
@@ -139,12 +139,83 @@
                 
 
                 
-                <li class="nav-section nav-active-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/tests/">Examples</a>
+                <li class="nav-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/tests/">Examples</a>
                 </li>
                 
                 
 
                 
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-section nav-active-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/">R package documentation</a>
+                </li>
+                
+                
+
+                
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/build/">Build tools</a></li>
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/filters/">Crosstalk filters</a></li>
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/render_svg/">Image tools</a></li>
+                
+
+                
+
                 
 
                 
@@ -152,78 +223,7 @@
                 
                 <li class="nav-item nav-active-item"><a
                                 class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state "
-                                href="https://co-analysis.github.io/govuk-hugo-demo/tests/tests/">Tests</a></li>
-                
-
-                
-
-                
-                
-                
-
-                
-
-                
-                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/tests/static_rmd/">Static R Markdown</a></li>
-                
-
-                
-
-                
-                
-                
-
-                
-
-                
-                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/tests/interactive_rmd/">Interactive R Markdown</a></li>
-                
-
-                
-
-                
-                
-                
-
-                
-
-                
-                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
-                                href="https://co-analysis.github.io/govuk-hugo-demo/tests/crosstalk_rmd/">Filtering with crosstalk</a></li>
-                
-
-                
-
-                
-                
-
-                
-
-                
-
-                
-
-                
-                <li class="nav-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/">R package documentation</a>
-                </li>
-                
-                
-
-                
-                
-
-                
-
-                
-
-                
-
-                
-
-                
-
+                                href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/govuk_datatable/">Interactive tables</a></li>
                 
 
                 
@@ -253,64 +253,151 @@
                 <div class="dashboard-content">
 
 
-<h1 class="govuk-heading-xl">Tests</h1>
+<h1 class="govuk-heading-xl">Interactive tables</h1>
 
 
 <div class="govuk-body">
 
-    <p>A page for tests</p>
-<p>Here is an <code>inline code block</code>.</p>
+    <p>The <code>{govukhugo}</code> R package includes the <code>govuk_datatable()</code> which provides a wrapper to the <a href="https://rstudio.github.io/DT/" class="govuk-link"  target="_blank" rel="noreferrer noopener"><code>{DT}</code></a> package&rsquo;s <code>datatable()</code> function.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="c1"># A code block for R</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
-
-<span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
-
-<span class="n">x</span> <span class="o">%&gt;%</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="s">&#34;b&#34;</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="m">12382</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
-
-<span class="c1"># This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line. This is a really long line.s</span>
-
-</code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># A code block for python</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-
-<span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-
-</code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!--&gt; A code block for HTML&lt;--&gt;</span>
-<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://www.example.com&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;link&#34;</span><span class="p">&gt;</span>a link<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="nf">govuk_datatable</span><span class="p">(</span>
+  <span class="n">data</span><span class="p">,</span>
+  <span class="n">title</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">,</span>
+  <span class="n">element_id</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">,</span>
+  <span class="n">col_names</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">,</span>
+  <span class="n">page_length</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span>
+  <span class="n">search</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span>
+  <span class="n">small_text</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span>
+  <span class="n">buttons</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span>
+  <span class="n">col_defs</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">,</span>
+  <span class="n">copy_info</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">,</span>
+  <span class="n">export_file</span> <span class="o">=</span> <span class="kc">NULL</span><span class="p">,</span>
+  <span class="n">options</span> <span class="o">=</span> <span class="kc">NULL</span>
+<span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div>
+<h2 id="arguments" class="govuk-heading-l">Arguments</h2>
+<dl class="govuk-summary-list govuk-summary-list--no-border">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      data
+    </dt>
+    <dd class="govuk-summary-list__value">
+      A data frame, matrix or crosstalk SharedData object.
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      title
+    </dt>
+    <dd class="govuk-summary-list__value">
+      A title to provide as a table caption.
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      element_id
+    </dt>
+    <dd class="govuk-summary-list__value">
+      A unique reference id for the table.
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      col_names
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Replacement column names.
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      page_length
+    </dt>
+    <dd class="govuk-summary-list__value">
+      The default number of rows to show per page of the table.
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      search
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Whether to include a search box.
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      small_text
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Whether to render the table with smaller font sizes.
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      buttons
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Whether to include buttons for copying and downloading the table.
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      col_defs
+    </dt>
+    <dd class="govuk-summary-list__value">
+      A list of column definitions.
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      copy_info
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Optional information to include when the table is copied.
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      export_file
+    </dt>
+    <dd class="govuk-summary-list__value">
+      The name of the file downloaded to the user's device.
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      options
+    </dt>
+    <dd class="govuk-summary-list__value">
+      A list of DT options.
+    </dd>
+  </div>
+</dl>
+
+<h2 id="govuk_datatable" class="govuk-heading-l">govuk_datatable()</h2>
+<p>The <code>{DT}</code> package provides an opinionated implementation of the DataTables jQuery plugin, which does not naturally conform to the GOV.UK Design System. As a result <code>{govukhugo}</code> includes <code>govuk_datatable()</code> to wrap around DT::datatable(). Note that <code>govuk_datatable()</code> only provides access to some aspects of the <code>datatable()</code> arguments, and does not support passing of additional arguments via dots (<code>...</code>), this is to minimise the potential for disrupting the application of GOV.UK style.</p>
+<p>While the <code>govuk_datatable()</code> object can be piped to <code>{DT}</code> helper functions, it is advised that only the <code>format*()</code> are used in conjunction with <code>govuk_datatable()</code>. The <code>col_defs</code> and <code>options</code> arguments allow for significant programmatic control of the output table (the format functions being shortcuts for modifying column definitions), please refer to the <a href="https://rstudio.github.io/DT/" class="govuk-link"  target="_blank" rel="noreferrer noopener"><code>{DT}</code></a> and <a href="https://datatables.net/" class="govuk-link"  target="_blank" rel="noreferrer noopener">DataTables</a> reference materials for full details on how to use these arguments.</p>
+
 
 </div>
 
