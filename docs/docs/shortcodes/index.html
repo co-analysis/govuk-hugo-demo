@@ -30,7 +30,7 @@
 
   
 
-  <meta property="og:image" content="https://co-analysis.github.io/govuk-hugo-demo/assets/images/govuk-opengraph-image.png">
+  
 
 </head><body class="govuk-template__body js-enabled"><script>
     document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
@@ -52,10 +52,202 @@
                 
 
             </a>
+            <button class="mobile-nav-button govuk-button" id="mobile-nav-control">Menu ▼</button>
         </div>
 
     </div>
 </header>
+
+<div class="govuk-width-container">
+    
+<nav class="mobile-nav" id="mobile-nav">
+
+        
+        
+
+        
+
+        <ul class="govuk-list">
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-section nav-active-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/docs/">Documentation</a>
+                </li>
+                
+                
+
+                
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/features/">Features</a></li>
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/pages/">Pages</a></li>
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/sections/">Sections</a></li>
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                <li class="nav-item nav-active-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state "
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/shortcodes/">Shortcodes</a></li>
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/rmarkdown/">Hugo-ify R Markdown documents</a></li>
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/render_svg/">Accessible charts</a></li>
+                
+
+                
+
+                
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/tests/">Examples</a>
+                </li>
+                
+                
+
+                
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/">R package documentation</a>
+                </li>
+                
+                
+
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+                
+
+                
+
+        </ul>
+
+        
+
+        <ul class="govuk-list nav-extra">
+
+                
+                <li class="nav-item nav-about"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/about/">About page</a></li>
+                
+
+                </a>
+
+        </ul>
+        
+
+</nav>
+</div>
 
 
 <div class="govuk-width-container">
@@ -74,7 +266,7 @@
 </div>
 <div class="govuk-width-container ">
         <main class="govuk-main-wrapper " id="main-content" role="main">
-            <div class="dashboard-container">
+            <div class="dashboard-container" id="top">
 
                 <div class="dashboard-nav">
 <nav class="sidebar-nav">
@@ -286,9 +478,16 @@
     <li><a href="#file-download-links">File download links</a></li>
     <li><a href="#notification-banners">Notification banners</a></li>
     <li><a href="#tag">Tag</a></li>
+    <li><a href="#tabs">Tabs</a></li>
+    <li><a href="#accordion">Accordion</a></li>
   </ul>
 </nav>
 </aside>
+<div class="govuk-body">
+
+  <hr class="govuk-section-break govuk-section-break--xl">
+
+</div>
 
 <h2 id="in-page-table-of-contents" class="govuk-heading-l">In-page table of contents</h2>
 <p>An in-page table of contents, suitable for long-form articles can be included by using the shortcode <code>{{&lt; TOC &gt;}}</code> within your document. Preferably, you should include this after the first section of text but before the first secondary heading.</p>
@@ -307,9 +506,14 @@
   </ul>
 </nav>
 </aside>
+<div class="govuk-body">
+
+  <hr class="govuk-section-break govuk-section-break--xl">
+
+</div>
 
 <h2 id="paragraph-styling" class="govuk-heading-l">Paragraph styling</h2>
-<p>You can use the lead and small <a href="https://design-system.service.gov.uk/styles/typography/#paragraphs" class="govuk-link"  target="_blank" rel="noreferrer noopener">paragraph typography</a> through the <code>&lt;&lt;/* lead */&gt;&gt;</code> and <code>&lt;&lt;/* small */&gt;&gt;</code> shortcodes. These shortcodes do not take arguments, simply use an opening and then closing shortcode to apply the styling.</p>
+<p>You can use the lead and small <a href="https://design-system.service.gov.uk/styles/typography/#paragraphs" class="govuk-link"  target="_blank" rel="noreferrer noopener">paragraph typography</a> through the <code>{{&lt; lead &gt;}}</code> and <code>{{&lt; small &gt;}}</code> shortcodes. These shortcodes do not take arguments, simply use an opening and then closing shortcode to apply the styling.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -328,6 +532,11 @@
 </code></pre></td></tr></table>
 </div>
 </div><p class="govuk-body-s">A small paragraph</p>
+<div class="govuk-body">
+
+  <hr class="govuk-section-break govuk-section-break--xl">
+
+</div>
 
 <h2 id="section-breaks" class="govuk-heading-l">Section breaks</h2>
 <p>By default <code>govukhugo</code> renders section breaks into invisible breaks using the GOV.UK design system&rsquo;s large section break. The <code>break</code> shortcode allows you to set custom sizes (<code>xl</code>, <code>l</code> or <code>m</code>), you can make a break visible by setting that argument to <code>true</code>.</p>
@@ -377,6 +586,11 @@ A section followed by a visible `m` break.
   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 </div>
+<div class="govuk-body">
+
+  <hr class="govuk-section-break govuk-section-break--xl">
+
+</div>
 
 <h2 id="details" class="govuk-heading-l">Details</h2>
 <p>You can add the <a href="https://design-system.service.gov.uk/components/details/" class="govuk-link"  target="_blank" rel="noreferrer noopener">details</a> component using the <code>{{&lt; details &gt;}}</code> shortcode. In the opening shortcode you specify the summary text, while between that and a closing <code>{{&lt; /details &gt;}}</code> shortcode you include the content that you wish to be revealed when the user chooses to expand the details section.</p>
@@ -404,6 +618,11 @@ that might be relevant to only some users.
     The details component allows you to hide more detailed information that might be relevant to only some users.
   </div>
 </details>
+<div class="govuk-body">
+
+  <hr class="govuk-section-break govuk-section-break--xl">
+
+</div>
 
 <h2 id="warning-text" class="govuk-heading-l">Warning text</h2>
 <p>You can add the <a href="https://design-system.service.gov.uk/components/warning-text/" class="govuk-link"  target="_blank" rel="noreferrer noopener">warning text</a> component using the <code>{{&lt; warning &gt;}}</code> shortcode.</p>
@@ -421,6 +640,11 @@ that might be relevant to only some users.
     <span class="govuk-warning-text__assistive">Warning</span>
     This is experimental and still under development
   </strong>
+</div>
+<div class="govuk-body">
+
+  <hr class="govuk-section-break govuk-section-break--xl">
+
 </div>
 
 <h2 id="links-as-buttons" class="govuk-heading-l">Links as buttons</h2>
@@ -461,6 +685,11 @@ that might be relevant to only some users.
     
 
 </p>
+<div class="govuk-body">
+
+  <hr class="govuk-section-break govuk-section-break--xl">
+
+</div>
 
 <h2 id="file-download-links" class="govuk-heading-l">File download links</h2>
 <p>You can add a <a href="https://govspeak-preview.herokuapp.com/guide#download-links" class="govuk-link"  target="_blank" rel="noreferrer noopener">file download</a> component to style links as downloads using the <code>{{&lt; download_file &gt;}}</code> shortcode. As with button links must name the arguments <code>link</code> (the link to visit) and <code>text</code> (the text for the button), you must also specify the file <code>type</code> (e.g. &ldquo;PDF&rdquo;, &ldquo;ODS&rdquo;, &ldquo;CSV&rdquo;) and the file <code>size</code> (e.g. &ldquo;42KB&rdquo;, &ldquo;1.4MB&rdquo;).</p>
@@ -477,9 +706,14 @@ that might be relevant to only some users.
 </div><div class="govuk-body file-download">
   <a href="" class="govuk-link download-link" download>Download the spreadsheet (ODS, 1.4MB)</a>
 </div>
+<div class="govuk-body">
+
+  <hr class="govuk-section-break govuk-section-break--xl">
+
+</div>
 
 <h2 id="notification-banners" class="govuk-heading-l">Notification banners</h2>
-<p>You can add the neutral <a href="https://design-system.service.gov.uk/components/notification-banner/" class="govuk-link"  target="_blank" rel="noreferrer noopener">notification banner</a> component using the <code>{{&lt; notification */}}</code> shortcode. In the opening shortcode specify the banner heading, while between that and a closing <code>{{&lt;/* /notification &gt;}}</code> banner you include the content of the notification message.</p>
+<p>You can add the neutral <a href="https://design-system.service.gov.uk/components/notification-banner/" class="govuk-link"  target="_blank" rel="noreferrer noopener">notification banner</a> component using the <code>{{&lt; notification &gt;}}</code> shortcode. In the opening shortcode specify the banner heading, while between that and a closing <code>{{&lt; /notification &gt;}}</code> banner you include the content of the notification message.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -569,6 +803,11 @@ Please visit <a href="https://www.gov.uk">GOV.UK</a> for further details.
 </div>
   </div>
   
+</div>
+<div class="govuk-body">
+
+  <hr class="govuk-section-break govuk-section-break--xl">
+
 </div>
 
 <h2 id="tag" class="govuk-heading-l">Tag</h2>
@@ -710,13 +949,199 @@ Please visit <a href="https://www.gov.uk">GOV.UK</a> for further details.
     </tr>
   </tbody>
 </table>
+<div class="govuk-body">
+
+  <hr class="govuk-section-break govuk-section-break--xl">
+
+</div>
+
+<h2 id="tabs" class="govuk-heading-l">Tabs</h2>
+<p>The <a href="https://design-system.service.gov.uk/components/tabs/" class="govuk-link"  target="_blank" rel="noreferrer noopener">tabs</a> component is supported using the <code>{{&lt; tabset &gt;}}</code> and <code>{{&lt; tab &gt;}}</code> shortcodes. Please note this is considered an experimental component, see the design system <a href="https://design-system.service.gov.uk/components/tabs/" class="govuk-link"  target="_blank" rel="noreferrer noopener">article</a> for more details.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">{{&lt; tabset  &gt;}}
+{{&lt; tab title=&#34;First Tab&#34; &gt;}}My first tab{{&lt; /tab  &gt;}}
+{{&lt; tab title=&#34;Tab 2&#34; &gt;}}My second tab{{&lt; /tab  &gt;}}
+{{&lt; tab title=&#34;Third&#34; &gt;}}My third tab{{&lt; /tab  &gt;}}
+{{&lt; /tabset &gt;}}
+</code></pre></td></tr></table>
+</div>
+</div>
+
+
+
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    
+      
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="#first-tab">First Tab</a>
+      </li>
+      
+    
+      
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#tab-2">Tab 2</a>
+      </li>
+      
+    
+      
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#third">Third</a>
+      </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+<div class="govuk-tabs__panel " id="first-tab">
+  <h2 class="govuk-heading-l">First Tab</h2>
+  <div class="govuk-body">
+  My first tab
+  </div>
+</div>
+
+
+
+
+
+<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="tab-2">
+  <h2 class="govuk-heading-l">Tab 2</h2>
+  <div class="govuk-body">
+  My second tab
+  </div>
+</div>
+
+
+
+
+
+<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="third">
+  <h2 class="govuk-heading-l">Third</h2>
+  <div class="govuk-body">
+  My third tab
+  </div>
+</div>
+
+</div>
+<div class="govuk-body">
+
+  <hr class="govuk-section-break govuk-section-break--xl">
+
+</div>
+
+<h2 id="accordion" class="govuk-heading-l">Accordion</h2>
+<p>The <a href="https://design-system.service.gov.uk/components/accordion/" class="govuk-link"  target="_blank" rel="noreferrer noopener">accordion</a> component is supported using the <code>{{&lt; accordionset &gt;}}</code> and <code>{{&lt; accordion &gt;}}</code> shortcodes. Please note this is considered an experimental component, see the design system <a href="https://design-system.service.gov.uk/components/accordion/" class="govuk-link"  target="_blank" rel="noreferrer noopener">article</a> for more details.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">{{&lt; accordionset &gt;}}
+{{&lt; accordion title=&#34;First Accordion&#34; &gt;}}My first accordion{{&lt; /accordion &gt;}}
+{{&lt; accordion title=&#34;Accordion 2&#34; &gt;}}My second accordion{{&lt; /accordion &gt;}}
+{{&lt; accordion title=&#34;Third&#34; summary=&#34;Only use a summary if essential&#34; &gt;}}My third accordion{{&lt; /accordion &gt;}}
+{{&lt; /accordionset &gt;}}
+</code></pre></td></tr></table>
+</div>
+</div><div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+  
+
+
+
+<div class="govuk-accordion__section ">
+  <div class="govuk-accordion__section-header">
+    <h2 class="govuk-accordion__section-heading">
+      <span class="govuk-accordion__section-button" id="accordion-first-accordion">
+        First Accordion
+      </span>
+    </h2>
+    
+  </div>
+  <div id="accordion-first-accordion-content" class="govuk-accordion__section-content"
+    aria-labelledby="accordion-first-accordion">
+    <div class='govuk-body'>
+      My first accordion
+    </div>
+  </div>
+</div>
+
+
+
+<div class="govuk-accordion__section ">
+  <div class="govuk-accordion__section-header">
+    <h2 class="govuk-accordion__section-heading">
+      <span class="govuk-accordion__section-button" id="accordion-accordion-2">
+        Accordion 2
+      </span>
+    </h2>
+    
+  </div>
+  <div id="accordion-accordion-2-content" class="govuk-accordion__section-content"
+    aria-labelledby="accordion-accordion-2">
+    <div class='govuk-body'>
+      My second accordion
+    </div>
+  </div>
+</div>
+
+
+
+<div class="govuk-accordion__section ">
+  <div class="govuk-accordion__section-header">
+    <h2 class="govuk-accordion__section-heading">
+      <span class="govuk-accordion__section-button" id="accordion-third">
+        Third
+      </span>
+    </h2>
+    
+    <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+      Only use a summary if essential
+    </div>
+    
+  </div>
+  <div id="accordion-third-content" class="govuk-accordion__section-content"
+    aria-labelledby="accordion-third">
+    <div class='govuk-body'>
+      My third accordion
+    </div>
+  </div>
+</div>
+
+</div>
+
 
 </div>
 
 
 
                 </div>
-
+            </div>
+            <div id="scroll-back">
+                <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+                    <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg"
+                        width="13" height="17" viewBox="0 0 13 17">
+                        <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+                    </svg>Back to top
+                </a>
             </div>
         </main>
     </div><footer class="govuk-footer " role="contentinfo">
@@ -778,6 +1203,7 @@ Please visit <a href="https://www.gov.uk">GOV.UK</a> for further details.
         </div>
     </div>
 </footer>
+
 
 <script type="text/javascript">
 
@@ -863,6 +1289,36 @@ Please visit <a href="https://www.gov.uk">GOV.UK</a> for further details.
 
     
 
+    function scrollTop() {
+        if (window.innerWidth <= 768) {
+            document.getElementById("scroll-back").style.display = "none";
+        } else if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            document.getElementById("scroll-back").style.display = "block";
+        } else {
+            document.getElementById("scroll-back").style.display = "none";
+        };
+    }
+
+    window.onscroll = function() { scrollTop() };
+
+    function mobileNav() {
+        var navState = document.getElementById("mobile-nav").style.display
+        if (navState == '' || navState == "none") {
+            document.getElementById("mobile-nav").style.display = "block";
+        } else {
+            document.getElementById("mobile-nav").style.display = "none";
+        }
+        console.log(navState)
+    }
+
+    document.getElementById("mobile-nav-control").onclick = function() { mobileNav() };
+
+</script>
+
+
+<script src="https://co-analysis.github.io/govuk-hugo-demo/js/govuk-frontend-4.0.0.min.js"></script>
+<script>
+    window.GOVUKFrontend.initAll()
 </script></body>
 
 </html>

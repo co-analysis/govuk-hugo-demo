@@ -30,7 +30,7 @@
 
   
 
-  <meta property="og:image" content="https://co-analysis.github.io/govuk-hugo-demo/assets/images/govuk-opengraph-image.png">
+  
 
 </head><body class="govuk-template__body js-enabled"><script>
     document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
@@ -52,10 +52,202 @@
                 
 
             </a>
+            <button class="mobile-nav-button govuk-button" id="mobile-nav-control">Menu ▼</button>
         </div>
 
     </div>
 </header>
+
+<div class="govuk-width-container">
+    
+<nav class="mobile-nav" id="mobile-nav">
+
+        
+        
+
+        
+
+        <ul class="govuk-list">
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-section nav-active-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/docs/">Documentation</a>
+                </li>
+                
+                
+
+                
+                
+
+                
+
+                
+                <li class="nav-item nav-active-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state "
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/features/">Features</a></li>
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/pages/">Pages</a></li>
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/sections/">Sections</a></li>
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/shortcodes/">Shortcodes</a></li>
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/rmarkdown/">Hugo-ify R Markdown documents</a></li>
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/docs/render_svg/">Accessible charts</a></li>
+                
+
+                
+
+                
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/tests/">Examples</a>
+                </li>
+                
+                
+
+                
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                
+                
+
+                
+
+                
+                
+
+                
+
+                
+
+                
+
+                
+                <li class="nav-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/">R package documentation</a>
+                </li>
+                
+                
+
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+                
+
+                
+
+        </ul>
+
+        
+
+        <ul class="govuk-list nav-extra">
+
+                
+                <li class="nav-item nav-about"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/about/">About page</a></li>
+                
+
+                </a>
+
+        </ul>
+        
+
+</nav>
+</div>
 
 
 <div class="govuk-width-container">
@@ -74,7 +266,7 @@
 </div>
 <div class="govuk-width-container ">
         <main class="govuk-main-wrapper " id="main-content" role="main">
-            <div class="dashboard-container">
+            <div class="dashboard-container" id="top">
 
                 <div class="dashboard-nav">
 <nav class="sidebar-nav">
@@ -272,10 +464,10 @@
 
 <div class="govuk-body">
 
-    <p>The <code>govukhugo</code> theme provides a version of the GOV.UK Design System for Hugo, presently it is only designed for dashboard and book-style content, which is inspired by Public Health England&rsquo;s <a href="https://coronavirus.data.gov.uk/" class="govuk-link"  target="_blank" rel="noreferrer noopener">Coronavirus dashboard</a>. The majority of this is done via Hugo templates to construct the site scaffold.</p>
+    <p>The <code>govukhugo</code> theme provides a version of the GOV.UK Design System for Hugo, presently it is only designed for dashboard and book-style content, which is inspired by the UK Health Security Agency (formerly Public Health England) <a href="https://coronavirus.data.gov.uk/" class="govuk-link"  target="_blank" rel="noreferrer noopener">Coronavirus dashboard</a>. The majority of this is done via Hugo templates to construct the site scaffold.</p>
 
 <h2 id="govuk-design-system" class="govuk-heading-l">GOV.UK Design System</h2>
-<p>Some of the <a href="https://design-system.service.gov.uk/components/" class="govuk-link"  target="_blank" rel="noreferrer noopener">Design System styles and components</a> are natively supported by <code>govukhugo</code>. Headings and links are converted using Hugo render hooks. For general text, lists, blockquotes, and tables a lightweight JavaScript function enables this support, making <code>govukhugo</code> unsuitable for environments that do not support JavaScript. The following elements are processed by the <code>govukhugo</code> JavaScript: paragraphs, lists, blockquotes, strong/bold emphasis, and tables.</p>
+<p>Some of the <a href="https://design-system.service.gov.uk/components/" class="govuk-link"  target="_blank" rel="noreferrer noopener">Design System styles and components</a> are natively supported by <code>govukhugo</code>. Headings and links are converted using Hugo render hooks. For general text, lists, blockquotes, and tables a lightweight JavaScript function enables this support, making <code>govukhugo</code> unsuitable for environments that do not support JavaScript. The following elements are processed by the <code>govukhugo</code> JavaScript: paragraphs, lists, blockquotes, strong/bold emphasis, and tables. JavaScript is also required for the tabs and accordions Deisng System components, as well supporting mobile navigation.</p>
 <p>A number of Hugo <a href="https://co-analysis.github.io/govuk-hugo-demo/docs/shortcodes/" class="govuk-link" >shortcodes</a> exist to provide access to further aspects of the Design System, including: lead/small paragraph styling, section breaks, details, warning text, rendering links as GOV.UK style buttons, notification banners, and tags. Shortcodes are also available to insert a in-page table of contents and a file download link.</p>
 <p>The default <code>config.yaml</code> sets <code>unsafe: true</code>  in the markdown configuration, this allows you to include raw HTML in your markdown documents (by default Hugo ignores raw HTML in markdown documents), which allows you to include other components as desired.</p>
 <p>The GOV.UK <a href="https://design-system.service.gov.uk/styles/colour/" class="govuk-link"  target="_blank" rel="noreferrer noopener">colour palette</a> is available via CSS variables, for example <code>background-color: var(--govuk-colour-bright-purple)</code> gives you the &ldquo;bright-purple&rdquo; <span style="width: 0.7em; height: 0.7em; background-color: var(--govuk-colour-bright-purple); display: inline-block; vertical-align: middle; border: 1px solid var(--govuk-border-colour);"> </span> from the palette.</p>
@@ -300,7 +492,14 @@
 
 
                 </div>
-
+            </div>
+            <div id="scroll-back">
+                <a class="govuk-link govuk-link--no-visited-state app-back-to-top__link" href="#top">
+                    <svg role="presentation" focusable="false" class="app-back-to-top__icon" xmlns="http://www.w3.org/2000/svg"
+                        width="13" height="17" viewBox="0 0 13 17">
+                        <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+                    </svg>Back to top
+                </a>
             </div>
         </main>
     </div><footer class="govuk-footer " role="contentinfo">
@@ -362,6 +561,7 @@
         </div>
     </div>
 </footer>
+
 
 <script type="text/javascript">
 
@@ -447,6 +647,36 @@
 
     
 
+    function scrollTop() {
+        if (window.innerWidth <= 768) {
+            document.getElementById("scroll-back").style.display = "none";
+        } else if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            document.getElementById("scroll-back").style.display = "block";
+        } else {
+            document.getElementById("scroll-back").style.display = "none";
+        };
+    }
+
+    window.onscroll = function() { scrollTop() };
+
+    function mobileNav() {
+        var navState = document.getElementById("mobile-nav").style.display
+        if (navState == '' || navState == "none") {
+            document.getElementById("mobile-nav").style.display = "block";
+        } else {
+            document.getElementById("mobile-nav").style.display = "none";
+        }
+        console.log(navState)
+    }
+
+    document.getElementById("mobile-nav-control").onclick = function() { mobileNav() };
+
+</script>
+
+
+<script src="https://co-analysis.github.io/govuk-hugo-demo/js/govuk-frontend-4.0.0.min.js"></script>
+<script>
+    window.GOVUKFrontend.initAll()
 </script></body>
 
 </html>
