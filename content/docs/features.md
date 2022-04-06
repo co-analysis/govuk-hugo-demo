@@ -6,10 +6,10 @@ weight: 100
 summary: "Features of govukhugo"
 ---
 
-The `govukhugo` theme provides a version of the GOV.UK Design System for Hugo, presently it is only designed for dashboard and book-style content, which is inspired by Public Health England's [Coronavirus dashboard](https://coronavirus.data.gov.uk/). The majority of this is done via Hugo templates to construct the site scaffold.
+The `govukhugo` theme provides a version of the GOV.UK Design System for Hugo, presently it is only designed for dashboard and book-style content, which is inspired by the UK Health Security Agency (formerly Public Health England) [Coronavirus dashboard](https://coronavirus.data.gov.uk/). The majority of this is done via Hugo templates to construct the site scaffold.
 
 ## GOV.UK Design System
-Some of the [Design System styles and components](https://design-system.service.gov.uk/components/) are natively supported by `govukhugo`. Headings and links are converted using Hugo render hooks. For general text, lists, blockquotes, and tables a lightweight JavaScript function enables this support, making `govukhugo` unsuitable for environments that do not support JavaScript. The following elements are processed by the `govukhugo` JavaScript: paragraphs, lists, blockquotes, strong/bold emphasis, and tables. 
+Some of the [Design System styles and components](https://design-system.service.gov.uk/components/) are natively supported by `govukhugo`. Headings and links are converted using Hugo render hooks. For general text, lists, blockquotes, and tables a lightweight JavaScript function enables this support, making `govukhugo` unsuitable for environments that do not support JavaScript. The following elements are processed by the `govukhugo` JavaScript: paragraphs, lists, blockquotes, strong/bold emphasis, and tables. JavaScript is also required for the tabs and accordions Deisng System components, as well supporting mobile navigation.
 
 A number of Hugo [shortcodes]({{< ref "/docs/shortcodes.md" >}}) exist to provide access to further aspects of the Design System, including: lead/small paragraph styling, section breaks, details, warning text, rendering links as GOV.UK style buttons, notification banners, and tags. Shortcodes are also available to insert a in-page table of contents and a file download link.
 
