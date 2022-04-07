@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   
   
-  <title>govuk-hugo Demonstration | R package documentation</title>
+  <title>govuk-hugo Demonstration | Use GOV.UK colours</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#0b0c0c">
 
@@ -158,8 +158,11 @@
                 
 
                 
-                <li class="nav-section nav-active-section nav-current"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/">R package documentation</a>
+
+                
+                <li class="nav-section nav-active-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/">R package documentation</a>
                 </li>
+                
                 
 
                 
@@ -212,7 +215,8 @@
                 
 
                 
-                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                <li class="nav-item nav-active-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state "
                                 href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/colours/">Use GOV.UK colours</a></li>
                 
 
@@ -360,8 +364,11 @@
                 
 
                 
-                <li class="nav-section nav-active-section nav-current"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/">R package documentation</a>
+
+                
+                <li class="nav-section nav-active-section"><a class="govuk-!-font-size-16" href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/">R package documentation</a>
                 </li>
+                
                 
 
                 
@@ -414,7 +421,8 @@
                 
 
                 
-                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                <li class="nav-item nav-active-item"><a
+                                class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state "
                                 href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/colours/">Use GOV.UK colours</a></li>
                 
 
@@ -444,115 +452,124 @@
 </nav></div>
                 <div class="dashboard-content">
 
-<div class="govuk-body">
-    
-    <h1 class="govuk-heading-xl">R package documentation</h1>
-    
 
-    <p>This section provides documentation for the <code>{govukhugo}</code> R package that enables the use of the govukhugo theme with Rmarkdown files. A fuller discussion of the approach to <a href="https://co-analysis.github.io/govuk-hugo-demo/docs/rmarkdown/" class="govuk-link" >working with Rmarkdown</a> is provided in the main documentation.</p>
-<p>The <code>{govukhugo}</code> package is not currently on CRAN, you can install it from GitHub:</p>
+<h1 class="govuk-heading-xl">Use GOV.UK colours</h1>
+
+
+<div class="govuk-body">
+
+    <p>Methods to access and use the GOV.UK design system <a href="https://design-system.service.gov.uk/styles/colour/" class="govuk-link"  target="_blank" rel="noreferrer noopener">colour palette</a> from within the <code>{govukhugo}</code> package. The GOV.UK design system includes a colour palette, these can be accessed via the <code>govuk_colours</code> vector, it includes both Sass variable colour names (e.g. govuk-text-colour) as well as the named colour palette. The GOV.UK colour scheme was not designed with data visualisation in mind. The <code>govuk_palette()</code> function provides an opinionated selection of GOV.UK colours for use in charts (e.g. via <code>ggplot2::scale_fill_manual()</code>).</p>
+<p>You should always think carefully about the colours you use in data visualisation and ensure your visualisation does not rely solely on colour to convey meaning. Depending on the nature of your visualisation it may be appropriate to use other colour scales, such as the <a href="https://colorbrewer2.org" class="govuk-link"  target="_blank" rel="noreferrer noopener">Color Brewer scales</a> by Cynthia Brewer (available in R through the <a href="https://cran.r-project.org/package=RColorBrewer" class="govuk-link"  target="_blank" rel="noreferrer noopener"><code>{RColorBrewer}</code></a> package).</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">remotes</span><span class="o">::</span><span class="nf">install_github</span><span class="p">(</span><span class="s">&#34;co-analysis/govuk-hugo-r&#34;</span><span class="p">)</span>
+<pre class="chroma"><code class="language-r" data-lang="r"><span class="n">govuk_colours[</span><span class="s">&#34;blue&#34;</span><span class="n">]</span>
+
+<span class="nf">govuk_palette</span><span class="p">(</span><span class="s">&#34;categorical&#34;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
 </div>
+<h2 id="arguments" class="govuk-heading-l">Arguments</h2>
+
+<dl class="govuk-summary-list govuk-summary-list--no-border">
+  
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    pal
+  </dt>
+  <dd class="govuk-summary-list__value">
+    One of <code>categorical</code> (the default), <code>blue</code>, <code>blrd</code>, <code>bldrd_dark</code>, <code>blyl</code>, <code>putq</code>, or a colour name from <code>govuk_colours</code>
+  </dd>
+</div>
+
+</dl>
 
 
-    
+<h2 id="govuk_colours" class="govuk-heading-l">govuk_colours</h2>
+<p>The <code>govuk_colours</code> vector provides all of the colours listed in the Design System <a href="https://design-system.service.gov.uk/styles/colour/" class="govuk-link"  target="_blank" rel="noreferrer noopener">colour palettes documentation</a> colour palette, this includes both the palette colours and the Sass named variables (e.g. <code>govuk-text-colour</code>).</p>
 
-    <hr class="govuk-section-break govuk-section-break--l" />
+<h3 id="palette-colours" class="govuk-heading-m">Palette colours</h3>
+<ul>
+<li><code>red</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-red); display: inline-block; vertical-align: middle;"> </span> (#d4351c)</li>
+<li><code>yellow</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-yellow); display: inline-block; vertical-align: middle;"> </span> (#ffdd00)</li>
+<li><code>green</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-green); display: inline-block; vertical-align: middle;"> </span> (#00703c)</li>
+<li><code>blue</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-blue); display: inline-block; vertical-align: middle;"> </span> (#1d70b8)</li>
+<li><code>dark-blue</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-dark-blue); display: inline-block; vertical-align: middle;"> </span> (#003078)</li>
+<li><code>light-blue</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-light-blue); display: inline-block; vertical-align: middle;"> </span> (#5694ca)</li>
+<li><code>purple</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-purple); display: inline-block; vertical-align: middle;"> </span> (#4c2c92)</li>
+<li><code>black</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-black); display: inline-block; vertical-align: middle;"> </span> (#0b0c0c)</li>
+<li><code>dark-grey</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-dark-grey); display: inline-block; vertical-align: middle;"> </span> (#505a5f)</li>
+<li><code>mid-grey</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-mid-grey); display: inline-block; vertical-align: middle;"> </span> (#b1b4b6)</li>
+<li><code>light-grey</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-light-grey); display: inline-block; vertical-align: middle; border: 1px solid var(--govuk-colour-mid-grey)"> </span> (#f3f2f1)</li>
+<li><code>white</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-white); display: inline-block; vertical-align: middle; border: 1px solid var(--govuk-colour-mid-grey)"> </span> (#ffffff)</li>
+<li><code>light-purple</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-light-purple); display: inline-block; vertical-align: middle;"> </span> (#6f72af)</li>
+<li><code>bright-purple</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-bright-purple); display: inline-block; vertical-align: middle;"> </span> (#912b88)</li>
+<li><code>pink</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-pink); display: inline-block; vertical-align: middle;"> </span> (#d53880)</li>
+<li><code>light-pink</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-light-pink); display: inline-block; vertical-align: middle;"> </span> (#f499be)</li>
+<li><code>orange</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-orange); display: inline-block; vertical-align: middle;"> </span> (#f47738)</li>
+<li><code>brown</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-brown); display: inline-block; vertical-align: middle;"> </span> (#b58840)</li>
+<li><code>light-green</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-light-green); display: inline-block; vertical-align: middle;"> </span> (#85994b)</li>
+<li><code>turquoise</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-turquoise); display: inline-block; vertical-align: middle;"> </span> (#28a197)</li>
+<li><code>chart-white</code> <span style="width: 1.5em; height: 1.5em; background-color: #f9f8f8; display: inline-block; vertical-align: middle; border: 1px solid var(--govuk-colour-mid-grey)"> </span> (#f9f8f8)</li>
+</ul>
+<p>The <code>chart-white</code> colour is not a GOV.UK official palette colour but included in the palette to enable effective visualisation in charts, see <code>govuk_palette()</code> documentation below.</p>
 
-    <h2 class="govuk-caption-xl">Pages</h2>
-    <hr class="govuk-section-break govuk-section-break--m" />
+<h3 id="sass-variables" class="govuk-heading-m">Sass variables</h3>
+<ul>
+<li><code>govuk-text-colour</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-text-colour); display: inline-block; vertical-align: middle;"> </span> (#0b0c0c)</li>
+<li><code>govuk-secondary-text-colour</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-secondary-text-colour); display: inline-block; vertical-align: middle;"> </span> (#505a5f)</li>
+<li><code>govuk-link-colour</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-link-colour); display: inline-block; vertical-align: middle;"> </span> (#1d70b8)</li>
+<li><code>govuk-link-hover-colour</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-link-hover-colour); display: inline-block; vertical-align: middle;"> </span> (#003078)</li>
+<li><code>govuk-link-visited-colour</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-link-visited-colour); display: inline-block; vertical-align: middle;"> </span> (#4c2c92)</li>
+<li><code>govuk-link-active-colour</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-link-active-colour); display: inline-block; vertical-align: middle;"> </span> (#0b0c0c)</li>
+<li><code>govuk-border-colour</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-border-colour); display: inline-block; vertical-align: middle;"> </span> (#b1b4b6)</li>
+<li><code>govuk-input-border-colour</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-input-border-colour); display: inline-block; vertical-align: middle;"> </span> (#0b0c0c)</li>
+<li><code>govuk-focus-colour</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-focus-colour); display: inline-block; vertical-align: middle;"> </span> (#ffdd00)</li>
+<li><code>govuk-focus-text-colour</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-focus-text-colour); display: inline-block; vertical-align: middle;"> </span> (#0b0c0c)</li>
+<li><code>govuk-error-colour</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-error-colour); display: inline-block; vertical-align: middle;"> </span> (#d4351c)</li>
+<li><code>govuk-success-colour</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-success-colour); display: inline-block; vertical-align: middle;"> </span> (#00703c)</li>
+<li><code>govuk-brand-colour</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-brand-colour); display: inline-block; vertical-align: middle;"> </span> (#1d70b8)</li>
+</ul>
 
-    <dl class="govuk-summary-list">
+<h2 id="govuk_palette" class="govuk-heading-l">govuk_palette</h2>
+<p>The <code>govuk_palette()</code> function provides an opinionated selection of GOV.UK colours for use in charts (e.g. via <code>ggplot2::scale_fill_manual()</code>). It has a single argument, <code>pal</code>, which must be one of <code>categorical</code>, <code>blues</code>, <code>blrd</code>, <code>blrd_dark</code>, <code>blyl</code>, <code>putq</code> or one of the names from the <code>govuk_colours</code> vector.</p>
 
-        
-        
-        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-                Build tools
-            </dt>
-            <dd class="govuk-summary-list__value">
-                Functions for building govukhugo sites from Rmarkdown
-            </dd>
-            <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/build/">
-                    Read/View</span>
-                </a>
-            </dd>
+<h3 id="categorical-palette" class="govuk-heading-m">Categorical palette</h3>
+<p>The <code>categorical</code> palette provides a set of colours for displaying discrete categories where a distinction between the categories is valuable. It provides 6 colours:</p>
+<ul>
+<li><code>blue</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-blue); display: inline-block; vertical-align: middle;"> </span> (#1d70b8)</li>
+<li><code>orange</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-orange); display: inline-block; vertical-align: middle;"> </span> (#f47738)</li>
+<li><code>turquoise</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-turquoise); display: inline-block; vertical-align: middle;"> </span> (#28a197)</li>
+<li><code>bright-purple</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-bright-purple); display: inline-block; vertical-align: middle;"> </span> (#912b88)</li>
+<li><code>yellow</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-yellow); display: inline-block; vertical-align: middle;"> </span> (#ffdd00)</li>
+<li><code>dark-blue</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-dark-blue); display: inline-block; vertical-align: middle;"> </span> (#003078)</li>
+</ul>
 
-        </div>
-        
-        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-                Crosstalk filters
-            </dt>
-            <dd class="govuk-summary-list__value">
-                Supporting interactive filtering controls
-            </dd>
-            <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/filters/">
-                    Read/View</span>
-                </a>
-            </dd>
+<h3 id="sequential-palettes" class="govuk-heading-m">Sequential palettes</h3>
+<p>The <code>blues</code> palette provides the three GOV.UK blues in sequential order from dark to light:</p>
+<ul>
+<li><code>dark-blue</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-dark-blue); display: inline-block; vertical-align: middle;"> </span> (#003078)</li>
+<li><code>blue</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-blue); display: inline-block; vertical-align: middle;"> </span> (#1d70b8)</li>
+<li><code>light-blue</code> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-light-blue); display: inline-block; vertical-align: middle;"> </span> (#5694ca)</li>
+</ul>
+<p>If you wish to use another GOV.UK for a sequential palette, supplying a name from <code>govuk_colours</code> as the <code>pal</code> argument will return two colours for use as end-points in a sequential palette, the original colour and a version of the colour that is roughly a third lighter. For example:</p>
+<ul>
+<li><code>govuk_palette(&quot;yellow&quot;)</code> returns <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-yellow); display: inline-block; vertical-align: middle;"> </span> (#ffdd00) and <span style="width: 1.5em; height: 1.5em; background-color: #ffeeb7; display: inline-block; vertical-align: middle;"> </span> (#ffeeb7)</li>
+<li><code>govuk_palette(&quot;green&quot;)</code> returns <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-green); display: inline-block; vertical-align: middle;"> </span> (#00703c) and <span style="width: 1.5em; height: 1.5em; background-color: #aecab5; display: inline-block; vertical-align: middle;"> </span> (#aecab5)</li>
+</ul>
 
-        </div>
-        
-        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-                Image tools
-            </dt>
-            <dd class="govuk-summary-list__value">
-                Improving the accessibility of ggplot charts
-            </dd>
-            <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/render_svg/">
-                    Read/View</span>
-                </a>
-            </dd>
-
-        </div>
-        
-        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-                Interactive tables
-            </dt>
-            <dd class="govuk-summary-list__value">
-                Enabling interactive tables in govukhugo
-            </dd>
-            <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/govuk_datatable/">
-                    Read/View</span>
-                </a>
-            </dd>
-
-        </div>
-        
-        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-                Use GOV.UK colours
-            </dt>
-            <dd class="govuk-summary-list__value">
-                Functions for building govukhugo sites from Rmarkdown
-            </dd>
-            <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/colours/">
-                    Read/View</span>
-                </a>
-            </dd>
-
-        </div>
-        
-        
-        
-    </dl>
-
-    
+<h3 id="divergent-palettes" class="govuk-heading-m">Divergent palettes</h3>
+<p>There are four palettes for use in divergent colour scales, using <code>chart-white</code> as their mid-point:</p>
+<ul>
+<li><code>blrd</code> which uses GOV.UK blue and red as its end-points: <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-blue); display: inline-block; vertical-align: middle;"> </span> <span style="width: 1.5em; height: 1.5em; background-color: #f9f8f8; display: inline-block; vertical-align: middle; border: 1px solid var(--govuk-colour-mid-grey)"> </span> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-red); display: inline-block; vertical-align: middle;"> </span></li>
+<li><code>blrd_dark</code> which uses GOV.UK dark blue as its blue end-point and a darker red of the same hue as GOV.UK red as its red end-point: <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-dark-blue); display: inline-block; vertical-align: middle;"> </span> <span style="width: 1.5em; height: 1.5em; background-color: #f9f8f8; display: inline-block; vertical-align: middle; border: 1px solid var(--govuk-colour-mid-grey)"> </span> <span style="width: 1.5em; height: 1.5em; background-color: #a12815; display: inline-block; vertical-align: middle;"> </span></li>
+<li><code>blyl</code> which uses GOV.UK blue and yellow as its end-points: <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-blue); display: inline-block; vertical-align: middle;"> </span> <span style="width: 1.5em; height: 1.5em; background-color: #f9f8f8; display: inline-block; vertical-align: middle; border: 1px solid var(--govuk-colour-mid-grey)"> </span> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-yellow); display: inline-block; vertical-align: middle;"> </span></li>
+<li><code>putq</code> which uses GOV.UK purple and turquoise as its end-points: <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-purple); display: inline-block; vertical-align: middle;"> </span> <span style="width: 1.5em; height: 1.5em; background-color: #f9f8f8; display: inline-block; vertical-align: middle; border: 1px solid var(--govuk-colour-mid-grey)"> </span> <span style="width: 1.5em; height: 1.5em; background-color: var(--govuk-colour-turquoise); display: inline-block; vertical-align: middle;"> </span></li>
+</ul>
 
 
 </div>

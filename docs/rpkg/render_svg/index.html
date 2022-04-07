@@ -212,6 +212,17 @@
                 
 
                 
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/colours/">Use GOV.UK colours</a></li>
+                
+
+                
+
+                
                 
 
                 
@@ -407,6 +418,17 @@
                 
 
                 
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/colours/">Use GOV.UK colours</a></li>
+                
+
+                
+
+                
                 
 
                 
@@ -465,72 +487,76 @@
 </div>
 </div>
 <h2 id="arguments" class="govuk-heading-l">Arguments</h2>
+
 <dl class="govuk-summary-list govuk-summary-list--no-border">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      plot
-    </dt>
-    <dd class="govuk-summary-list__value">
-      A [`ggplot2::ggplot()`](https://ggplot2.tidyverse.org/reference/ggplot.html) object.
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      width
-    </dt>
-    <dd class="govuk-summary-list__value">
-      The desired width of the object.
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      height
-    </dt>
-    <dd class="govuk-summary-list__value">
-      The desired height of the object.
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      units
-    </dt>
-    <dd class="govuk-summary-list__value">
-      The units of width and height, the default is pixels (`"px"`).
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      alt_title
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Short alt text (will show as a tool-tip)
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      alt_desc
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Longer alt text (for assistive technology)
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      caption
-    </dt>
-    <dd class="govuk-summary-list__value">
-      A caption to display to all users, can also be set to `"alt_title"` or `"alt_desc"` to reuse those values.
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      dpi
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Dots per inch, default for 96 for screen resolution, switch to 300 if using physical units (e.g. mm, cm or inches).
-    </dd>
-  </div>
+  
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    plot
+  </dt>
+  <dd class="govuk-summary-list__value">
+    A <a href="https://ggplot2.tidyverse.org/reference/ggplot.html"><code>ggplot2::ggplot()</code></a> object.
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    width
+  </dt>
+  <dd class="govuk-summary-list__value">
+    The desired width of the object.
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    height
+  </dt>
+  <dd class="govuk-summary-list__value">
+    The desired height of the object.
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    units
+  </dt>
+  <dd class="govuk-summary-list__value">
+    The units of width and height, the default is pixels (<code>&quot;px&quot;</code>).
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    alt_title
+  </dt>
+  <dd class="govuk-summary-list__value">
+    Short alt text (will show as a tool-tip)
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    alt_desc
+  </dt>
+  <dd class="govuk-summary-list__value">
+    Longer alt text (for assistive technology)
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    caption
+  </dt>
+  <dd class="govuk-summary-list__value">
+    A caption to display to all users, can also be set to <code>&quot;alt_title&quot;</code> or <code>&quot;alt_desc&quot;</code> to reuse those values.
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    dpi
+  </dt>
+  <dd class="govuk-summary-list__value">
+    Dots per inch, default for 96 for screen resolution, switch to 300 if using physical units (e.g. mm, cm or inches).
+  </dd>
+</div>
+
 </dl>
+
 
 <h2 id="render_svg" class="govuk-heading-l">render_svg()</h2>
 <p>The <code>render_svg()</code> function uses svglite to render the ggplot object, it will then insert into the plot the supplied alt text and if specified will also provide a caption for the figure.</p>

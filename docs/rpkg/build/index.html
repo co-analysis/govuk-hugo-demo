@@ -212,6 +212,17 @@
                 
 
                 
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/colours/">Use GOV.UK colours</a></li>
+                
+
+                
+
+                
                 
 
                 
@@ -407,6 +418,17 @@
                 
 
                 
+
+                
+
+                
+                <li class="nav-item"><a class="govuk-!-font-size-14 govuk-link govuk-link--no-visited-state"
+                                href="https://co-analysis.github.io/govuk-hugo-demo/rpkg/colours/">Use GOV.UK colours</a></li>
+                
+
+                
+
+                
                 
 
                 
@@ -479,32 +501,36 @@
 </div>
 </div>
 <h2 id="arguments" class="govuk-heading-l">Arguments</h2>
+
 <dl class="govuk-summary-list govuk-summary-list--no-border">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      with_rmd
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Whether to build Rmarkdown files, default is `TRUE`.
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      rmd_folder
-    </dt>
-    <dd class="govuk-summary-list__value">
-      The location of the Rmarkdown files, default is `R/Rmd`.
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      rebuild
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Whether to rebuild all the Rmarkdown files, default is `FALSE`
-    </dd>
-  </div>
+  
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    with_rmd
+  </dt>
+  <dd class="govuk-summary-list__value">
+    Whether to build Rmarkdown files, default is <code>TRUE</code>
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    rmd_folder
+  </dt>
+  <dd class="govuk-summary-list__value">
+    The location of the Rmarkdown files, default is <code>R/Rmd</code>
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    rebuild
+  </dt>
+  <dd class="govuk-summary-list__value">
+    Whether to rebuild all the Rmarkdown files, default is <code>FALSE</code>
+  </dd>
+</div>
+
 </dl>
+
 
 <h2 id="build_hugo" class="govuk-heading-l">build_hugo()</h2>
 <p><code>build_hugo()</code> is a wrapper around <code>build_hugo_rmd()</code> that calls the Hugo site builder after the Rmarkdown files have been converted to the format the govukhugo theme expects, this removes the need to call <code>build_hugo_rmd()</code> and then switch to a shell terminal to call Hugo directly. The arguments <code>rmd_folder</code> and <code>rebuild</code> are passed directly to <code>build_hugo_rmd()</code>. Calling <code>build_hugo(with_rmd = FALSE)</code> is equivalent to calling Hugo from the terminal.</p>

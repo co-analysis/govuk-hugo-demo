@@ -226,6 +226,10 @@
                 
 
                 
+
+                
+
+                
                 
 
                 
@@ -435,6 +439,10 @@
                 
 
                 
+
+                
+
+                
                 
 
                 
@@ -480,6 +488,7 @@
     <li><a href="#tag">Tag</a></li>
     <li><a href="#tabs">Tabs</a></li>
     <li><a href="#accordion">Accordion</a></li>
+    <li><a href="#summary-list">Summary list</a></li>
   </ul>
 </nav>
 </aside>
@@ -713,32 +722,49 @@ that might be relevant to only some users.
 </div>
 
 <h2 id="notification-banners" class="govuk-heading-l">Notification banners</h2>
-<p>You can add the neutral <a href="https://design-system.service.gov.uk/components/notification-banner/" class="govuk-link"  target="_blank" rel="noreferrer noopener">notification banner</a> component using the <code>{{&lt; notification &gt;}}</code> shortcode. In the opening shortcode specify the banner heading, while between that and a closing <code>{{&lt; /notification &gt;}}</code> banner you include the content of the notification message.</p>
+<p>You can add the neutral <a href="https://design-system.service.gov.uk/components/notification-banner/" class="govuk-link"  target="_blank" rel="noreferrer noopener">notification banner</a> component using the <code>{{&lt; notification &gt;}}</code> shortcode. The shortcode requires the named arguments <code>title</code> and <code>message</code>. Optionally you can add further messages between an opening and closing shortcode, if not providing a closing shortcode you must end the shortcode with a slash character (<code>/</code>).</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-txt" data-lang="txt">{{&lt; notification &#34;Important&#34; &gt;}}
-Here is an important notice
-{{&lt; /notification &gt;}}
+<pre class="chroma"><code class="language-txt" data-lang="txt">{{&lt; notification title=&#34;Important&#34; message=&#34;Here is an important notice&#34; /&gt;}}
+
+{{&lt; notification title=&#34;Important&#34; message=&#34;Here is an important notice&#34; */&gt;}
+You can find further information on [GOV.UK](https://www.gov.uk)
+{{&lt;/* /notification &gt;}}
 </code></pre></td></tr></table>
 </div>
-</div><div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
-  data-module="govuk-notification-banner">
+</div><div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
     <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
       Important
     </h2>
   </div>
   <div class="govuk-notification-banner__content">
-    <div class="govuk-notification-banner__heading">
-      
-Here is an important notice
-
-    </div>
+    <h3 class="govuk-notification-banner__heading">
+      Here is an important notice
+    </h3>
+    
+  </div>
+</div>
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Here is an important notice
+    </h3>
+    
+    <div class="govuk-body">You can find further information on <a href="https://www.gov.uk">GOV.UK</a></div>
+    
   </div>
 </div>
 <p>You can add the success notification banner using the <code>{{&lt; success &gt;}}</code> shortcode.</p>
@@ -747,17 +773,21 @@ Here is an important notice
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-txt" data-lang="txt">{{&lt; success &#34;Success&#34; &gt;}}
-You have succeeded
+<pre class="chroma"><code class="language-txt" data-lang="txt">{{&lt; success title=&#34;Success&#34; message=&#34;You have succeeded&#34; /&gt;}}
+
+{{&lt; success title=&#34;Success&#34; message=&#34;You have succeeded&#34; &gt;}}
+Please visit &lt;a href=&#34;https://www.gov.uk&#34;&gt;GOV.UK&lt;/a&gt; for further details.
 {{&lt; /success &gt;}}
 </code></pre></td></tr></table>
 </div>
-</div><div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+</div>
+<div class="govuk-notification-banner govuk-notification-banner--success" role="region"
   aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   
-    
     <div class="govuk-notification-banner__header">
       <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
         Success
@@ -765,45 +795,29 @@ You have succeeded
     </div>
     <div class="govuk-notification-banner__content">
       <h3 class="govuk-notification-banner__heading">
-        
-You have succeeded
-
+        You have succeeded
       </h3>
+      
     </div>
-    
-  
-</div>
-<p>If you need to include further information then include you should provide the <code>title</code> and <code>message</code> as named arguments to the shortcode and include the further information within the opening and closing shortcodes. Note you will need to use raw HTML tags for inner content rather than markdown.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-txt" data-lang="txt">{{&lt; success title=&#34;Success&#34; message=&#34;You have succeeded&#34; &gt;}}
-Please visit &lt;a href=&#34;https://www.gov.uk&#34;&gt;GOV.UK&lt;/a&gt; for further details.
-{{&lt; /success &gt;}}
-</code></pre></td></tr></table>
-</div>
-</div><div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+  </div>
+
+<div class="govuk-notification-banner govuk-notification-banner--success" role="region"
   aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Success
-    </h2>
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Success
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <h3 class="govuk-notification-banner__heading">
+        You have succeeded
+      </h3>
+      
+      <div class="govuk-body">Please visit <a href="https://www.gov.uk">GOV.UK</a> for further details.</div>
+      
+    </div>
   </div>
-  <div class="govuk-notification-banner__content">
-    <h3 class="govuk-notification-banner__heading">
-      You have succeeded
-    </h3>
-    <div class="govuk-body">
-Please visit <a href="https://www.gov.uk">GOV.UK</a> for further details.
-</div>
-  </div>
-  
-</div>
 <div class="govuk-body">
 
   <hr class="govuk-section-break govuk-section-break--xl">
@@ -1127,6 +1141,87 @@ Please visit <a href="https://www.gov.uk">GOV.UK</a> for further details.
 </div>
 
 </div>
+<div class="govuk-body">
+
+  <hr class="govuk-section-break govuk-section-break--xl">
+
+</div>
+
+<h2 id="summary-list" class="govuk-heading-l">Summary list</h2>
+<p>The <a href="https://design-system.service.gov.uk/components/summary-list/" class="govuk-link"  target="_blank" rel="noreferrer noopener">summary list</a> component is supported using the <code>{{&lt; summarylist &gt;}}</code> and <code>{{&lt; summaryitem &gt;}}</code> shortcodes. The summary list is intended for key-value pairs, the &ldquo;key&rdquo; should provided as an argument to the opening <code>{{&lt; summaryitem &gt;}}</code> shortcode itself and the value is the contents between the <code>{{&lt; summaryitem &gt;}}</code> opening and closing shortcodes.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">{{&lt; summarylist &gt;}}
+{{&lt; summaryitem &#34;Department&#34; &gt;}}Cabinet Office{{&lt; /summaryitem &gt;}}
+{{&lt; summaryitem &#34;Address&#34; &gt;}}70 Whitehall&lt;br /&gt;London&lt;br /&gt;SW1A 2AS{{&lt; /summaryitem &gt;}}
+{{&lt; /summarylist &gt;}}
+</code></pre></td></tr></table>
+</div>
+</div>
+<dl class="govuk-summary-list">
+  
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Department
+  </dt>
+  <dd class="govuk-summary-list__value">
+    Cabinet Office
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Address
+  </dt>
+  <dd class="govuk-summary-list__value">
+    70 Whitehall<br />London<br />SW1A 2AS
+  </dd>
+</div>
+
+</dl>
+
+<p>You can remove the row borders in the summary list by including the <code>noborder</code> argument in the <code>{{&lt; summarylist &gt;}}</code> opening shortcode.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">{{&lt; summarylist noborder &gt;}}
+{{&lt; summaryitem &#34;Department&#34; &gt;}}Cabinet Office{{&lt; /summaryitem &gt;}}
+{{&lt; summaryitem &#34;Address&#34; &gt;}}70 Whitehall&lt;br /&gt;London&lt;br /&gt;SW1A 2AS{{&lt; /summaryitem &gt;}}
+{{&lt; /summarylist &gt;}}
+</code></pre></td></tr></table>
+</div>
+</div>
+<dl class="govuk-summary-list govuk-summary-list--no-border">
+  
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Department
+  </dt>
+  <dd class="govuk-summary-list__value">
+    Cabinet Office
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Address
+  </dt>
+  <dd class="govuk-summary-list__value">
+    70 Whitehall<br />London<br />SW1A 2AS
+  </dd>
+</div>
+
+</dl>
+
 
 
 </div>
