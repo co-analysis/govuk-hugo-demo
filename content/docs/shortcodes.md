@@ -289,10 +289,10 @@ Optionally you can define a colour (one of `grey`, `green`, `turquoise`, `blue`,
 The [tabs](https://design-system.service.gov.uk/components/tabs/) component is supported using the `{{</* tabset */>}}` and `{{</* tab */>}}` shortcodes. Please note this is considered an experimental component, see the design system [article](https://design-system.service.gov.uk/components/tabs/) for more details.
 
 ```txt
-{{</* tabset  */>}}
-{{</* tab title="First Tab" >}}My first tab{{< /tab  */>}}
-{{</* tab title="Tab 2" >}}My second tab{{< /tab  */>}}
-{{</* tab title="Third" >}}My third tab{{< /tab  */>}}
+{{</* tabset */>}}
+{{</* tab title="First Tab" >}}My first tab{{< /tab */>}}
+{{</* tab title="Tab 2" >}}My second tab{{< /tab */>}}
+{{</* tab title="Third" >}}My third tab{{< /tab */>}}
 {{</* /tabset */>}}
 ```
 
@@ -301,6 +301,22 @@ The [tabs](https://design-system.service.gov.uk/components/tabs/) component is s
 {{< tab title="Tab 2" >}}My second tab{{< /tab >}}
 {{< tab title="Third" >}}My third tab{{< /tab >}}
 {{< /tabset>}}
+
+By default the tab panel will include the tab title as a large heading (i.e. using the `govuk-heading-l` class), however you can change this behaviour with the `heading` argument. Setting `heading` to `xl`, `l`, `m`, or `s` will use the associated heading style, for example setting `heading="m"` will use the `govuk-heading-m` class. Setting `heading="hide"` will stop the title from being included as a header in the tab panel. When dealing with multiple tabsets on the same page that have the same title, such as using tabs to allow switching between table and chart views, you can supply a unique id using the `ref` argument.
+
+```txt
+{{</* tabset */>}}
+{{</* tab title="Medium" heading="m" ref="tab1" >}}This panel has a medium heading{{< /tab */>}}
+{{</* tab title="Small" heading="s" ref="tab2" >}}This panel has a small heading{{< /tab */>}}
+{{</* tab title="None" heading="hide" ref="tab3" >}}This panel has no heading{{< /tab */>}}
+{{</* /tabset */>}}
+```
+
+{{< tabset >}}
+{{< tab title="Medium" heading="m" ref="tab1" >}}This panel has a medium heading{{< /tab >}}
+{{< tab title="Small" heading="s" ref="tab2" >}}This panel has a small heading{{< /tab >}}
+{{< tab title="None" heading="hide" ref="tab3" >}}This panel has no heading{{< /tab >}}
+{{< /tabset >}}
 
 {{< break type="xl" >}}
 
