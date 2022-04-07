@@ -27,32 +27,11 @@ render_rmd(
 ```
 
 ## Arguments
-<dl class="govuk-summary-list govuk-summary-list--no-border">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      with_rmd
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Whether to build Rmarkdown files, default is `TRUE`.
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      rmd_folder
-    </dt>
-    <dd class="govuk-summary-list__value">
-      The location of the Rmarkdown files, default is `R/Rmd`.
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      rebuild
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Whether to rebuild all the Rmarkdown files, default is `FALSE`
-    </dd>
-  </div>
-</dl>
+{{< summarylist noborder >}}
+{{< summaryitem "with_rmd" >}}Whether to build Rmarkdown files, default is `TRUE`{{< /summaryitem >}}
+{{< summaryitem "rmd_folder" >}}The location of the Rmarkdown files, default is `R/Rmd`{{< /summaryitem >}}
+{{< summaryitem "rebuild" >}}Whether to rebuild all the Rmarkdown files, default is `FALSE`{{< /summaryitem >}}
+{{< /summarylist >}}
 
 ## build_hugo()
 `build_hugo()` is a wrapper around `build_hugo_rmd()` that calls the Hugo site builder after the Rmarkdown files have been converted to the format the govukhugo theme expects, this removes the need to call `build_hugo_rmd()` and then switch to a shell terminal to call Hugo directly. The arguments `rmd_folder` and `rebuild` are passed directly to `build_hugo_rmd()`. Calling `build_hugo(with_rmd = FALSE)` is equivalent to calling Hugo from the terminal.
