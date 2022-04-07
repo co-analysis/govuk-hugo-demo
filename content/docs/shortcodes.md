@@ -151,40 +151,36 @@ You can add a [file download](https://govspeak-preview.herokuapp.com/guide#downl
 {{< break type="xl" >}}
 
 ## Notification banners
-You can add the neutral [notification banner](https://design-system.service.gov.uk/components/notification-banner/) component using the `{{</* notification */>}}` shortcode. In the opening shortcode specify the banner heading, while between that and a closing `{{</* /notification */>}}` banner you include the content of the notification message.
+You can add the neutral [notification banner](https://design-system.service.gov.uk/components/notification-banner/) component using the `{{</* notification */>}}` shortcode. The shortcode requires the named arguments `title` and `message`. Optionally you can add further messages between an opening and closing shortcode, if not providing a closing shortcode you must end the shortcode with a slash character (`/`).
 
 ```txt
-{{</* notification "Important" */>}}
-Here is an important notice
+{{</* notification title="Important" message="Here is an important notice" /*/>}}
+
+{{</* notification title="Important" message="Here is an important notice" */>}
+You can find further information on [GOV.UK](https://www.gov.uk)
 {{</* /notification */>}}
 ```
 
-{{< notification "Important" >}}
-Here is an important notice
+{{< notification title="Important" message="Here is an important notice" />}}
+
+{{< notification title="Important" message="Here is an important notice" >}}
+You can find further information on [GOV.UK](https://www.gov.uk)
 {{< /notification >}}
 
 You can add the success notification banner using the `{{</* success */>}}` shortcode.
 
 ```txt
-{{</* success "Success" */>}}
-You have succeeded
-{{</* /success */>}}
-```
+{{</* success title="Success" message="You have succeeded" /*/>}}
 
-{{< success "Success" >}}
-You have succeeded
-{{< /success >}}
-
-If you need to include further information then include you should provide the `title` and `message` as named arguments to the shortcode and include the further information within the opening and closing shortcodes. Note you will need to use raw HTML tags for inner content rather than markdown.
-
-```txt
 {{</* success title="Success" message="You have succeeded" */>}}
 Please visit <a href="https://www.gov.uk">GOV.UK</a> for further details.
 {{</* /success */>}}
 ```
 
-{{< success title="Success" message="You have succeeded" >}}
-Please visit <a href="https://www.gov.uk">GOV.UK</a> for further details.
+{{< success title="Success" message="You have succeeded" role="region" />}}
+
+{{< success title="Success" message="You have succeeded" role="region" >}}
+Please visit [GOV.UK](https://www.gov.uk) for further details.
 {{< /success >}}
 
 {{< break type="xl" >}}
