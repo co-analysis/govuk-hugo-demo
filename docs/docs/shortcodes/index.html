@@ -980,10 +980,10 @@ Please visit &lt;a href=&#34;https://www.gov.uk&#34;&gt;GOV.UK&lt;/a&gt; for fur
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-txt" data-lang="txt">{{&lt; tabset  &gt;}}
-{{&lt; tab title=&#34;First Tab&#34; &gt;}}My first tab{{&lt; /tab  &gt;}}
-{{&lt; tab title=&#34;Tab 2&#34; &gt;}}My second tab{{&lt; /tab  &gt;}}
-{{&lt; tab title=&#34;Third&#34; &gt;}}My third tab{{&lt; /tab  &gt;}}
+<pre class="chroma"><code class="language-txt" data-lang="txt">{{&lt; tabset &gt;}}
+{{&lt; tab title=&#34;First Tab&#34; &gt;}}My first tab{{&lt; /tab &gt;}}
+{{&lt; tab title=&#34;Tab 2&#34; &gt;}}My second tab{{&lt; /tab &gt;}}
+{{&lt; tab title=&#34;Third&#34; &gt;}}My third tab{{&lt; /tab &gt;}}
 {{&lt; /tabset &gt;}}
 </code></pre></td></tr></table>
 </div>
@@ -1022,8 +1022,17 @@ Please visit &lt;a href=&#34;https://www.gov.uk&#34;&gt;GOV.UK&lt;/a&gt; for fur
 
 
 
+
+
+
+
+
+
+
 <div class="govuk-tabs__panel " id="first-tab">
+  
   <h2 class="govuk-heading-l">First Tab</h2>
+  
   <div class="govuk-body">
   My first tab
   </div>
@@ -1033,8 +1042,17 @@ Please visit &lt;a href=&#34;https://www.gov.uk&#34;&gt;GOV.UK&lt;/a&gt; for fur
 
 
 
+
+
+
+
+
+
+
 <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="tab-2">
+  
   <h2 class="govuk-heading-l">Tab 2</h2>
+  
   <div class="govuk-body">
   My second tab
   </div>
@@ -1044,10 +1062,127 @@ Please visit &lt;a href=&#34;https://www.gov.uk&#34;&gt;GOV.UK&lt;/a&gt; for fur
 
 
 
+
+
+
+
+
+
+
 <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="third">
+  
   <h2 class="govuk-heading-l">Third</h2>
+  
   <div class="govuk-body">
   My third tab
+  </div>
+</div>
+
+</div>
+<p>By default the tab panel will include the tab title as a large heading (i.e. using the <code>govuk-heading-l</code> class), however you can change this behaviour with the <code>heading</code> argument. Setting <code>heading</code> to <code>xl</code>, <code>l</code>, <code>m</code>, or <code>s</code> will use the associated heading style, for example setting <code>heading=&quot;m&quot;</code> will use the <code>govuk-heading-m</code> class. Setting <code>heading=&quot;hide&quot;</code> will stop the title from being included as a header in the tab panel. When dealing with multiple tabsets on the same page that have the same title, such as using tabs to allow switching between table and chart views, you can supply a unique id using the <code>ref</code> argument.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-txt" data-lang="txt">{{&lt; tabset &gt;}}
+{{&lt; tab title=&#34;Medium&#34; heading=&#34;m&#34; ref=&#34;tab1&#34; &gt;}}This panel has a medium heading{{&lt; /tab &gt;}}
+{{&lt; tab title=&#34;Small&#34; heading=&#34;s&#34; ref=&#34;tab2&#34; &gt;}}This panel has a small heading{{&lt; /tab &gt;}}
+{{&lt; tab title=&#34;None&#34; heading=&#34;hide&#34; ref=&#34;tab3&#34; &gt;}}This panel has no heading{{&lt; /tab &gt;}}
+{{&lt; /tabset &gt;}}
+</code></pre></td></tr></table>
+</div>
+</div>
+
+
+
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    
+      
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="#tab1">Medium</a>
+      </li>
+      
+    
+      
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#tab2">Small</a>
+      </li>
+      
+    
+      
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#tab3">None</a>
+      </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="govuk-tabs__panel " id="tab1">
+  
+  <h2 class="govuk-heading-m">Medium</h2>
+  
+  <div class="govuk-body">
+  This panel has a medium heading
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="tab2">
+  
+  <h2 class="govuk-heading-s">Small</h2>
+  
+  <div class="govuk-body">
+  This panel has a small heading
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="tab3">
+  
+  
+  <div class="govuk-body">
+  This panel has no heading
   </div>
 </div>
 
