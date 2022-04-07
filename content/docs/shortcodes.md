@@ -325,3 +325,34 @@ The [accordion](https://design-system.service.gov.uk/components/accordion/) comp
 {{< accordion title="Accordion 2" >}}My second accordion{{< /accordion >}}
 {{< accordion title="Third" summary="Only use a summary if essential" >}}My third accordion{{< /accordion >}}
 {{< /accordionset >}}
+
+{{< break type="xl" >}}
+
+## Summary list
+The [summary list](https://design-system.service.gov.uk/components/summary-list/) component is supported using the `{{</* summarylist */>}}` and `{{</* summaryitem */>}}` shortcodes. The summary list is intended for key-value pairs, the "key" should provided as an argument to the opening `{{</* summaryitem */>}}` shortcode itself and the value is the contents between the `{{</* summaryitem */>}}` opening and closing shortcodes.
+
+```txt
+{{</* summarylist */>}}
+{{</* summaryitem "Department" >}}Cabinet Office{{< /summaryitem */>}}
+{{</* summaryitem "Address" >}}70 Whitehall<br />London<br />SW1A 2AS{{< /summaryitem */>}}
+{{</* /summarylist */>}}
+```
+
+{{< summarylist >}}
+{{< summaryitem "Department" >}}Cabinet Office{{< /summaryitem >}}
+{{< summaryitem "Address" >}}70 Whitehall<br />London<br />SW1A 2AS{{< /summaryitem >}}
+{{< /summarylist >}}
+
+You can remove the row borders in the summary list by including the `noborder` argument in the `{{</* summarylist */>}}` opening shortcode.
+
+```txt
+{{</* summarylist noborder */>}}
+{{</* summaryitem "Department" >}}Cabinet Office{{< /summaryitem */>}}
+{{</* summaryitem "Address" >}}70 Whitehall<br />London<br />SW1A 2AS{{< /summaryitem */>}}
+{{</* /summarylist */>}}
+```
+
+{{< summarylist noborder >}}
+{{< summaryitem "Department" >}}Cabinet Office{{< /summaryitem >}}
+{{< summaryitem "Address" >}}70 Whitehall<br />London<br />SW1A 2AS{{< /summaryitem >}}
+{{< /summarylist >}}
