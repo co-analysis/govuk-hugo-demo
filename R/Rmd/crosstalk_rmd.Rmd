@@ -76,6 +76,9 @@ govukhugo::unstrap(fs_sex)
 :::
 
 :::{.govuk-grid-column-three-quarters .data-display}
+
+{{< tabset >}}
+{{< tab title="Table" heading="hide">}}
 ```{r penguin-table, echo=FALSE}
 govukhugo::govuk_datatable(
   penguins_sd,
@@ -84,7 +87,24 @@ govukhugo::govuk_datatable(
   page_length = 10,
   search = FALSE
 )
+
 ```
+{{< /tab >}}
+{{< tab title="Chart" heading="hide" >}}
+```{r penguin-chart, echo=FALSE}
+p <- ggplot2::ggplot(
+  penguins_sd, 
+  ggplot2::aes(x = bill_length_mm, y = flipper_length_mm, 
+               colour = species, shape = species)) +
+  ggplot2::geom_point() +
+  ggplot2::theme(legend.position = "bottom")
+
+plotly::ggplotly(p)
+ 
+```
+{{< /tab >}}
+{{< /tabset >}}
+
 :::
 
 ::::
